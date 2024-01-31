@@ -12,5 +12,7 @@
             "name": "yes"
         }
     ],
-    "require": {}
+    "require": {
+        "eftec/bladeone": "^4.9"
+    }
 }
