@@ -1,0 +1,16 @@
+{
+    "name": "clodi/ti-msite-web",
+    "type": "y",
+    "license": "y",
+    "autoload": {
+        "psr-4": {
+            "Clodi\\TiMsiteWeb\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yes"
+        }
+    ],
+    "require": {}
+}
