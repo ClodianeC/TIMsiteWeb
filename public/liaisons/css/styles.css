@@ -1,0 +1,231 @@
+@charset "UTF-8";
+/**
+ * @author Prenom Nom courriel
+ * @todo Lier les modules avec des instructions @import
+ * @todo Compléter selon l'énoncé de l'exercice
+ */
+/*
+ * ------------------
+ * TABLE DES MATIERES
+ * ------------------
+ * Librairies
+ ** Normalize
+ * UTILITAIRES
+ ** Variables
+ ** Mixins
+ * BASE
+ ** Typographie
+ ** Hyperliens
+ ** Boutons
+ * MODULES
+ ** gds - Styles généraux du Guide de styles
+ ** palette - Palette de couleurs
+ ** listeInteractivite - Éléments interactifs
+ */
+/****** Librairies ******/
+/** Normalize **/
+/**** UTILITAIRES ****/
+/** Variables **/
+/**
+* @author Prenom Nom courriel
+* @todo Importer la fonte Futura
+* @todo Personnaliser les variables selon les spécifications du guide visuel
+*       Certaines variables devront être définies par une fonction de coloration
+* @todo Compléter selon l'énoncé de l'exercice
+* @todo Utiliser le sélecteur & pour les sélecteurs des différentes couleurs
+*/
+/** Polices de caractères **/
+@font-face {
+  font-family: Futura, sans-serif;
+  src: url("../fonts/Futura.ttc") format("truetype");
+}
+/** Palette de couleurs **/
+/* Couleurs de base */
+/* Autres couleurs */
+/** Points de rupture **/
+/** Mixins **/
+/**
+* @author Ève Février - efevrier@cegep-ste-foy.qc.ca
+* @author Yves Hélie - yves.helie@cegep-ste-foy.qc.ca
+*/
+/**
+ * ----------------------------
+ * TABLE DES MATIERES - MIXINS
+ * ----------------------------
+ * Utilitaires de base
+ ** Box sizing
+ ** Clearfix
+ * Accessibilité
+ * Typographie
+ */
+/********** Utilitaires de base **********/
+/** Box sizing **/
+/* Clearfix */
+/********* Accessibilité *********/
+.visuallyhidden,
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus,
+.screen-reader-only.focusable:active,
+.screen-reader-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/******** Typographie *********/
+/****** BASE ******/
+/** Typographie **/
+/**
+* @author Prenom Nom courriel
+* @todo Préciser l’interlignage sur le body pour l’écran large
+* @todo Utiliser le mixin fontSize pour définir les tailles de polices
+* @todo Utiliser une variable pour la media query de la règle body
+*/
+/**** Typographie responsive ****/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px; /* 16px pour toutes les largeurs d'écran */
+  font-size: 1.6rem;
+  line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
+}
+h1,
+.titreNiveau1,
+h2,
+.titreNiveau2,
+h3,
+.titreNiveau3 {
+  font-family: Futura, sans-serif;
+  font-weight: 500;
+}
+
+h1,
+.titreNiveau1 {
+  font-size: 28px;
+  font-size: 2.8rem;
+  margin: 0;
+}
+h1--desktop,
+.titreNiveau1--desktop {
+  font-size: 48px;
+  font-size: 4.8rem;
+  padding-bottom: 15px;
+  position: relative;
+}
+h1--desktop:after,
+.titreNiveau1--desktop:after {
+  background-color: #358ae0;
+  content: "";
+  display: inline-block;
+  width: 150px;
+  height: 8px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+h2,
+.titreNiveau2 {
+  font-size: 20px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+h2--desktop,
+.titreNiveau2--desktop {
+  font-size: 28px;
+  font-size: 2.8rem;
+}
+
+h3,
+.titreNiveau3 {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+h3--desktop,
+.titreNiveau3--desktop {
+  font-size: 22px;
+  font-size: 2.2rem;
+}
+
+.texte {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.375;
+}
+.texte--desktop {
+  line-height: 1.5;
+}
+
+/** Hyperliens **/
+/**
+* @author Prenom Nom courriel
+* @todo Compléter selon l'énoncé de l'exercice
+*/
+.hyperlien {
+  color: #2678B5;
+  text-decoration: none;
+}
+.hyperlien--visited {
+  color: #226aa0;
+}
+.hyperlien--hover {
+  color: #144061;
+  text-decoration: underline;
+}
+.hyperlien--active {
+  color: #bbd531;
+  text-decoration: underline;
+}
+
+/** Boutons **/
+/**
+* @author Prenom Nom courriel
+* @todo Compléter selon l'énoncé de l'exercice
+*/
+.bouton {
+  background-color: #bbd531;
+  border-radius: 18px;
+  color: black;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+.bouton:after {
+  content: "»";
+  margin-left: 0.4em;
+}
+.bouton--hover {
+  background-color: rgba(187, 213, 49, 0.75);
+}
+.bouton--active {
+  background-color: rgba(187, 213, 49, 0.5);
+}
+.bouton--inverse {
+  background-color: white;
+  border: 2px solid #bbd531;
+}
+.bouton--inverse--hover {
+  border-color: rgba(187, 213, 49, 0.75);
+}
+.bouton--inverse--active {
+  border-color: rgba(187, 213, 49, 0.5);
+}
+
+/****** MODULES ******/
+
+/*# sourceMappingURL=styles.css.map */

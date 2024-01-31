@@ -72,7 +72,7 @@
 
 // Fonction pour convertir une valeur de font-size en pixels à son équivalent rem
 @function calculateRem($size) {
-    $remSize: calc($size / 10px);
+    $remSize: calc($size / 10);
     @return #{$remSize}rem;
 }
 
