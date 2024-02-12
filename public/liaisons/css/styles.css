@@ -583,10 +583,10 @@ header {
   margin: 0 auto 9rem auto;
   position: relative;
   z-index: 1;
-  top: -8rem;
+  top: -11rem;
 }
 .menu__liste {
-  padding: 0;
+  padding: 0 1rem 0 0;
   display: flex;
   align-items: end;
   flex-direction: row;
@@ -594,11 +594,11 @@ header {
 }
 .menu__liste li:nth-child(1) a,
 .menu__liste li:nth-child(5) a {
-  padding-bottom: 160%;
+  padding-bottom: 190%;
 }
 .menu__liste li:nth-child(2) a,
 .menu__liste li:nth-child(4) a {
-  padding-bottom: 30%;
+  padding-bottom: 45%;
 }
 .menu__liste__item {
   list-style: none;
