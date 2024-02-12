@@ -4,7 +4,7 @@
     "license": "y",
     "autoload": {
         "psr-4": {
-            "Clodi\\TiMsiteWeb\\": "src/"
+            "App\\":"App/"
         }
     },
     "authors": [
@@ -13,6 +13,7 @@
         }
     ],
     "require": {
+        "symfony/mailer": "^7.0",
         "eftec/bladeone": "^4.9"
     }
 }

@@ -1,37 +1,41 @@
 /**
-* @author Prenom Nom courriel
-* @todo Importer la fonte Futura
+* @author Clodiane Charette clodianecharette@hotmail.com
 * @todo Personnaliser les variables selon les spécifications du guide visuel
 *       Certaines variables devront être définies par une fonction de coloration
 * @todo Compléter selon l'énoncé de l'exercice
-* @todo Utiliser le sélecteur & pour les sélecteurs des différentes couleurs
 */
 
 /** Polices de caractères **/
 
 @font-face {
-  font-family: Futura, sans-serif;
-  src: 	url('../fonts/Futura.ttc') format('truetype');
+  font-family: 'LT Binary Neue Round', sans-serif;
+  src: 	url('../fonts/CaviarDreams.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Caviar Dreams', sans-serif;
+  src: 	url('../fonts/LTBinaryNeueRound-Regular.ttf') format('truetype');
 }
 
-$fontePrimaire : Futura, sans-serif;
-$fonteSecondaire : Arial, sans-serif;
+$fonteTitre : 'LT Binary Neue Round', sans-serif;
+$fonteNiveauDeTitre : 'Caviar Dreams', sans-serif;
+$fonteTexteCourant : Arial, sans-serif;
 
 /** Palette de couleurs **/
 // Utiliser http://chir.ag/projects/name-that-color pour obtenir des noms uniques et mémorisables
 // Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop étrange
 
 /* Couleurs de base */
-$bleuMoyen: #358ae0;
-$bleuPale: #68a8e8;
-$vertLime: #bbd531;
-$bleuMinuit: #012d61;
-$bleuMarin: #2678B5;
+$blancCasse: #fffaf1;
+$orange: #febe98;
+$rose: #e87c84;
+$vert: #d0e3cc;
+$gris: #7d7d7d;
+$noir: #000;
 
-$bleuMoyenTransparent : transparentize($bleuMoyen, 0.50);
+//$bleuMoyenTransparent : transparentize($bleuMoyen, 0.50);
 
 /* Autres couleurs */
-$hyperlien: $bleuMarin;
+//$hyperlien: $bleuMarin;
 
 /** Points de rupture **/
-$desktop : 601px;
+$desktop : 801px;

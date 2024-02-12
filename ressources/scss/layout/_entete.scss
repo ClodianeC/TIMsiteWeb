@@ -1,0 +1,136 @@
+/*Entête*/
+header {
+  //margin-bottom: 7rem;
+  max-width: 100%;
+}
+
+.enteteFond {
+  max-width: 1200px;
+  display: block;
+  width: 100%;
+  padding-bottom: 400px;
+  margin: 0 auto -400px auto;
+  z-index: 0;
+  background-image: url("../img/cercleMenu.svg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+
+}
+
+.titre {
+  max-width: 100rem;
+  font-family: "LT Binary Neue Round", sans-serif;
+  color: $noir;
+  font-size: 6rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin: 2rem auto 0 auto;
+}
+.sous-titre {
+  font-family: "Caviar Dreams", sans-serif;
+  color: $noir;
+  font-size: 4rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.menu {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 9rem auto;
+  position: relative;
+  z-index: 1;
+  top: -8rem;
+
+  &__liste {
+    padding: 0;
+    display: flex;
+    align-items: end;
+    flex-direction: row;
+    justify-content: space-between;
+
+    li:nth-child(1) a,
+    li:nth-child(5) a {
+      padding-bottom: 160%;
+    }
+    li:nth-child(2) a,
+    li:nth-child(4) a {
+      padding-bottom: 30%;
+    }
+
+    &__item {
+      list-style: none;
+      width: fit-content;
+
+      &__lien {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $noir;
+        width: fit-content;
+
+        &__rond {
+          background-color: $gris;
+          padding: 2.7rem;
+          border-radius: 100%;
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+
+          &__icone {
+            background-image: url("../img/sprite.png");
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+          }
+        }
+        &__texte {
+          margin: 0;
+        }
+
+        &:active,
+        &:hover {
+          .menu__liste__item__lien__rond {
+            background-color: $orange;
+          }
+          #finissants {
+            background-position: -156px -52px;
+          }
+          #projets {
+            background-position: -208px -52px;
+          }
+          #programme {
+            background-position: -312.5px -52px;
+          }
+          #stages {
+            background-position: -364px -52px;
+          }
+          #joindre {
+            background-position: -416px -52px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#finissants {
+  background-position: -156px 0;
+}
+#projets {
+  background-position: -208px 0;
+}
+#programme {
+  background-position: -312.5px 0;
+}
+#stages {
+  background-position: -364px 0;
+}
+#joindre {
+  background-position: -416px 0;
+}
+

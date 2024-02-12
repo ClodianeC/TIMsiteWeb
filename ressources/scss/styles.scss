@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /**
- * @author Prenom Nom courriel
+ * @author Clodiane Charette clodianecharette@hotmail.com
  * @todo Lier les modules avec des instructions @import
  * @todo Compléter selon l'énoncé de l'exercice
  */
@@ -32,7 +32,7 @@
 /****** Librairies ******/
 
 /** Normalize **/
-       //@import ''; // Adapter le lien vers votre fichier normalize dans node_module.
+@import 'base/normalize';
 
 /**** UTILITAIRES ****/
 
@@ -44,9 +44,6 @@
 
 /****** BASE ******/
 
-h1 {
-  color: #bbd531;
-}
 /** Typographie **/
 @import 'base/typo';
 
@@ -57,4 +54,6 @@ h1 {
 @import 'base/bouton';
 
 /****** MODULES ******/
-
+@import 'base/general';
+@import 'layout/entete';
+@import "layout/piedDePage";

@@ -1,0 +1,13 @@
+body {
+  background-color: $blancCasse;
+  background-image: url("../img/texture/old_wall.png");
+  background-size: 200px;
+  background-repeat: repeat;
+  background-blend-mode: luminosity;
+}
+
+main {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}

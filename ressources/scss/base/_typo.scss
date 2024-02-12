@@ -1,8 +1,5 @@
 /**
-* @author Prenom Nom courriel
-* @todo Préciser l’interlignage sur le body pour l’écran large
-* @todo Utiliser le mixin fontSize pour définir les tailles de polices
-* @todo Utiliser une variable pour la media query de la règle body
+* @author Clodiane Charette clodianecharette@hotmail.com
 */
 
 /**** Typographie responsive ****/
@@ -12,11 +9,11 @@ html {
 }
 
 body {
-  font-family: $fonteSecondaire;
-  font-size: 16px; /* 16px pour toutes les largeurs d'écran */
-  font-size: 1.6rem;
+  font-family: $fonteTexteCourant;
+  font-size: 18px; /* 18px pour toutes les largeurs d'écran */
+  font-size: 1.8rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
-  @media (min-width: 601px) {
+  @media (min-width: $desktop) {
   }
 }
 
@@ -26,8 +23,8 @@ h2,
 .titreNiveau2,
 h3,
 .titreNiveau3 {
-  font-family: $fontePrimaire;
-  font-weight: 500;
+  font-family: $fonteNiveauDeTitre;
+  font-weight: normal;
 }
 
 h1,
@@ -40,7 +37,7 @@ h1,
     padding-bottom: 15px;
     position: relative;
     &:after {
-      background-color: $bleuMoyen;
+      background-color: $blancCasse;
       content: "";
       display: inline-block;
       width: 150px;
@@ -54,9 +51,8 @@ h1,
 
 h2,
 .titreNiveau2{
-  font-size: 20px;
-  font-size: 2rem;
-  text-transform: uppercase;
+  font-size: 40px;
+  font-size: 4rem;
   &--desktop {
     font-size: 28px;
     font-size: 2.8rem;
@@ -74,9 +70,9 @@ h3,
 }
 
 .texte {
-  font-family: $fonteSecondaire;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-family: $fonteTexteCourant;
+  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.375;
   &--desktop {
     line-height: 1.5;

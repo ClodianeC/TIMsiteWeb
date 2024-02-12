@@ -1,2 +1,4 @@
-# projet-depart
-Structure de départ pour le projet Site de la TIM 2024
+# Site web de la TIM 2024
+Par Clodiane Charette
+</br>
+Prepare to be amazed
