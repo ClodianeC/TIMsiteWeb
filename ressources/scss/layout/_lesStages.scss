@@ -1,0 +1,89 @@
+/* Les stages */
+
+.fondInfoStage {
+  background-color: $orange;
+  background-image: url("../img/texture/round.webp");
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+  width: 100vw;
+  margin: 10rem auto;
+  box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+}
+.infoStage {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto 5rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+
+  &__section {
+    flex-basis: 48%;
+
+    &__h2 {
+      text-align: center;
+    }
+    &__sousSection{
+      background-color: $blancCasse;
+      border: $vert solid 0.4rem;
+      border-radius: 2rem;
+      padding: 2rem;
+
+      &__h3 {
+
+      }
+      &__texte {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.texteStage {
+  width: 80%;
+  max-width: 500px;
+  margin: auto;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.stageDerniereSession {
+  width: 80%;
+  max-width: 800px;
+  margin: 10rem auto;
+
+  &__h2 {
+    text-align: center;
+  }
+  &__texte {
+
+  }
+}
+
+.fondInfoATE {
+  background-color: $blancCasse;
+  border: $vert solid 0.4rem;
+  border-radius: 30rem;
+  padding: 5rem 10rem;
+  margin: 10rem auto;
+  width: 75%;
+  max-width: 1300px;
+}
+.stageATE {
+
+  &__h2 {
+
+  }
+  &__texte {
+
+  }
+  &__h3 {
+
+  }
+  &__liste {
+
+    &__item {
+
+    }
+  }
+}
