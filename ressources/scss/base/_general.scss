@@ -16,3 +16,38 @@ main {
   width: 80%;
   max-width: 800px;
 }
+
+.btnPrincipal {
+  background-color: $rose;
+  color: $noir;
+  font-family: "Caviar Dreams", sans-serif;
+  font-size: 2rem;
+  width: 42rem;
+  height: 9.5rem;
+  border-radius: 2rem;
+  border: none;
+
+  &:hover,
+  &:active {
+    background-color: $blancCasse;
+    outline: $rose solid 0.4rem;
+    outline-offset: -0.4rem;
+  }
+}
+.btnSecondaire {
+  background-color: $blancCasse;
+  color: $noir;
+  font-family: "Caviar Dreams", sans-serif;
+  font-size: 2rem;
+  width: 42rem;
+  height: 9.5rem;
+  border-radius: 2rem;
+  border: none;
+
+  &:hover,
+  &:active {
+    background-color: $rose;
+    outline: $blancCasse solid 0.4rem;
+    outline-offset: -0.4rem;
+  }
+}

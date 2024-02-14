@@ -30,7 +30,9 @@ h1,
 h2,
 .titreNiveau2,
 h3,
-.titreNiveau3 {
+.titreNiveau3,
+h4,
+.titreNiveau4 {
   font-family: $fonteNiveauDeTitre;
   font-weight: normal;
 }
@@ -70,8 +72,18 @@ h2,
 
 h3,
 .titreNiveau3 {
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 25px;
+  font-size: 2.5rem;
+  &--desktop {
+    font-size: 25px;
+    font-size: 2.5rem;
+  }
+}
+
+h4,
+.titreNiveau4 {
+  font-size: 22px;
+  font-size: 2.2rem;
   &--desktop {
     font-size: 22px;
     font-size: 2.2rem;

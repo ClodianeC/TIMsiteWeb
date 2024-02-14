@@ -1,0 +1,227 @@
+/* Nous joindre */
+
+//Switch basée de W3School
+//https://www.w3schools.com/howto/howto_css_switch.asp
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 9.0rem;
+  height: 3.8rem;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $rose;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 3.1rem;
+  width: 3.1rem;
+  left: 0.4rem;
+  bottom: 0.4rem;
+  background-color: $blancCasse;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: $rose;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px $rose;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(5.1rem);
+  -ms-transform: translateX(5.1rem);
+  transform: translateX(5.1rem);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 3.4rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.selectionMoyen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  max-width: 750px;
+  margin: 5rem auto;
+
+  &__section {
+    text-align: center;
+    flex-basis: 35%;
+
+    &__h2 {
+      margin-top: 0;
+    }
+    &__btn {
+      width: 12rem;
+      aspect-ratio: 1;
+      border-radius: 12rem;
+      border: none;
+      text-align: center;
+      margin: auto;
+
+      &.active {
+        background-color: $vert;
+        #courriel {
+          background-position: -260px -52px;
+        }
+        #telephone {
+          background-position: -468px -52px;
+        }
+      }
+      &.inactive {
+        background-color: $gris;
+        #courriel {
+          background-position: -260px 0;
+        }
+        #telephone {
+          background-position: -468px 0;
+        }
+      }
+      &__icone {
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        background-image: url("../img/sprite.png");
+        background-repeat: no-repeat;
+        margin: auto;
+      }
+    }
+  }
+}
+
+.fondFormulaire {
+  background-color: $orange;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  width: 100%;
+  margin: 5rem auto;
+  box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+
+}
+.formulaire {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 1.5rem;
+
+  &__info {
+    font-weight: bold;
+  }
+  &__label {
+    display: block;
+
+  }
+  &__input {
+    background-color: $blancCasse;
+    border: none;
+    border-radius: 1.5rem;
+    height: 7rem;
+    margin-bottom: 3rem;
+  }
+  &__destinataires {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+
+    &__item {
+      list-style: none;
+      border-radius: 2rem;
+      padding: 2rem;
+      display: block;
+      width: fit-content;
+      flex-basis: 45%;
+      margin: 2rem auto;
+
+      &__img {
+        aspect-ratio: 1;
+        width: 37%;
+        border-radius: 50rem;
+        border: none;
+      }
+      &__h3 {
+        text-align: center;
+
+      }
+      &__contact {
+        text-align: center;
+      }
+      &__h4 {
+        text-align: center;
+        margin-bottom: 0;
+      }
+      &.active {
+        background-color: $vert;
+        .formulaire__destinataires__item__img {
+          outline: $blancCasse solid 0.4rem;
+          outline-offset: -0.4rem;
+        }
+      }
+      &.inactive {
+        background-color: $blancCasse;
+        outline: $vert solid 0.4rem;
+        outline-offset: -0.4rem;
+      }
+    }
+  }
+}
+.conteneurNomPrenom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.moyen {
+  width: 42rem;
+}
+.large {
+  width: 51rem;
+}
+input.xLarge {
+  width: 85rem;
+  height: 20rem;
+}
+#envoyerCourriel,
+#appeler {
+  &.active {
+    display: block;
+    margin: 5rem auto 10rem auto;
+    text-align: center;
+  }
+  &.inactive {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.conteneurFormPhotoTexte {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
