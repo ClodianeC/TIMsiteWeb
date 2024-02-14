@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>@yield('title')</title>
+        <title>@yield('title') | Techniques d'Intégration Multimédia</title>
         <meta charset="utf-8">
 
         <link rel="apple-touch-icon" sizes="180x180" href="liaisons/img/favicon/apple-touch-icon.png">

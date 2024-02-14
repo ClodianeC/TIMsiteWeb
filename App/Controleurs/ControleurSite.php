@@ -14,7 +14,7 @@ class ControleurSite
     public function accueil(): void
     {
         $tDonnees = array("contenu"=>"Je suis le contenu de la page d'accueil...");
-        echo App::getBlade()->run('accueil',$tDonnees);
+        echo App::getBlade()->run('leProgramme',$tDonnees);
     }
 
     public function apropos():void

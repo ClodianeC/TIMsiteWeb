@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
- <title><?php echo $this->yieldContent('title'); ?></title>
+ <title><?php echo $this->yieldContent('title'); ?> | Techniques d'Intégration Multimédia</title>
  <meta charset="utf-8">
 
  <link rel="apple-touch-icon" sizes="180x180" href="liaisons/img/favicon/apple-touch-icon.png">
