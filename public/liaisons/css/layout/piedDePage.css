@@ -3,7 +3,7 @@
  * 3 |   background-color: $orange;
  *   |                     ^^^^^^^
  *   '
- *   ressources\scss\layout\piedDePage.scss 3:21  root stylesheet */
+ *   ressources\scss\layout\_piedDePage.scss 3:21  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",

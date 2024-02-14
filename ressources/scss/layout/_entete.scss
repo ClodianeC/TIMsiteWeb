@@ -95,6 +95,8 @@ header {
 
         &:active,
         &:hover {
+          text-decoration: underline;
+
           .menu__liste__item__lien__rond {
             background-color: $orange;
           }

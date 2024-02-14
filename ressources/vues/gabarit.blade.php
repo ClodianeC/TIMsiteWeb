@@ -13,6 +13,8 @@
         <meta name="theme-color" content="#ffffff">
 
         <link rel="stylesheet" href="liaisons/css/styles.css">
+
+        @yield('graphique')
     </head>
     <body>
         <header >

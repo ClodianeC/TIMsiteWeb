@@ -630,6 +630,9 @@ header {
 .menu__liste__item__lien__texte {
   margin: 0;
 }
+.menu__liste__item__lien:active, .menu__liste__item__lien:hover {
+  text-decoration: underline;
+}
 .menu__liste__item__lien:active .menu__liste__item__lien__rond, .menu__liste__item__lien:hover .menu__liste__item__lien__rond {
   background-color: #febe98;
 }
@@ -784,21 +787,21 @@ footer {
 }
 
 /* *the individual entries* */
-.sky-blue {
-  background-color: lightskyblue;
+.vLight {
+  background-color: #D0E3CC;
   height: 50%;
   width: 50%;
   display: block;
 }
 
-.light-yellow {
-  background-color: lightyellow;
+.light {
+  background-color: #B5C6B2;
   height: 50%;
   width: 50%;
 }
 
-.pink {
-  background-color: pink;
+.green {
+  background-color: #95AA91;
   height: 50%;
   position: absolute;
   top: 0px;
@@ -807,8 +810,8 @@ footer {
   clip-path: polygon(0 0, 100% 0%, 0% 100%);
 }
 
-.purple {
-  background-color: purple;
+.dark {
+  background-color: #6A8065;
   height: 50%;
   width: 50%;
   right: 0;
@@ -817,8 +820,8 @@ footer {
   clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
 }
 
-.green {
-  background-color: limegreen;
+.vDark {
+  background-color: #3D5139;
   height: 50%;
   width: 50%;
   right: 0;
