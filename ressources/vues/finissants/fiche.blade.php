@@ -1,10 +1,10 @@
 @extends('gabarit')
 
 @section('title')
-    Les stages
+    Fiche de *un nom*
 @endsection
 
 @section('contenu')
-    <h1 class="h1">Les stages</h1>
+    <h1 class="h1">Fiche de *un nom*</h1>
 
 @endsection

@@ -1,11 +1,10 @@
 @extends('gabarit')
 
 @section('title')
-    Nous joindre
+    *nom du projet*
 @endsection
 
 @section('contenu')
-    <h1 class="h1">Nous joindre</h1>
+    <h1 class="h1">*nom du projet*</h1>
 
 @endsection
-

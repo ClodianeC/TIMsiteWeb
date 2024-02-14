@@ -6,14 +6,14 @@
  </div>
  <span class="piedDePage__separateur"></span>
  <div class="piedDePage__boiteLien">
- <a class="piedDePage__boiteLien__lien" id="lienCegep" href="#"><img class="piedDePage__lien__img" src="liaisons/img/logoCegep.png" alt="Logo du Cégep de Sainte-Foy Lien vers la page du Cégep de Sainte-Foy"></a>
+ <a class="piedDePage__boiteLien__lien" id="lienCegep" href="http://www.csfoy.ca"><img class="piedDePage__lien__img" src="liaisons/img/logoCegep.png" alt="Logo du Cégep de Sainte-Foy Lien vers la page du Cégep de Sainte-Foy"></a>
  </div>
  <div class="piedDePage__rangeeLiens">
- <a class="piedDePage__rangeeLiens__lien hyperlien" id="lienProgramme" href="#">Aller sur la page du programme sur le site du Cégep</a>
+ <a class="piedDePage__rangeeLiens__lien hyperlien" id="lienProgramme" href="https://www.csfoy.ca/programmes/tous-les-programmes/programmes-techniques/techniques-dintegration-multimedia-web-et-apps/">Aller sur la page du programme sur le site du Cégep</a>
  <div class="piedDePage__rangeeLiens__reseauxSociaux">
- <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="#"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="instagram"></span></a>
- <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="#"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="facebook"></span></a>
- <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="#"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="linkedin"></span></a>
+ <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="https://www.instagram.com/cegepsaintefoy/"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="instagram"></span></a>
+ <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="https://www.facebook.com/timcsf"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="facebook"></span></a>
+ <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="https://www.linkedin.com/groups/2211970"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="linkedin"></span></a>
  </div>
  </div>
  <span class="piedDePage__separateur"></span>

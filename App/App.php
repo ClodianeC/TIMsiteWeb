@@ -3,6 +3,8 @@ declare(strict_types=1);
 namespace App;
 
 
+use App\Controleurs\ControleurFinissant;
+use App\Controleurs\ControleurProjet;
 use App\Controleurs\ControleurSite;
 use \PDO;
 use eftec\bladeone\BladeOne;
@@ -76,7 +78,7 @@ class App
 
         // Valeurs par défaut
         $urlControleur = 'site';
-        $urlAction = 'accueil';
+        $urlAction = 'leProgramme';
 
         // Instance de l'objet controleur
         $objControleur = null;
@@ -92,19 +94,46 @@ class App
         }
 
         // Instantier le bon controleur selon la page demandée
-        if ($urlControleur === 'site'){
+        if ($urlControleur === 'site') {
             $objControleur = new ControleurSite();
             switch ($urlAction) {
-                case 'accueil':
-                    $objControleur->accueil();
+                case 'leProgramme':
+                    $objControleur->leProgramme();
                     break;
-                case 'apropos':
+                case 'nousJoindre':
                     $objControleur->apropos();
+                    break;
+                case 'lesStages':
+                    $objControleur->lesStages();
                     break;
                 default:
                     echo 'Erreur 404 - Action invalide';
             }
-        }else{
+        } else if ($urlControleur === 'projet') {
+            $objControleur = new ControleurProjet();
+            switch ($urlAction) {
+                case 'index':
+                    $objControleur->index();
+                    break;
+                case 'fiche':
+                    $objControleur->fiche();
+                    break;
+                default:
+                    echo 'Erreur 404 - Action invalide';
+            }
+        } else if ($urlControleur === 'finissant') {
+            $objControleur = new ControleurFinissant();
+            switch ($urlAction) {
+                case 'index':
+                    $objControleur->index();
+                    break;
+                case 'fiche':
+                    $objControleur->fiche();
+                    break;
+                default:
+                    echo 'Erreur 404 - Action invalide';
+            }
+        } else {
                 echo 'Erreur 404 - Controleur invalide';
             }
         }
