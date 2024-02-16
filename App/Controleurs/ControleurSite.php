@@ -25,5 +25,9 @@ class ControleurSite {
         $tDonnees = array("infosFooter"=>[Texte::trouverParId(9), Texte::trouverParId(1), Texte::trouverParId(2), Texte::trouverParId(5), Texte::trouverParId(3), Texte::trouverParId(4)]);
         echo App::getBlade()->run('lesStages',$tDonnees);
     }
+    public function bidon():void {
+        $tDonnees = array("infosFooter"=>[Texte::trouverParId(9), Texte::trouverParId(1), Texte::trouverParId(2), Texte::trouverParId(5), Texte::trouverParId(3), Texte::trouverParId(4)]);
+        echo App::getBlade()->run('bidon',$tDonnees);
+    }
 }
 

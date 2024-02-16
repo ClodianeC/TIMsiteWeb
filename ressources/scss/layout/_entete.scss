@@ -1,96 +1,284 @@
-/*Entête*/
-header {
-  //margin-bottom: 7rem;
-  max-width: 100%;
-}
+///*Entête*/
+//header {
+//  //margin-bottom: 7rem;
+//  max-width: 100%;
+//}
+//
+//.enteteFondRond {
+//  max-width: 1200px;
+//  display: block;
+//  width: 100%;
+//  padding-bottom: 400px;
+//  margin: 0 auto -400px auto;
+//  z-index: 0;
+//  background-image: url("../img/cercleMenu.svg");
+//  background-size: cover;
+//  background-position: center bottom;
+//  background-repeat: no-repeat;
+//
+//}
+//
+//.titre {
+//  max-width: 100rem;
+//  font-family: "LT Binary Neue Round", sans-serif;
+//  color: $noir;
+//  font-size: 6rem;
+//  text-align: center;
+//  position: relative;
+//  z-index: 1;
+//  margin: 2rem auto 0 auto;
+//}
+//.sous-titre {
+//  font-family: "Caviar Dreams", sans-serif;
+//  color: $noir;
+//  font-size: 4rem;
+//  text-align: center;
+//  position: relative;
+//  z-index: 1;
+//  margin: 0;
+//}
+//
+//.menu {
+//  width: 90%;
+//  max-width: 1000px;
+//  margin: 0 auto 9rem auto;
+//  position: relative;
+//  z-index: 1;
+//  top: -11rem;
+//
+//  &__liste {
+//    padding: 0 1rem 0 0;
+//    display: flex;
+//    align-items: end;
+//    flex-direction: row;
+//    justify-content: space-between;
+//
+//    li:nth-child(1) a,
+//    li:nth-child(5) a {
+//      padding-bottom: 190%;
+//    }
+//    li:nth-child(2) a,
+//    li:nth-child(4) a {
+//      padding-bottom: 45%;
+//    }
+//
+//    &__item {
+//      list-style: none;
+//      width: fit-content;
+//
+//      &__lien {
+//        display: flex;
+//        flex-direction: column;
+//        align-items: center;
+//        color: $noir;
+//        width: fit-content;
+//        text-decoration: none;
+//
+//        &__rond {
+//          background-color: $gris;
+//          padding: 2.7rem;
+//          border-radius: 100%;
+//          display: inline-block;
+//          width: 50px;
+//          height: 50px;
+//
+//          &__icone {
+//            background-image: url("../img/sprite.png");
+//            display: inline-block;
+//            width: 50px;
+//            height: 50px;
+//          }
+//        }
+//        &__texte {
+//          margin: 0;
+//        }
+//
+//        &:active,
+//        &:hover {
+//          text-decoration: underline;
+//
+//          .menu__liste__item__lien__rond {
+//            background-color: $orange;
+//          }
+//          #finissants {
+//            background-position: -156px -52px;
+//          }
+//          #projets {
+//            background-position: -208px -52px;
+//          }
+//          #programme {
+//            background-position: -312.5px -52px;
+//          }
+//          #stages {
+//            background-position: -364px -52px;
+//          }
+//          #joindre {
+//            background-position: -416px -52px;
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//#finissants {
+//  background-position: -156px 0;
+//}
+//#projets {
+//  background-position: -208px 0;
+//}
+//#programme {
+//  background-position: -312.5px 0;
+//}
+//#stages {
+//  background-position: -364px 0;
+//}
+//#joindre {
+//  background-position: -416px 0;
+//}
+//
 
-.enteteFond {
-  max-width: 1200px;
+
+.enteteFondRectangle {
+  background-color: $blancCasse;
+  background-image: url("../img/texture/memphis-mini.webp");
+  background-size: 75%;
+  background-blend-mode: multiply;
   display: block;
-  width: 100%;
-  padding-bottom: 400px;
-  margin: 0 auto -400px auto;
+  width: 50%;
+  margin: 0 auto auto 0;
+  height: 90vw;
+  border-bottom: $gris solid 0.2rem;
+  border-right: $gris solid 0.2rem;
+  border-bottom-right-radius: 4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 0;
-  background-image: url("../img/cercleMenu.svg");
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-
 }
-
-.titre {
-  max-width: 100rem;
-  font-family: "LT Binary Neue Round", sans-serif;
-  color: $noir;
-  font-size: 6rem;
-  text-align: center;
-  position: relative;
+@media (min-width: 800px) {
+  .enteteFondRectangle {
+    display: none;
+    visibility: hidden;
+  }
+}
+.enteteFondRond {
+  background-color: $orange;
+  background-image: url("../img/texture/memphis-mini.webp");
+  background-blend-mode: multiply;
+  display: block;
+  width: 95vw;
+  height: 95vw;
+  position: absolute;
+  top: -10%;
+  left: -55%;
   z-index: 1;
-  margin: 2rem auto 0 auto;
+  border-radius: 100%;
+}
+@media (min-width: 800px) {
+  .enteteFondRond {
+    max-width: 1200px;
+    width: 100%;
+    padding-bottom: 400px;
+    margin: 0 auto -400px auto;
+    z-index: 0;
+    background-image: url("../img/cercleMenu.svg");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
+    position: static;
+    border-radius: 0;
+    background-color: transparent;
+    height: auto;
+  }
+}
+.titre {
+  position: relative;
+  z-index: 2;
+  font-family: "LT Binary Neue Round", sans-serif;
+  font-size: 4vw;
+  width: 40vw;
+  margin-left: 1rem;
+  top: 20vw;
+}
+@media (min-width: 800px) {
+  .titre {
+    max-width: 100rem;
+    font-size: 6rem;
+    text-align: center;
+    margin: 2rem auto 0 auto;
+    position: static;
+    width: auto;
+  }
 }
 .sous-titre {
-  font-family: "Caviar Dreams", sans-serif;
-  color: $noir;
-  font-size: 4rem;
-  text-align: center;
   position: relative;
-  z-index: 1;
-  margin: 0;
+  z-index: 2;
+  font-family: "Caviar Dreams",sans-serif;
+  font-size: 3vw;
+  top: 20vw;
+  margin-left: 1rem;
 }
-
+@media (min-width: 800px) {
+  .sous-titre {
+    font-size: 4rem;
+    text-align: center;
+    position: static;
+    margin: 0;
+  }
+}
 .menu {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto 9rem auto;
   position: relative;
-  z-index: 1;
-  top: -11rem;
+  z-index: 2;
 
   &__liste {
-    padding: 0 1rem 0 0;
+    padding: 0;
+    position: relative;
+    left: 46vw;
+    top: -27vw;
     display: flex;
-    align-items: end;
-    flex-direction: row;
-    justify-content: space-between;
-
-    li:nth-child(1) a,
-    li:nth-child(5) a {
-      padding-bottom: 190%;
-    }
-    li:nth-child(2) a,
-    li:nth-child(4) a {
-      padding-bottom: 45%;
-    }
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80vw;
 
     &__item {
       list-style: none;
-      width: fit-content;
+      margin-bottom: 3vw;
 
       &__lien {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: $noir;
         width: fit-content;
         text-decoration: none;
+        color: $noir;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
         &__rond {
           background-color: $gris;
-          padding: 2.7rem;
           border-radius: 100%;
           display: inline-block;
-          width: 50px;
-          height: 50px;
+          min-width: 4rem;
+          width: 8vw;
+          aspect-ratio: 1;
+          text-align: center;
+          position: relative;
+          margin: auto 1rem auto auto;
 
           &__icone {
             background-image: url("../img/sprite.png");
             display: inline-block;
-            width: 50px;
-            height: 50px;
+            background-size: 200px;
+            width: 20px;
+            height: 20px;
+            margin: auto;
+            position: relative;
+            top: 2.5vw;
           }
         }
         &__texte {
           margin: 0;
+          display: block;
         }
 
         &:active,
@@ -101,39 +289,132 @@ header {
             background-color: $orange;
           }
           #finissants {
-            background-position: -156px -52px;
+            background-position: -60px 20px;
           }
           #projets {
-            background-position: -208px -52px;
+            background-position: -80px 20px;
           }
           #programme {
-            background-position: -312.5px -52px;
+            background-position: -120px 20px;
           }
           #stages {
-            background-position: -364px -52px;
+            background-position: -140px 20px;
           }
           #joindre {
-            background-position: -416px -52px;
+            background-position: -160px 20px;
           }
         }
       }
     }
   }
 }
-
 #finissants {
-  background-position: -156px 0;
+  background-position: -60px 0;
 }
 #projets {
-  background-position: -208px 0;
+  background-position: -80px 0;
 }
 #programme {
-  background-position: -312.5px 0;
+  background-position: -120px 0;
 }
 #stages {
-  background-position: -364px 0;
+  background-position: -140px 0;
 }
 #joindre {
-  background-position: -416px 0;
+  background-position: -160px 0;
 }
+@media (min-width: 800px) {
+  .menu {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 9rem auto;
+    position: relative;
+    top: -11rem;
 
+    &__liste {
+      display: flex;
+      padding: 0 0 0 1rem;
+      position: static;
+      align-items: end;
+      flex-direction: row;
+      justify-content: space-between;
+      height: fit-content;
+
+      li:nth-child(1) a,
+      li:nth-child(5) a {
+        padding-bottom: 177%;
+      }
+      li:nth-child(2) a,
+      li:nth-child(4) a {
+        padding-bottom: 45%;
+      }
+
+      &__item {
+        width: fit-content;
+        margin-bottom: 0;
+        align-self: end;
+
+        &__lien {
+          flex-direction: column;
+
+          &__rond {
+            padding: 2.7rem;
+            width: 5rem;
+            height: 5rem;
+            top: 0;
+
+            &__icone {
+              width: 5rem;
+              height: 5rem;
+              background-size: 518px;
+              position: static;
+            }
+          }
+          &__texte {
+
+          }
+
+          &:active,
+          &:hover {
+
+            .menu__liste__item__lien__rond {
+
+            }
+            #finissants {
+              background-position: -156px -52px;
+            }
+            #projets {
+              background-position: -208px -52px;
+            }
+            #programme {
+              background-position: -312.5px -52px;
+            }
+            #stages {
+              background-position: -364px -52px;
+            }
+            #joindre {
+              background-position: -416px -52px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #finissants {
+    background-position: -156px 0;
+  }
+  #projets {
+    background-position: -208px 0;
+  }
+  #programme {
+    background-position: -312.5px 0;
+  }
+  #stages {
+    background-position: -364px 0;
+  }
+  #joindre {
+    background-position: -416px 0;
+  }
+
+}

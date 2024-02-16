@@ -1,4 +1,5 @@
-<span class="enteteFond"></span>
+<span class="enteteFondRectangle"></span>
+<span class="enteteFondRond"></span>
 <p class="titre">Techniques d'Intégration Mutimédia</p>
 <p class="sous-titre">- Web et Apps -</p>
 <div class="menu">

@@ -10,6 +10,7 @@ class Texte {
     private int $id = 0;
     private string $titre = '';
     private string $texte = '';
+    private int $epic = 0;
 
     // Méthodes statiques
     public function __construct() {
@@ -56,5 +57,8 @@ class Texte {
     }
     public function getTexte():string{
         return $this->texte;
+    }
+    public function getEpic():int{
+        return $this->epic;
     }
 }

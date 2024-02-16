@@ -106,6 +106,9 @@ class App
                 case 'lesStages':
                     $objControleur->lesStages();
                     break;
+                case 'bidon':
+                    $objControleur->bidon();
+                    break;
                 default:
                     echo 'Erreur 404 - Action invalide';
             }
