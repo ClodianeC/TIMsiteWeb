@@ -3,9 +3,117 @@
 #piechart {
   width: 90%;
   max-width: 1000px;
-  margin: auto;
+  margin: -10rem auto 5rem auto;
   text-align: center;
-  & svg {
-    margin: auto;
+
+  & svg g path {
+    box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+
+  }
+}
+
+.fondInfoPrgramme {
+  background-color: $orange;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+  margin-top: -30rem;
+
+}
+.infoProgramme {
+  width: 85%;
+  max-width: 1000px;
+  margin:  5rem auto 5rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8rem 0 3rem 0;
+
+  &__titreExplication {
+    flex-basis: 70%;
+  }
+  &__listeExemples {
+    flex-basis: 25%;
+  }
+}
+
+.infoSuppProgramme {
+  width: 90%;
+  max-width: 1000px;
+  margin: 10rem auto 10rem auto;
+
+  &__h2 {
+    text-align: center;
+
+  }
+  &__boutons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+
+    &__btnSiteCegep {
+
+    }
+    &__ou {
+      background-color: $vert;
+      display: block;
+      aspect-ratio: 1;
+      width: 12rem;
+      border-radius: 6rem;
+
+      &__texte {
+        text-align: center;
+        font-size: 4.5rem;
+        font-family: "Caviar Dreams", sans-serif;
+        font-weight: bold;
+        position: relative;
+        bottom: 10%;
+      }
+    }
+    &__btnTelechargerGrille {
+
+    }
+  }
+}
+
+.fondEtudiantDunJour {
+  background-color: $blancCasse;
+  border: $vert solid 0.4rem;
+  border-radius: 30rem;
+  padding: 5rem 10rem;
+  margin: 10rem auto;
+  width: 75%;
+  max-width: 1300px;
+}
+.etudiantDunJour {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+
+  &__h2 {
+    text-align: center;
+
+  }
+  &__infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__texte {
+      display: block;
+      flex-basis: 50%;
+
+    }
+    &__contact {
+      display: block;
+      flex-basis: 45%;
+
+      &__benoitF {
+
+      }
+    }
   }
 }

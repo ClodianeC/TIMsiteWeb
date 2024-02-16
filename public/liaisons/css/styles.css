@@ -590,11 +590,13 @@ main {
   height: 9.5rem;
   border-radius: 2rem;
   border: none;
+  outline: #e87c84 solid 0.4rem;
+  outline-offset: -0.3rem;
 }
 .btnSecondaire:hover, .btnSecondaire:active {
   background-color: #e87c84;
   outline: #fffaf1 solid 0.4rem;
-  outline-offset: -0.4rem;
+  outline-offset: -0.3rem;
 }
 
 /*Entête*/
@@ -822,13 +824,99 @@ footer {
 #piechart {
   width: 90%;
   max-width: 1000px;
-  margin: auto;
+  margin: -10rem auto 5rem auto;
   text-align: center;
 }
-#piechart svg {
-  margin: auto;
+#piechart svg g path {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+.fondInfoPrgramme {
+  background-color: #febe98;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  margin-top: -30rem;
+}
+
+.infoProgramme {
+  width: 85%;
+  max-width: 1000px;
+  margin: 5rem auto 5rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8rem 0 3rem 0;
+}
+.infoProgramme__titreExplication {
+  flex-basis: 70%;
+}
+.infoProgramme__listeExemples {
+  flex-basis: 25%;
+}
+
+.infoSuppProgramme {
+  width: 90%;
+  max-width: 1000px;
+  margin: 10rem auto 10rem auto;
+}
+.infoSuppProgramme__h2 {
+  text-align: center;
+}
+.infoSuppProgramme__boutons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+}
+.infoSuppProgramme__boutons__ou {
+  background-color: #d0e3cc;
+  display: block;
+  aspect-ratio: 1;
+  width: 12rem;
+  border-radius: 6rem;
+}
+.infoSuppProgramme__boutons__ou__texte {
+  text-align: center;
+  font-size: 4.5rem;
+  font-family: "Caviar Dreams", sans-serif;
+  font-weight: bold;
+  position: relative;
+  bottom: 10%;
+}
+.fondEtudiantDunJour {
+  background-color: #fffaf1;
+  border: #d0e3cc solid 0.4rem;
+  border-radius: 30rem;
+  padding: 5rem 10rem;
+  margin: 10rem auto;
+  width: 75%;
+  max-width: 1300px;
+}
+
+.etudiantDunJour {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+.etudiantDunJour__h2 {
+  text-align: center;
+}
+.etudiantDunJour__infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.etudiantDunJour__infos__texte {
+  display: block;
+  flex-basis: 50%;
+}
+.etudiantDunJour__infos__contact {
+  display: block;
+  flex-basis: 45%;
+}
 /* Les stages */
 .fondInfoStage {
   background-color: #febe98;

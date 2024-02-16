@@ -43,11 +43,13 @@ main {
   height: 9.5rem;
   border-radius: 2rem;
   border: none;
+  outline: $rose solid 0.4rem;
+  outline-offset: -0.3rem;
 
   &:hover,
   &:active {
     background-color: $rose;
     outline: $blancCasse solid 0.4rem;
-    outline-offset: -0.4rem;
+    outline-offset: -0.3rem;
   }
 }
