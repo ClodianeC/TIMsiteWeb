@@ -101,7 +101,7 @@ class App
                     $objControleur->leProgramme();
                     break;
                 case 'nousJoindre':
-                    $objControleur->apropos();
+                    $objControleur->nousJoindre();
                     break;
                 case 'lesStages':
                     $objControleur->lesStages();

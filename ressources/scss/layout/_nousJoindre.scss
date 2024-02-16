@@ -146,46 +146,83 @@ input:checked + .slider:before {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
+    margin: 3rem auto 5rem auto;
 
     &__item {
       list-style: none;
       border-radius: 2rem;
-      padding: 2rem;
       display: block;
       width: fit-content;
       flex-basis: 45%;
-      margin: 2rem auto;
+      margin: 2rem 0;
 
-      &__img {
-        aspect-ratio: 1;
-        width: 37%;
-        border-radius: 50rem;
-        border: none;
-      }
-      &__h3 {
-        text-align: center;
+      &__input {
+        color: #e87c84;
 
-      }
-      &__contact {
-        text-align: center;
-      }
-      &__h4 {
-        text-align: center;
-        margin-bottom: 0;
-      }
-      &.active {
-        background-color: $vert;
-        .formulaire__destinataires__item__img {
-          outline: $blancCasse solid 0.4rem;
-          outline-offset: -0.4rem;
+        &:hover,
+        &:focus {
+
+          &+label {
+            background-color: $vert;
+          }
+        }
+        &:checked {
+
+          &+label {
+            background-color: $vert;
+            outline: $blancCasse solid 0.4rem;
+            outline-offset: -0.4rem;
+          }
         }
       }
-      &.inactive {
+      &__label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 88%;
+        height: 88%;
+        border-radius: 2rem;
+        padding: 2rem;
         background-color: $blancCasse;
         outline: $vert solid 0.4rem;
         outline-offset: -0.4rem;
+
+        &__img {
+          width: 12rem;
+          height: 12rem;
+          border-radius: 50rem;
+          outline: $blancCasse solid 0.4rem;
+          outline-offset: -0.3rem;
+        }
+        &__h3 {
+          text-align: center;
+          display: block;
+          margin: 0 auto 5rem auto;
+        }
+        &__contact {
+          text-align: center;
+          display: inline-block;
+        }
+        &__h4 {
+          display: block;
+          text-align: center;
+          margin-bottom: 0;
+        }
+        &.active {
+          background-color: $vert;
+          .formulaire__destinataires__item__img {
+            outline: $blancCasse solid 0.4rem;
+            outline-offset: -0.4rem;
+          }
+        }
+        &.inactive {
+          background-color: $blancCasse;
+          outline: $vert solid 0.4rem;
+          outline-offset: -0.4rem;
+        }
       }
+
+
     }
   }
 }
@@ -224,4 +261,7 @@ input.xLarge {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.conteneurFormTexte {
+  //flex-basis: 30%;
 }

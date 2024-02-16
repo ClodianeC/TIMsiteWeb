@@ -421,33 +421,33 @@ body {
 }
 
 h1,
-.titreNiveau1,
+.h1,
 h2,
-.titreNiveau2,
+.h2,
 h3,
-.titreNiveau3,
+.h3,
 h4,
-.titreNiveau4 {
+.h4 {
   font-family: "Caviar Dreams", sans-serif;
   font-weight: normal;
 }
 
 h1,
-.titreNiveau1 {
+.h1 {
   font-size: 60px;
   font-size: 6pxrem;
   margin: 0;
   text-align: center;
 }
 h1--desktop,
-.titreNiveau1--desktop {
+.h1--desktop {
   font-size: 60px;
   font-size: 6rem;
   padding-bottom: 15px;
   position: relative;
 }
 h1--desktop:after,
-.titreNiveau1--desktop:after {
+.h1--desktop:after {
   background-color: #fffaf1;
   content: "";
   display: inline-block;
@@ -459,34 +459,34 @@ h1--desktop:after,
 }
 
 h2,
-.titreNiveau2 {
+.h2 {
   font-size: 40px;
   font-size: 4rem;
 }
 h2--desktop,
-.titreNiveau2--desktop {
+.h2--desktop {
   font-size: 28px;
   font-size: 2.8rem;
 }
 
 h3,
-.titreNiveau3 {
+.h3 {
   font-size: 25px;
   font-size: 2.5rem;
 }
 h3--desktop,
-.titreNiveau3--desktop {
+.h3--desktop {
   font-size: 25px;
   font-size: 2.5rem;
 }
 
 h4,
-.titreNiveau4 {
+.h4 {
   font-size: 22px;
   font-size: 2.2rem;
 }
 h4--desktop,
-.titreNiveau4--desktop {
+.h4--desktop {
   font-size: 22px;
   font-size: 2.2rem;
 }
@@ -819,242 +819,16 @@ footer {
 }
 
 /*Le programme*/
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pie-wrap {
-  border: 2px solid lightgrey;
-  width: 400px;
-  height: 400px;
-  margin: 10% 50px;
-  position: relative;
-  border-radius: 50%;
-  color: black;
-  overflow: hidden;
-  animation: pie-size 500ms 500ms ease forwards;
-}
-
-.pie-wrap .entry {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* *the individual entries* */
-.vLight {
-  background-color: #D0E3CC;
-  height: 50%;
-  width: 50%;
-  display: block;
-}
-
-.light {
-  background-color: #B5C6B2;
-  height: 50%;
-  width: 50%;
-}
-
-.green {
-  background-color: #95AA91;
-  height: 50%;
-  position: absolute;
-  top: 0px;
-  right: 0;
-  width: 50%;
-  clip-path: polygon(0 0, 100% 0%, 0% 100%);
-}
-
-.dark {
-  background-color: #6A8065;
-  height: 50%;
-  width: 50%;
-  right: 0;
-  top: 0;
-  position: absolute;
-  clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
-}
-
-.vDark {
-  background-color: #3D5139;
-  height: 50%;
-  width: 50%;
-  right: 0;
-  top: 50%;
-  position: absolute;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-}
-
-.wheat {
-  background-color: wheat;
-  height: 50%;
-  width: 50%;
-  right: 0;
-  top: 50%;
-  position: absolute;
-  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
-}
-
-.pie-wrap .purple p {
-  position: absolute;
-  top: 140px;
-  color: white;
-}
-
-.pie-wrap .purple p:first-child {
-  top: 120px;
-}
-
-.pie-wrap .green p {
-  position: absolute;
-  top: 20px;
-}
-
-.pie-wrap .green p:first-child {
-  top: 0px;
-}
-
-.pie-wrap .pink p, .pie-wrap .wheat p {
-  position: absolute;
-  left: 20px;
-  top: 80px;
-}
-
-.pie-wrap .pink, .pie-wrap .wheat {
-  justify-content: flex-start;
-}
-
-.pie-wrap .pink p:first-child, .pie-wrap .wheat p:first-child {
-  top: 100px;
-}
-
-.entry .entry-value {
-  display: none;
-  transition: all 500ms linear;
-}
-
-.entry:hover .entry-value {
-  display: block;
-}
-
-.entry {
-  transition: all 500ms linear;
-}
-
-.entry:hover {
-  filter: white;
-}
-
-.key-wrap label {
-  display: block;
-  border: 1px solid;
-  width: 50px;
+#piechart {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
   text-align: center;
-  padding: 10px 15px;
-  cursor: pointer;
-  margin-bottom: 8px;
+}
+#piechart svg {
+  margin: auto;
 }
 
-input[type=radio] {
-  display: none;
-}
-
-.rice-label {
-  background-color: lightyellow;
-  visibility: hidden;
-  animation: display-key 500ms 1s ease forwards;
-}
-
-.beans-label {
-  background-color: pink;
-  animation: display-key 500ms 1.5s ease forwards;
-}
-
-.plantain-label {
-  background-color: purple;
-  color: white;
-  animation: display-key 500ms 2s ease forwards;
-}
-
-.potato-label {
-  background-color: limegreen;
-  animation: display-key 500ms 2.5s ease forwards;
-}
-
-.yam-label {
-  background-color: wheat;
-  animation: display-key 500ms 3s ease forwards;
-}
-
-.pasta-label {
-  background-color: skyblue;
-  animation: display-key 500ms 3.5s ease forwards;
-}
-
-.text {
-  display: none;
-  margin-left: -50px;
-  position: absolute;
-  margin-top: 50px;
-  font-size: 20px;
-  padding-bottom: 4px;
-  padding-top: 4px;
-  border-bottom: 5px solid;
-  border-top: 5px solid;
-}
-
-.key-wrap label:active {
-  opacity: 0.5;
-}
-
-.rice-key:checked ~ .rice-text, .beans-key:checked ~ .beans-text, .plantain-key:checked ~ .plantain-text, .potato-key:checked ~ .potato-text, .yam-key:checked ~ .yam-text, .pasta-key:checked ~ .pasta-text {
-  display: block;
-}
-
-.rice-text {
-  border-color: black;
-}
-
-.beans-text {
-  border-color: pink;
-}
-
-.plantain-text {
-  border-color: purple;
-}
-
-.potato-text {
-  border-color: limegreen;
-}
-
-.yam-text {
-  border-color: wheat;
-}
-
-.pasta-text {
-  border-color: skyblue;
-}
-
-@keyframes pie-size {
-  from {
-    width: 0px;
-  }
-  to {
-    width: 400px;
-    height: 400px;
-  }
-}
-@keyframes display-key {
-  from {
-    visibility: hidden;
-  }
-  to {
-    visibility: visible;
-  }
-}
 /* Les stages */
 .fondInfoStage {
   background-color: #febe98;
@@ -1263,40 +1037,68 @@ input:checked + .slider:before {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 3rem auto 5rem auto;
 }
 .formulaire__destinataires__item {
   list-style: none;
   border-radius: 2rem;
-  padding: 2rem;
   display: block;
   width: fit-content;
   flex-basis: 45%;
-  margin: 2rem auto;
+  margin: 2rem 0;
 }
-.formulaire__destinataires__item__img {
-  aspect-ratio: 1;
-  width: 37%;
-  border-radius: 50rem;
-  border: none;
+.formulaire__destinataires__item__input {
+  color: #e87c84;
 }
-.formulaire__destinataires__item__h3 {
-  text-align: center;
-}
-.formulaire__destinataires__item__contact {
-  text-align: center;
-}
-.formulaire__destinataires__item__h4 {
-  text-align: center;
-  margin-bottom: 0;
-}
-.formulaire__destinataires__item.active {
+.formulaire__destinataires__item__input:hover + label, .formulaire__destinataires__item__input:focus + label {
   background-color: #d0e3cc;
 }
-.formulaire__destinataires__item.active .formulaire__destinataires__item__img {
+.formulaire__destinataires__item__input:checked + label {
+  background-color: #d0e3cc;
   outline: #fffaf1 solid 0.4rem;
   outline-offset: -0.4rem;
 }
-.formulaire__destinataires__item.inactive {
+.formulaire__destinataires__item__label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 88%;
+  height: 88%;
+  border-radius: 2rem;
+  padding: 2rem;
+  background-color: #fffaf1;
+  outline: #d0e3cc solid 0.4rem;
+  outline-offset: -0.4rem;
+}
+.formulaire__destinataires__item__label__img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50rem;
+  outline: #fffaf1 solid 0.4rem;
+  outline-offset: -0.3rem;
+}
+.formulaire__destinataires__item__label__h3 {
+  text-align: center;
+  display: block;
+  margin: 0 auto 5rem auto;
+}
+.formulaire__destinataires__item__label__contact {
+  text-align: center;
+  display: inline-block;
+}
+.formulaire__destinataires__item__label__h4 {
+  display: block;
+  text-align: center;
+  margin-bottom: 0;
+}
+.formulaire__destinataires__item__label.active {
+  background-color: #d0e3cc;
+}
+.formulaire__destinataires__item__label.active .formulaire__destinataires__item__img {
+  outline: #fffaf1 solid 0.4rem;
+  outline-offset: -0.4rem;
+}
+.formulaire__destinataires__item__label.inactive {
   background-color: #fffaf1;
   outline: #d0e3cc solid 0.4rem;
   outline-offset: -0.4rem;

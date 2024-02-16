@@ -26,7 +26,7 @@
  </main>
 
  <footer>
- <?php echo $this->runChild('fragments.pieddepage', ['date'=> (new \DateTime())->format('Y'), 'legal'=> '© Tous droits réservés']); ?>
+ <?php echo $this->runChild('fragments.pieddepage'); ?>
  </footer>
  </body>
 </html>

@@ -40,46 +40,21 @@
             <label class="formulaire__label" for="courriel">Courriel*</label>
             <input type="text" id="courriel" name="courriel" class="formulaire__input large">
             <ul class="formulaire__destinataires">
-                <li class="formulaire__destinataires__item active">
-                    <div class="conteneurFormPhotoTexte">
-                        <img class="formulaire__destinataires__item__img" src="liaisons/img/profile.jpg">
-                        <div class="conteneurFormTexte">
-                            <h3 class="formulaire__destinataires__item__h3 h3">Sylvain Lamoureux</h3>
-                            <p class="formulaire__destinataires__item__contact">(418) 659-6600 Poste 6662</p>
-                        </div>
-                    </div>
-                    <h4 class="formulaire__destinataires__item__h4 h4">Coordonateur départemental</h4>
-                </li>
-                <li class="formulaire__destinataires__item inactive">
-                    <div class="conteneurFormPhotoTexte">
-                        <img class="formulaire__destinataires__item__img" src="liaisons/img/profile.jpg">
-                        <div class="conteneurFormTexte">
-                            <h3 class="formulaire__destinataires__item__h3 h3">Ève Février</h3>
-                            <p class="formulaire__destinataires__item__contact">(418) 659-6600 Poste 6655</p>
-                        </div>
-                    </div>
-                    <h4 class="formulaire__destinataires__item__h4 h4">Webmestre</h4>
-                </li>
-                <li class="formulaire__destinataires__item inactive">
-                    <div class="conteneurFormPhotoTexte">
-                        <img class="formulaire__destinataires__item__img" src="liaisons/img/profile.jpg">
-                        <div class="conteneurFormTexte">
-                            <h3 class="formulaire__destinataires__item__h3 h3">Pascal Larouche</h3>
-                            <p class="formulaire__destinataires__item__contact">(418) 659-6600 Poste 6653</p>
-                        </div>
-                    </div>
-                    <h4 class="formulaire__destinataires__item__h4 h4">Responsable des stages</h4>
-                </li>
-                <li class="formulaire__destinataires__item inactive">
-                    <div class="conteneurFormPhotoTexte">
-                        <img class="formulaire__destinataires__item__img" src="liaisons/img/profile.jpg">
-                        <div class="conteneurFormTexte">
-                            <h3 class="formulaire__destinataires__item__h3 h3">Benoît Frigon</h3>
-                            <p class="formulaire__destinataires__item__contact">(418) 659-6600 Poste 6656</p>
-                        </div>
-                    </div>
-                    <h4 class="formulaire__destinataires__item__h4 h4">Responsable « Étudiant d’un jour » </h4>
-                </li>
+                @foreach($lesResponsables as $unResponsable)
+                    <li class="formulaire__destinataires__item">
+                        <input type="radio" class="formulaire__destinataires__item__input screen-reader-only" id="selection{{$unResponsable->getNom()}}" name="selectionResponsable">
+                        <label for="selection{{$unResponsable->getNom()}}" class="formulaire__destinataires__item__label">
+                        <span class="conteneurFormPhotoTexte">
+                            <img class="formulaire__destinataires__item__label__img" src="liaisons/img/responsables/{{$unResponsable->getId()}}.jpg" alt="image de profil de {{$unResponsable->getPrenom()}} {{$unResponsable->getNom()}}">
+                            <span class="conteneurFormTexte">
+                                <span class="formulaire__destinataires__item__label__h3 h3">{{$unResponsable->getPrenom()}} {{$unResponsable->getNom()}}</span>
+                                <span class="formulaire__destinataires__item__label__contact">{{$unResponsable->getTelephone()}}</span>
+                            </span>
+                        </span>
+                            <span class="formulaire__destinataires__item__label__h4 h4">{{$unResponsable->getResponsabilite()}}</span>
+                        </label>
+                    </li>
+                @endforeach
             </ul>
             <label class="formulaire__label" for="sujet">Sujet*</label>
             <input type="text" id="sujet" name="sujet" class="formulaire__input large">

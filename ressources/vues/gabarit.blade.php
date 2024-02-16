@@ -26,7 +26,7 @@
         </main>
 
         <footer>
-            @include('fragments.pieddepage', ['date'=> (new \DateTime())->format('Y'), 'legal'=> '© Tous droits réservés'])
+            @include('fragments.pieddepage')
         </footer>
     </body>
 </html>

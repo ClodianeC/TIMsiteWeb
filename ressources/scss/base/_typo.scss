@@ -26,19 +26,19 @@ body {
 }
 
 h1,
-.titreNiveau1,
+.h1,
 h2,
-.titreNiveau2,
+.h2,
 h3,
-.titreNiveau3,
+.h3,
 h4,
-.titreNiveau4 {
+.h4 {
   font-family: $fonteNiveauDeTitre;
   font-weight: normal;
 }
 
 h1,
-.titreNiveau1 {
+.h1 {
   @include fontSize(60px);
   margin: 0;
   text-align: center;
@@ -61,7 +61,7 @@ h1,
 }
 
 h2,
-.titreNiveau2{
+.h2{
   font-size: 40px;
   font-size: 4rem;
   &--desktop {
@@ -71,7 +71,7 @@ h2,
 }
 
 h3,
-.titreNiveau3 {
+.h3 {
   font-size: 25px;
   font-size: 2.5rem;
   &--desktop {
@@ -81,7 +81,7 @@ h3,
 }
 
 h4,
-.titreNiveau4 {
+.h4 {
   font-size: 22px;
   font-size: 2.2rem;
   &--desktop {
