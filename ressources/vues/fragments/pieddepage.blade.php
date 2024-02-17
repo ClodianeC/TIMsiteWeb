@@ -6,7 +6,7 @@
     </div>
     <span class="piedDePage__separateur"></span>
     <div class="piedDePage__boiteLien">
-        <a class="piedDePage__boiteLien__lien" id="lienCegep" href="http://www.csfoy.ca"><img class="piedDePage__lien__img" src="liaisons/img/logoCegep.png" alt="{{$infosFooter[1]->getTitre()}}"></a>
+        <a class="piedDePage__boiteLien__lien" id="lienCegep" href="http://www.csfoy.ca"><img class="piedDePage__boiteLien__lien__img" src="liaisons/img/logoCegep.png" alt="{{$infosFooter[1]->getTitre()}}"></a>
     </div>
     <div class="piedDePage__rangeeLiens">
         <a class="piedDePage__rangeeLiens__lien hyperlien" id="lienProgramme" href="https://www.csfoy.ca/programmes/tous-les-programmes/programmes-techniques/techniques-dintegration-multimedia-web-et-apps/">{{$infosFooter[2]->getTitre()}}</a>

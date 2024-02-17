@@ -12,11 +12,11 @@ footer {
 .piedDePage {
   &__questions {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    max-width: 1000px;
+    width: 80%;
+    max-width: 500px;
     margin: auto;
 
     &__h2 {
@@ -42,6 +42,9 @@ footer {
       display: inline-block;
       margin: 0 auto 5rem auto;
 
+      &__img {
+        width: 30rem;
+      }
       &:active,
       &:hover {
         .piedDePage__lien__img {
@@ -53,15 +56,15 @@ footer {
   }
   &__rangeeLiens {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    max-width: 1000px;
+    width: 80%;
+    max-width: 600px;
     margin: auto;
 
     &__lien {
-
+      margin-bottom: 2rem;
     }
     &__reseauxSociaux {
       &__lien {
@@ -103,4 +106,51 @@ footer {
 }
 #linkedin {
   background-position: -104px 0;
+}
+@media (min-width: 800px) {
+  .piedDePage {
+    &__questions {
+      flex-direction: row;
+      width: 90%;
+      max-width: 1000px;
+
+      &__h2 {
+
+      }
+      &__texte {
+
+      }
+    }
+    &__separateur {
+
+    }
+    &__boiteLien {
+
+      &__lien {
+
+        &__img {
+          width: auto;
+        }
+      }
+    }
+    &__rangeeLiens {
+      flex-direction: row;
+      width: 90%;
+      max-width: 1000px;
+
+      &__lien {
+
+      }
+      &__reseauxSociaux {
+        &__lien {
+          &__icone {
+
+          }
+        }
+      }
+    }
+    &__credits {
+
+    }
+  }
 }

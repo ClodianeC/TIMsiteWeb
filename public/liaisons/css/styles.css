@@ -874,11 +874,11 @@ footer {
 
 .piedDePage__questions {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 1000px;
+  width: 80%;
+  max-width: 500px;
   margin: auto;
 }
 .piedDePage__questions__h2 {
@@ -903,17 +903,23 @@ footer {
   display: inline-block;
   margin: 0 auto 5rem auto;
 }
+.piedDePage__boiteLien__lien__img {
+  width: 30rem;
+}
 .piedDePage__boiteLien__lien:active .piedDePage__lien__img, .piedDePage__boiteLien__lien:hover .piedDePage__lien__img {
   content: url("../img/logoCegepHover.png");
 }
 .piedDePage__rangeeLiens {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 1000px;
+  width: 80%;
+  max-width: 600px;
   margin: auto;
+}
+.piedDePage__rangeeLiens__lien {
+  margin-bottom: 2rem;
 }
 .piedDePage__rangeeLiens__reseauxSociaux__lien__icone {
   background-image: url("../img/sprite.png");
@@ -949,6 +955,21 @@ footer {
   background-position: -104px 0;
 }
 
+@media (min-width: 800px) {
+  .piedDePage__questions {
+    flex-direction: row;
+    width: 90%;
+    max-width: 1000px;
+  }
+  .piedDePage__boiteLien__lien__img {
+    width: auto;
+  }
+  .piedDePage__rangeeLiens {
+    flex-direction: row;
+    width: 90%;
+    max-width: 1000px;
+  }
+}
 /*Le programme*/
 #piechart {
   width: 90%;
