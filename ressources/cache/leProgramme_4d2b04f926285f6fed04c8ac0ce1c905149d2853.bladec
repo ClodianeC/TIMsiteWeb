@@ -103,8 +103,8 @@
  <h2 class="infoSuppProgramme__h2 h2">Pour avoir de l'information plus spécifique sur les cours</h2>
  <div class="infoSuppProgramme__boutons">
  <button class="btnPrincipal infoSuppProgramme__boutons__btnSiteCegep">Visite le site web du Cégep de Sainte-Foy</button>
- <div class="infoSuppProgramme__boutons__ou"><p class="infoSuppProgramme__boutons__ou__texte">OU</p></div>
- <button class="btnSecondaire infoSuppProgramme__boutons_btnTelechargerGrille">Télécharge la grille du cours</button>
+ <div class="infoSuppProgramme__boutons__ou"><span class="infoSuppProgramme__boutons__ou__texte">OU</span></div>
+ <button class="btnSecondaire infoSuppProgramme__boutons__btnTelechargerGrille">Télécharge la grille du cours</button>
  </div>
  </div>
  <div class="fondEtudiantDunJour">
