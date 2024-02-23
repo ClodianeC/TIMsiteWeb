@@ -19,7 +19,7 @@
     <body>
         <header >
             @include('fragments.entete')
-            <a href="index.php?controleur=site&action=bidon">Lien bidon</a>
+{{--            <a href="index.php?controleur=site&action=bidon">Lien bidon</a>--}}
         </header>
 
         <main>

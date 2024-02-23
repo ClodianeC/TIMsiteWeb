@@ -1,0 +1,48 @@
+/* Index de diplômés */
+.fondDiplomes {
+  background-color: $orange;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+  margin-bottom: 10rem;
+}
+.lesDiplomes {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rem 0;
+  justify-content: space-around;
+
+  &__unDiplome {
+    display: block;
+    width: fit-content;
+    margin-bottom: 4rem;
+
+    &__img {
+      display: block;
+      width: 225px;
+      height: 225px;
+      object-fit: cover;
+      border-radius: 20rem;
+      border: $blancCasse solid 0.4rem;
+      outline: $vert solid 0.4rem;
+    }
+    &__nom {
+      font-size: 2.5rem;
+      display: block;
+      width: fit-content;
+      max-width: 225px;
+      text-align: center;
+      margin: auto;
+    }
+    &.pair {
+      padding-top: 4rem;
+    }
+    &.impair {
+
+    }
+  }
+}

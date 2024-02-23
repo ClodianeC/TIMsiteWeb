@@ -3,11 +3,15 @@ declare(strict_types=1);
 namespace App;
 
 
-use App\Controleurs\ControleurFinissant;
+use App\Controleurs\ControleurDiplome;
 use App\Controleurs\ControleurProjet;
 use App\Controleurs\ControleurSite;
 use \PDO;
 use eftec\bladeone\BladeOne;
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 
 class App
 {
@@ -67,6 +71,7 @@ class App
             $cheminDossierCache = '../ressources/cache';
             App::$refBlade = new BladeOne($cheminDossierVues,$cheminDossierCache,BladeOne::MODE_AUTO);
         }
+
         return App::$refBlade;
     }
 
@@ -124,8 +129,8 @@ class App
                 default:
                     echo 'Erreur 404 - Action invalide';
             }
-        } else if ($urlControleur === 'finissant') {
-            $objControleur = new ControleurFinissant();
+        } else if ($urlControleur === 'diplome') {
+            $objControleur = new ControleurDiplome();
             switch ($urlAction) {
                 case 'index':
                     $objControleur->index();

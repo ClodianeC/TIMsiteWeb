@@ -749,7 +749,7 @@ main {
 .menu__liste__item__lien:active .menu__liste__item__lien__rond, .menu__liste__item__lien:hover .menu__liste__item__lien__rond {
   background-color: #febe98;
 }
-.menu__liste__item__lien:active #finissants, .menu__liste__item__lien:hover #finissants {
+.menu__liste__item__lien:active #diplomes, .menu__liste__item__lien:hover #diplomes {
   background-position: -60px 20px;
 }
 .menu__liste__item__lien:active #projets, .menu__liste__item__lien:hover #projets {
@@ -765,7 +765,7 @@ main {
   background-position: -160px 20px;
 }
 
-#finissants {
+#diplomes {
   background-position: -60px 0;
 }
 
@@ -830,7 +830,7 @@ main {
     background-size: 518px;
     position: static;
   }
-  .menu__liste__item__lien:active #finissants, .menu__liste__item__lien:hover #finissants {
+  .menu__liste__item__lien:active #diplomes, .menu__liste__item__lien:hover #diplomes {
     background-position: -156px -52px;
   }
   .menu__liste__item__lien:active #projets, .menu__liste__item__lien:hover #projets {
@@ -845,7 +845,7 @@ main {
   .menu__liste__item__lien:active #joindre, .menu__liste__item__lien:hover #joindre {
     background-position: -416px -52px;
   }
-  #finissants {
+  #diplomes {
     background-position: -156px 0;
   }
   #projets {
@@ -906,7 +906,7 @@ footer {
 .piedDePage__boiteLien__lien__img {
   width: 30rem;
 }
-.piedDePage__boiteLien__lien:active .piedDePage__lien__img, .piedDePage__boiteLien__lien:hover .piedDePage__lien__img {
+.piedDePage__boiteLien__lien:active .piedDePage__boiteLien__lien__img, .piedDePage__boiteLien__lien:hover .piedDePage__boiteLien__lien__img {
   content: url("../img/logoCegepHover.png");
 }
 .piedDePage__rangeeLiens {
@@ -1442,6 +1442,51 @@ input.xLarge {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+/* Index de diplômés */
+.fondDiplomes {
+  background-color: #febe98;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10rem;
+}
+
+.lesDiplomes {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rem 0;
+  justify-content: space-around;
+}
+.lesDiplomes__unDiplome {
+  display: block;
+  width: fit-content;
+  margin-bottom: 4rem;
+}
+.lesDiplomes__unDiplome__img {
+  display: block;
+  width: 225px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 20rem;
+  border: #fffaf1 solid 0.4rem;
+  outline: #d0e3cc solid 0.4rem;
+}
+.lesDiplomes__unDiplome__nom {
+  font-size: 2.5rem;
+  display: block;
+  width: fit-content;
+  max-width: 225px;
+  text-align: center;
+  margin: auto;
+}
+.lesDiplomes__unDiplome.pair {
+  padding-top: 4rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
