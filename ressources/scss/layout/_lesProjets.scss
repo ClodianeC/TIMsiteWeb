@@ -1,37 +1,57 @@
-/* Index de diplômés */
-.fondDiplomes {
-  background-color: $orange;
-  background-image: url("../img/texture/round.webp");
-  background-blend-mode: multiply;
-  background-repeat: repeat;
-  box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
-  margin-bottom: 10rem;
+/* Index des projets */
+.fondFiltresTri {
+
 }
-.lesDiplomes {
+.filtresTri {
+
+  &__h2 {
+
+  }
+  &__section {
+
+    &__h3 {
+
+    }
+    &__liste {
+
+      &__item {
+
+        &__checkbox {
+
+        }
+        &__label {
+
+        }
+      }
+    }
+  }
+}
+
+.lesProjets {
   width: 90%;
   max-width: 1000px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  padding: 5rem 0;
   justify-content: space-around;
 
-  &__unDiplome {
+  &__unProjet {
     display: block;
     width: fit-content;
     margin-bottom: 4rem;
     color: $noir;
 
     &__img {
+      aspect-ratio: 16/9;
+      width: 30rem;
       display: block;
-      width: 225px;
-      height: 225px;
       object-fit: cover;
-      border-radius: 20rem;
+      border-radius: 1rem;
       border: $blancCasse solid 0.4rem;
       outline: $vert solid 0.4rem;
+      text-decoration: none;
     }
-    &__nom {
+    &__h2 {
       font-size: 2.5rem;
       display: block;
       width: fit-content;
@@ -40,7 +60,7 @@
       margin: auto;
     }
     &.pair {
-      padding-top: 4rem;
+      padding-top: 3rem;
     }
     &.impair {
 
@@ -49,7 +69,7 @@
     &:active {
       color: $rose;
 
-      .lesDiplomes__unDiplome__img {
+      .lesProjets__unProjet__img {
         border: $vert solid 0.4rem;
       }
     }

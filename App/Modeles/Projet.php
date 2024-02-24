@@ -22,34 +22,34 @@ class Projet {
 
     public static function trouverTout():array{
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT * FROM diplomes';
+        $chaineSQL = 'SELECT * FROM projets';
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Diplome");
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Projet");
         // Exécuter la requête
         $requetePreparee->execute();
         // Récupérer le résultat
-        $diplomes = $requetePreparee->fetchAll();
+        $projets = $requetePreparee->fetchAll();
 
-        return $diplomes;
+        return $projets;
     }
-    public static function trouverParId(int $unIdDiplome):Diplome{
+    public static function trouverParId(int $unIdProjet):Projet{
 
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT * FROM diplomes WHERE id=:idDiplome';
+        $chaineSQL = 'SELECT * FROM projets WHERE id=:idProjet';
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // BindParam
-        $requetePreparee->bindParam('idDiplome', $unIdDiplome);
+        $requetePreparee->bindParam('idProjet', $unIdProjet);
         // Définir le mode de récupération
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Diplome");
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Projet");
         // Exécuter la requête
         $requetePreparee->execute();
         // Récupérer le résultat
-        $diplome= $requetePreparee->fetch();
+        $projets= $requetePreparee->fetch();
 
-        return $diplome;
+        return $projets;
     }
     public static function trouverParDiplome(int $idDiplome):array{
         $chaineSQL = 'SELECT * FROM projets WHERE diplome_id = :idDiplome';

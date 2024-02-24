@@ -1467,6 +1467,7 @@ input.xLarge {
   display: block;
   width: fit-content;
   margin-bottom: 4rem;
+  color: #000;
 }
 .lesDiplomes__unDiplome__img {
   display: block;
@@ -1488,6 +1489,13 @@ input.xLarge {
 .lesDiplomes__unDiplome.pair {
   padding-top: 4rem;
 }
+.lesDiplomes__unDiplome:hover, .lesDiplomes__unDiplome:active {
+  color: #e87c84;
+}
+.lesDiplomes__unDiplome:hover .lesDiplomes__unDiplome__img, .lesDiplomes__unDiplome:active .lesDiplomes__unDiplome__img {
+  border: #d0e3cc solid 0.4rem;
+}
+
 /* Fiche d'un diplômé */
 .fondFicheDiplome {
   background-color: #febe98;
@@ -1651,6 +1659,180 @@ input.xLarge {
   color: #e87c84;
 }
 .projetsDiplome__unProjet:hover .projetsDiplome__unProjet__img, .projetsDiplome__unProjet:active .projetsDiplome__unProjet__img {
+  border: #d0e3cc solid 0.4rem;
+}
+
+/* Index des projets */
+.lesProjets {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.lesProjets__unProjet {
+  display: block;
+  width: fit-content;
+  margin-bottom: 4rem;
+  color: #000;
+}
+.lesProjets__unProjet__img {
+  aspect-ratio: 16/9;
+  width: 30rem;
+  display: block;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: #fffaf1 solid 0.4rem;
+  outline: #d0e3cc solid 0.4rem;
+  text-decoration: none;
+}
+.lesProjets__unProjet__h2 {
+  font-size: 2.5rem;
+  display: block;
+  width: fit-content;
+  max-width: 225px;
+  text-align: center;
+  margin: auto;
+}
+.lesProjets__unProjet.pair {
+  padding-top: 3rem;
+}
+.lesProjets__unProjet:hover, .lesProjets__unProjet:active {
+  color: #e87c84;
+}
+.lesProjets__unProjet:hover .lesProjets__unProjet__img, .lesProjets__unProjet:active .lesProjets__unProjet__img {
+  border: #d0e3cc solid 0.4rem;
+}
+
+/* Fiche du projet */
+.fondFicheProjet {
+  background-color: #febe98;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10rem;
+}
+
+.imgPrincipale {
+  display: block;
+  aspect-ratio: 16/9;
+  width: 98%;
+  max-width: 140rem;
+  margin: auto;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.ficheProjet {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+}
+.ficheProjet__premierePhrase {
+  max-width: 60rem;
+  flex-basis: 100%;
+}
+.ficheProjet__img {
+  aspect-ratio: 16/9;
+  width: 50%;
+  flex-basis: 50%;
+  max-width: 60rem;
+  border-radius: 1rem;
+  height: fit-content;
+  margin-bottom: 5rem;
+}
+.ficheProjet__restantPhrases {
+  width: 45%;
+  flex-basis: 45%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5rem;
+}
+.fondFicheCreateurProjet {
+  background-color: #fffaf1;
+  border: #d0e3cc solid 0.4rem;
+  border-radius: 300rem;
+  margin: 10rem auto;
+  padding: 5rem 10rem;
+  width: 75%;
+  max-width: 1300px;
+}
+
+.ficheCreateurProjet {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.ficheCreateurProjet__h2 {
+  margin: 2rem auto 0 auto;
+  width: 70%;
+  flex-basis: 100%;
+  text-align: center;
+}
+.ficheCreateurProjet__lienCreateur {
+  display: block;
+  width: fit-content;
+  flex-basis: 10%;
+}
+.ficheCreateurProjet__lienCreateur__img {
+  display: block;
+  aspect-ratio: 1;
+  width: 15vw;
+  object-fit: cover;
+  border-radius: 30rem;
+  border: #fffaf1 solid 0.4rem;
+  outline: #d0e3cc solid 0.4rem;
+}
+.ficheCreateurProjet__section {
+  flex-basis: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.ficheCreateurProjet__section__h3 {
+  display: block;
+  width: fit-content;
+  text-align: center;
+  flex-basis: 100%;
+}
+.ficheCreateurProjet__section__unProjet {
+  display: block;
+  width: fit-content;
+  margin-bottom: 4rem;
+  color: #000;
+}
+.ficheCreateurProjet__section__unProjet__img {
+  width: 30rem;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  display: block;
+  object-fit: cover;
+  border: #fffaf1 solid 0.4rem;
+  outline: #d0e3cc solid 0.4rem;
+}
+.ficheCreateurProjet__section__unProjet__h4 {
+  width: fit-content;
+  max-width: 30rem;
+  text-align: center;
+  margin: auto;
+}
+.ficheCreateurProjet__section__unProjet:hover, .ficheCreateurProjet__section__unProjet:active {
+  color: #e87c84;
+}
+.ficheCreateurProjet__section__unProjet:hover .ficheCreateurProjet__section__unProjet__img, .ficheCreateurProjet__section__unProjet:active .ficheCreateurProjet__section__unProjet__img {
   border: #d0e3cc solid 0.4rem;
 }
 

@@ -49,7 +49,7 @@
 
     <div class="fondProjetsDiplome">
         <div class="projetsDiplome">
-            <h2 class="projetsDiplome__h2 h2">Les projets de {{$leDiplome->getPrenom()}} {{$leDiplome->getNom()}}</h2>
+            <h2 class="projetsDiplome__h2 h2">Les projets par {{$leDiplome->getPrenom()}} {{$leDiplome->getNom()}}</h2>
             @foreach($lesProjets as $unProjet)
                 <a href="index.php?controleur=projet&action=fiche&idProjet={{$unProjet->getId()}}" class="projetsDiplome__unProjet">
                     <img class="projetsDiplome__unProjet__img" src="liaisons/img/projets/{{$leDiplome->getId()}}_{{$unProjet->getId()}}_01.png" alt="Image du projet {{$unProjet->getTitre()}}">
