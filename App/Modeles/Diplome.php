@@ -66,7 +66,7 @@ class Diplome {
         return $this->prenom;
     }
     public function getPresentation():string{
-        return $this->responsabilite;
+        return $this->presentation;
     }
     public function getInteretConception():int{
         return $this->interet_conception;

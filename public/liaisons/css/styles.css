@@ -732,7 +732,7 @@ main {
 .menu__liste__item__lien__rond__icone {
   background-image: url("../img/sprite.png");
   display: inline-block;
-  background-size: 200px;
+  background-size: 280px;
   width: 20px;
   height: 20px;
   margin: auto;
@@ -827,7 +827,7 @@ main {
   .menu__liste__item__lien__rond__icone {
     width: 5rem;
     height: 5rem;
-    background-size: 518px;
+    background-size: 726px;
     position: static;
   }
   .menu__liste__item__lien:active #diplomes, .menu__liste__item__lien:hover #diplomes {
@@ -1487,6 +1487,171 @@ input.xLarge {
 }
 .lesDiplomes__unDiplome.pair {
   padding-top: 4rem;
+}
+/* Fiche d'un diplômé */
+.fondFicheDiplome {
+  background-color: #febe98;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10rem;
+  padding: 5rem 0;
+}
+
+.ficheDiplome {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ficheDiplome__img {
+  display: block;
+  width: 225px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 20rem;
+  border: #fffaf1 solid 0.4rem;
+  outline: #d0e3cc solid 0.4rem;
+}
+.ficheDiplome__texte {
+  display: block;
+  width: 70%;
+  margin-right: 0;
+  margin-left: 3rem;
+}
+
+.niveauInteret {
+  width: 90%;
+  max-width: 1000px;
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.niveauInteret__h2 {
+  text-align: center;
+  flex-basis: 100%;
+  width: 100%;
+}
+.niveauInteret__section {
+  width: 20%;
+  aspect-ratio: 1;
+  border-radius: 2rem;
+  background-color: #7d7d7d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.niveauInteret__section__h3 {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+.niveauInteret__section__icone {
+  background-image: url("../img/sprite.png");
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  margin: auto;
+}
+.niveauInteret__section__note {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#iconeConception {
+  background-position: -520px 0;
+}
+
+#iconeMedias {
+  background-position: -572px 0;
+}
+
+#iconeIntegration {
+  background-position: -624px 0;
+}
+
+#iconeProgrammation {
+  background-position: -676px 0;
+}
+
+.interet1,
+.interet2 {
+  background-color: #7d7d7d;
+}
+
+.interet3,
+.interet4 {
+  background-color: #929791;
+}
+
+.interet5,
+.interet6 {
+  background-color: #A7B0A5;
+}
+
+.interet7,
+.interet8 {
+  background-color: #BBCAB8;
+}
+
+.interet9,
+.interet10 {
+  background-color: #d0e3cc;
+}
+
+.fondProjetsDiplome {
+  background-color: #fffaf1;
+  border: #d0e3cc solid 0.4rem;
+  border-radius: 300rem;
+  margin: 10rem auto;
+  padding: 5rem 10rem;
+  width: 75%;
+  max-width: 1300px;
+}
+
+.projetsDiplome {
+  width: 90%;
+  max-width: 1000px;
+  margin: 10rem auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.projetsDiplome__h2 {
+  margin: 0 0 3rem 0;
+  text-align: center;
+  width: 100%;
+  flex-basis: 100%;
+}
+.projetsDiplome__unProjet {
+  color: #000;
+  margin: 1rem;
+}
+.projetsDiplome__unProjet__img {
+  width: 30rem;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  border: #fffaf1 solid 0.4rem;
+  outline: #d0e3cc solid 0.4rem;
+}
+.projetsDiplome__unProjet__h3 {
+  width: 30rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+.projetsDiplome__unProjet:hover, .projetsDiplome__unProjet:active {
+  color: #e87c84;
+}
+.projetsDiplome__unProjet:hover .projetsDiplome__unProjet__img, .projetsDiplome__unProjet:active .projetsDiplome__unProjet__img {
+  border: #d0e3cc solid 0.4rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

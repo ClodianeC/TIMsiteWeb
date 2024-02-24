@@ -7,6 +7,60 @@
 
 <?php $this->startSection('contenu'); ?>
  <h1 class="h1"><?php echo \htmlentities($leDiplome->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($leDiplome->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?></h1>
+ <p class="accroche">Diplômé(e) 2024</p>
+
+ <div class="fondFicheDiplome">
+ <div class="ficheDiplome">
+ <img class="ficheDiplome__img"
+ <?php if(is_file("liaisons/img/diplomes/".$leDiplome->getId().".jpg")): ?>
+ src="liaisons/img/diplomes/<?php echo \htmlentities($leDiplome->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>.jpg"
+ <?php else: ?>
+ src="liaisons/img/profile.jpg"
+ <?php endif; ?>
+ alt="Image de <?php echo \htmlentities($leDiplome->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($leDiplome->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <div class="ficheDiplome__texte">
+ <?php echo str_replace('"', '', $leDiplome->getPresentation()); ?>
+
+ </div>
+ </div>
+ </div>
+
+ <div class="niveauInteret">
+ <h2 class="niveauInteret__h2 h2">Les niveaux d'intérêt</h2>
+ <div class="niveauInteret__section interet<?php echo \htmlentities($leDiplome->getInteretConception()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <h3 class="niveauInteret__section__h3">Conception</h3>
+ <span class="niveauInteret__section__icone" id="iconeConception"></span>
+ <h4 class="niveauInteret__section__note h4"><?php echo \htmlentities($leDiplome->getInteretConception()??'', ENT_QUOTES, 'UTF-8', false); ?>/10</h4>
+ </div>
+ <div class="niveauInteret__section interet<?php echo \htmlentities($leDiplome->getInteretMedias()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <h3 class="niveauInteret__section__h3">Médias</h3>
+ <span class="niveauInteret__section__icone" id="iconeMedias"></span>
+ <h4 class="niveauInteret__section__note h4"><?php echo \htmlentities($leDiplome->getInteretMedias()??'', ENT_QUOTES, 'UTF-8', false); ?>/10</h4>
+ </div>
+ <div class="niveauInteret__section interet<?php echo \htmlentities($leDiplome->getInteretIntegration()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <h3 class="niveauInteret__section__h3">Intégration</h3>
+ <span class="niveauInteret__section__icone" id="iconeIntegration"></span>
+ <h4 class="niveauInteret__section__note h4"><?php echo \htmlentities($leDiplome->getInteretIntegration()??'', ENT_QUOTES, 'UTF-8', false); ?>/10</h4>
+ </div>
+ <div class="niveauInteret__section interet<?php echo \htmlentities($leDiplome->getInteretProgrammation()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <h3 class="niveauInteret__section__h3">Programmation</h3>
+ <span class="niveauInteret__section__icone" id="iconeProgrammation"></span>
+ <h4 class="niveauInteret__section__note h4"><?php echo \htmlentities($leDiplome->getInteretProgrammation()??'', ENT_QUOTES, 'UTF-8', false); ?>/10</h4>
+ </div>
+ </div>
+
+ <div class="fondProjetsDiplome">
+ <div class="projetsDiplome">
+ <h2 class="projetsDiplome__h2 h2">Les projets de <?php echo \htmlentities($leDiplome->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($leDiplome->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?></h2>
+ <?php $__currentLoopData = $lesProjets; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $unProjet): $loop = $this->incrementLoopIndices();  ?>
+ <a href="index.php?controleur=projet&action=fiche&idProjet=<?php echo \htmlentities($unProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>" class="projetsDiplome__unProjet">
+ <img class="projetsDiplome__unProjet__img" src="liaisons/img/projets/<?php echo \htmlentities($leDiplome->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($unProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_01.png" alt="Image du projet <?php echo \htmlentities($unProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <h3 class="projetsDiplome__unProjet__h3 h3"><?php echo \htmlentities($unProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></h3>
+ </a>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
 
 <?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('gabarit'); } ?>
