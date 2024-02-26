@@ -11,15 +11,24 @@
     <div class="fondFicheProjet">
         <img class="imgPrincipale" src="liaisons/img/projets/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_01.png" alt="Image du projet {{$leProjet->getTitre()}}">
         <div class="ficheProjet">
-            <div class="ficheProjet__premierePhrase accroche">{!!explode('.', str_replace('"', '',$leProjet->getDescription()))[0]!!}.</div>
-            <img class="ficheProjet__img" src="liaisons/img/projets/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_02.png" alt="Image du projet {{$leProjet->getTitre()}}">
-            <div class="ficheProjet__restantPhrases">
-            @foreach(explode('.', $leProjet->getDescription()) as $unePhrase)
-                @if($loop->iteration != 1 && strlen($unePhrase) > 5)
-                    {!!$unePhrase!!}.
-                @endif
-            @endforeach
-            </div>
+            @if(substr_count($leProjet->getDescription(), '.') > 1)
+                <div class="ficheProjet__premierePhrase accroche">{!!explode('.', str_replace('"', '',$leProjet->getDescription()))[0]!!}.</div>
+            @endif
+{{--            <div class="ficheProjet__premierePhrase accroche">{!!explode('.', str_replace('"', '',$leProjet->getDescription()))[0]!!}.</div>--}}
+            @if(is_file("liaisons/img/projets/".$leProjet->getDiplomeId()."_".$leProjet->getId()."_02.png"))
+                <img class="ficheProjet__img" src="liaisons/img/projets/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_02.png" alt="Image du projet {{$leProjet->getTitre()}}">
+            @endif
+{{--            <img class="ficheProjet__img" src="liaisons/img/projets/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_02.png" alt="Image du projet {{$leProjet->getTitre()}}">--}}
+            <p class="ficheProjet__restantPhrases">
+                @foreach(explode('.', $leProjet->getDescription()) as $unePhrase)
+                    @if($loop->iteration != 1 && strlen($unePhrase) > 5)
+                        {!! str_replace(array('<p>', '</p>', '"'), '', $unePhrase) !!}.
+
+                    @elseif(substr_count($leProjet->getDescription(), '.') <= 1 && strlen($unePhrase) > 5)
+                        {!! str_replace(array('<p>', '</p>', '"'), '', $unePhrase) !!}.
+                    @endif
+                @endforeach
+            </p>
             <div class="ficheProjet__sectionTechnologies">
                 <h2 class="ficheProjet__sectionTechnologies__h2 h2">Technologies utilisées:</h2>
                 <ul class="ficheProjet__sectionTechnologies__listeTechno">
@@ -28,21 +37,24 @@
                     @endforeach
                 </ul>
             </div>
-            <img class="ficheProjet__img" src="liaisons/img/projets/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_03.png" alt="Image du projet {{$leProjet->getTitre()}}">
+            @if(is_file("liaisons/img/projets/".$leProjet->getDiplomeId()."_".$leProjet->getId()."_03.png"))
+                <img class="ficheProjet__img" src="liaisons/img/projets/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_03.png" alt="Image du projet {{$leProjet->getTitre()}}">
+            @endif
+{{--            <img class="ficheProjet__img" src="liaisons/img/projets/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_03.png" alt="Image du projet {{$leProjet->getTitre()}}">--}}
         </div>
     </div>
 
-    @if($lesEtapes !== false)
+    @if(count($lesEtapes) >= 1)
         <div class="lesEtapes">
             <h2 class="lesEtapes__h2 h2">Les étapes</h2>
             @foreach($lesEtapes as $uneEtape)
-                <div>
+                <div class="lesEtapes__section">
                     @if($loop->iteration % 2 == 0)
-                        <p>{!! $uneEtape->getDescription() !!}</p>
-                        <img>
+                        <p class="lesEtapes__section__texte">{!! str_replace(array('<p>', '</p>', '"'), '', $uneEtape->getDescription()) !!}</p>
+                        <img class="lesEtapes__section__img" src="liaisons/img/projets/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}.png" alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">
                     @else
-                        <img>
-                        <p>{!! $uneEtape->getDescription() !!}</p>
+                        <img class="lesEtapes__section__img" src="liaisons/img/projets/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}.png" alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">
+                        <p class="lesEtapes__section__texte">{!! str_replace(array('<p>', '</p>', '"'), '', $uneEtape->getDescription()) !!}</p>
                     @endif
                 </div>
             @endforeach

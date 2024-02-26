@@ -12,16 +12,25 @@
  <div class="fondFicheProjet">
  <img class="imgPrincipale" src="liaisons/img/projets/<?php echo \htmlentities($leProjet->getDiplomeId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($leProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_01.png" alt="Image du projet <?php echo \htmlentities($leProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">
  <div class="ficheProjet">
+ <?php if(substr_count($leProjet->getDescription(), '.') > 1): ?>
  <div class="ficheProjet__premierePhrase accroche"><?php echo explode('.', str_replace('"', '',$leProjet->getDescription()))[0]; ?>.</div>
+ <?php endif; ?>
+<?php /*            <div class="ficheProjet__premierePhrase accroche"><?php echo explode('.', str_replace('"', '',$leProjet->getDescription()))[0]; ?>.</div>*/ ?>
+ <?php if(is_file("liaisons/img/projets/".$leProjet->getDiplomeId()."_".$leProjet->getId()."_02.png")): ?>
  <img class="ficheProjet__img" src="liaisons/img/projets/<?php echo \htmlentities($leProjet->getDiplomeId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($leProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_02.png" alt="Image du projet <?php echo \htmlentities($leProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">
- <div class="ficheProjet__restantPhrases">
+ <?php endif; ?>
+<?php /*            <img class="ficheProjet__img" src="liaisons/img/projets/<?php echo \htmlentities($leProjet->getDiplomeId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($leProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_02.png" alt="Image du projet <?php echo \htmlentities($leProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">*/ ?>
+ <p class="ficheProjet__restantPhrases">
  <?php $__currentLoopData = explode('.', $leProjet->getDescription()); $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $unePhrase): $loop = $this->incrementLoopIndices();  ?>
  <?php if($loop->iteration != 1 && strlen($unePhrase) > 5): ?>
- <?php echo $unePhrase; ?>.
+ <?php echo str_replace(array('<p>', '</p>', '"'), '', $unePhrase); ?>.
+
+ <?php elseif(substr_count($leProjet->getDescription(), '.') <= 1 && strlen($unePhrase) > 5): ?>
+ <?php echo str_replace(array('<p>', '</p>', '"'), '', $unePhrase); ?>.
  <?php endif; ?>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
- </div>
+ </p>
  <div class="ficheProjet__sectionTechnologies">
  <h2 class="ficheProjet__sectionTechnologies__h2 h2">Technologies utilisées:</h2>
  <ul class="ficheProjet__sectionTechnologies__listeTechno">
@@ -31,22 +40,25 @@
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </ul>
  </div>
+ <?php if(is_file("liaisons/img/projets/".$leProjet->getDiplomeId()."_".$leProjet->getId()."_03.png")): ?>
  <img class="ficheProjet__img" src="liaisons/img/projets/<?php echo \htmlentities($leProjet->getDiplomeId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($leProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_03.png" alt="Image du projet <?php echo \htmlentities($leProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php endif; ?>
+<?php /*            <img class="ficheProjet__img" src="liaisons/img/projets/<?php echo \htmlentities($leProjet->getDiplomeId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($leProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_03.png" alt="Image du projet <?php echo \htmlentities($leProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">*/ ?>
  </div>
  </div>
 
- <?php if($lesEtapes !== false): ?>
+ <?php if(count($lesEtapes) >= 1): ?>
  <div class="lesEtapes">
  <h2 class="lesEtapes__h2 h2">Les étapes</h2>
  <?php $__currentLoopData = $lesEtapes; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $uneEtape): $loop = $this->incrementLoopIndices();  ?>
- <div>
+ <div class="lesEtapes__section">
  <?php if($loop->iteration % 2 == 0): ?>
- <p><?php echo $uneEtape->getDescription(); ?></p>
- <img>
+ <p class="lesEtapes__section__texte"><?php echo str_replace(array('<p>', '</p>', '"'), '', $uneEtape->getDescription()); ?></p>
+ <img class="lesEtapes__section__img" src="liaisons/img/projets/<?php echo \htmlentities($leDiplome->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($leProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_e<?php echo \htmlentities($uneEtape->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>.png" alt="Image de l'étape <?php echo \htmlentities($uneEtape->getOrdre()??'', ENT_QUOTES, 'UTF-8', false); ?> du projet <?php echo \htmlentities($leProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">
  <?php else: ?>
- <img>
- <p><?php echo $uneEtape->getDescription(); ?></p>
+ <img class="lesEtapes__section__img" src="liaisons/img/projets/<?php echo \htmlentities($leDiplome->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($leProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_e<?php echo \htmlentities($uneEtape->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>.png" alt="Image de l'étape <?php echo \htmlentities($uneEtape->getOrdre()??'', ENT_QUOTES, 'UTF-8', false); ?> du projet <?php echo \htmlentities($leProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <p class="lesEtapes__section__texte"><?php echo str_replace(array('<p>', '</p>', '"'), '', $uneEtape->getDescription()); ?></p>
  <?php endif; ?>
  </div>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>

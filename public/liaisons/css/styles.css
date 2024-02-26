@@ -1713,6 +1713,7 @@ input.xLarge {
   background-repeat: repeat;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
   margin-bottom: 10rem;
+  padding-bottom: 5rem;
 }
 
 .imgPrincipale {
@@ -1720,7 +1721,7 @@ input.xLarge {
   aspect-ratio: 16/9;
   width: 98%;
   max-width: 140rem;
-  margin: auto;
+  margin: auto auto 5rem auto;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
 }
@@ -1733,11 +1734,12 @@ input.xLarge {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .ficheProjet__premierePhrase {
   max-width: 60rem;
   flex-basis: 100%;
+  margin-top: 0;
 }
 .ficheProjet__img {
   aspect-ratio: 16/9;
@@ -1747,13 +1749,16 @@ input.xLarge {
   border-radius: 1rem;
   height: fit-content;
   margin-bottom: 5rem;
+  object-fit: cover;
 }
 .ficheProjet__restantPhrases {
   width: 45%;
   flex-basis: 45%;
-  display: flex;
-  align-items: center;
+  vertical-align: middle;
   padding-bottom: 5rem;
+}
+.ficheProjet__sectionTechnologies__h2 {
+  margin-top: 0;
 }
 .fondFicheCreateurProjet {
   background-color: #fffaf1;
@@ -1777,7 +1782,7 @@ input.xLarge {
 }
 .ficheCreateurProjet__h2 {
   margin: 2rem auto 0 auto;
-  width: 70%;
+  width: 7640%;
   flex-basis: 100%;
   text-align: center;
 }
@@ -1834,6 +1839,28 @@ input.xLarge {
 }
 .ficheCreateurProjet__section__unProjet:hover .ficheCreateurProjet__section__unProjet__img, .ficheCreateurProjet__section__unProjet:active .ficheCreateurProjet__section__unProjet__img {
   border: #d0e3cc solid 0.4rem;
+}
+
+.lesEtapes__h2 {
+  text-align: center;
+  width: 100%;
+}
+.lesEtapes__section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5rem auto;
+  width: 90%;
+  max-width: 1000px;
+}
+.lesEtapes__section__texte {
+  width: 40%;
+}
+.lesEtapes__section__img {
+  aspect-ratio: 16/9;
+  width: 55%;
+  border-radius: 1rem;
+  align-self: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,13 +6,14 @@
   background-repeat: repeat;
   box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
   margin-bottom: 10rem;
+  padding-bottom: 5rem;
 }
 .imgPrincipale {
   display: block;
   aspect-ratio: 16/9;
   width: 98%;
   max-width: 140rem;
-  margin: auto;
+  margin: auto auto 5rem auto;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
 }
@@ -24,11 +25,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
   &__premierePhrase {
     max-width: 60rem;
     flex-basis: 100%;
+    margin-top: 0;
   }
   &__img {
     aspect-ratio: 16/9;
@@ -38,18 +40,18 @@
     border-radius: 1rem;
     height: fit-content;
     margin-bottom: 5rem;
+    object-fit: cover;
   }
   &__restantPhrases {
     width: 45%;
     flex-basis: 45%;
-    display: flex;
-    align-items: center;
+    vertical-align: middle;
     padding-bottom: 5rem;
   }
   &__sectionTechnologies {
 
     &__h2 {
-
+      margin-top: 0;
     }
     &__listeTechno {
 
@@ -78,7 +80,7 @@
 
   &__h2 {
     margin: 2rem auto 0 auto;
-    width: 70%;
+    width: 7640%;
     flex-basis: 100%;
     text-align: center;
   }
@@ -141,5 +143,31 @@
       }
     }
   }
+}
 
+.lesEtapes {
+
+  &__h2 {
+    text-align: center;
+    width: 100%;
+  }
+  &__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5rem auto;
+    width: 90%;
+    max-width: 1000px;
+
+    &__texte {
+      width: 40%;
+
+    }
+    &__img {
+      aspect-ratio: 16/9;
+      width: 55%;
+      border-radius: 1rem;
+      align-self: center;
+    }
+  }
 }

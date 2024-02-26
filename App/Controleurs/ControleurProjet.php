@@ -26,9 +26,6 @@ class ControleurProjet {
         $leDiplome = Diplome::trouverParId($leProjet->getDiplomeId());
         $lesProjetsDuDiplome = Projet::trouverParDiplome($leProjet->getDiplomeId());
         $lesEtapes = Etape::trouverParProjet($leProjet->getId());
-        if($lesEtapes === false || $lesEtapes === null) {
-            $lesEtapes = false;
-        }
 
         $tDonnees = array("infosFooter"=>[Texte::trouverParId(9), Texte::trouverParId(1), Texte::trouverParId(2), Texte::trouverParId(5), Texte::trouverParId(3), Texte::trouverParId(4)], 'leProjet'=>$leProjet, 'leDiplome'=>$leDiplome,"lesProjets"=>$lesProjetsDuDiplome, 'lesEtapes'=>$lesEtapes);
         echo App::getBlade()->run('projets.fiche',$tDonnees);
