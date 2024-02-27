@@ -45,7 +45,7 @@
                         <input type="radio" class="formulaire__destinataires__item__input screen-reader-only" id="selection{{$unResponsable->getNom()}}" name="selectionResponsable">
                         <label for="selection{{$unResponsable->getNom()}}" class="formulaire__destinataires__item__label">
                         <span class="conteneurFormPhotoTexte">
-                            <img class="formulaire__destinataires__item__label__img" src="liaisons/img/responsables/{{$unResponsable->getId()}}.jpg" alt="image de profil de {{$unResponsable->getPrenom()}} {{$unResponsable->getNom()}}">
+                            <img class="formulaire__destinataires__item__label__img" src="liaisons/img/responsables/{{$unResponsable->getId()}}_200.jpg" alt="image de profil de {{$unResponsable->getPrenom()}} {{$unResponsable->getNom()}}">
                             <span class="conteneurFormTexte">
                                 <span class="formulaire__destinataires__item__label__h3 h3">{{$unResponsable->getPrenom()}} {{$unResponsable->getNom()}}</span>
                                 <span class="formulaire__destinataires__item__label__contact">{{$unResponsable->getTelephone()}}</span>

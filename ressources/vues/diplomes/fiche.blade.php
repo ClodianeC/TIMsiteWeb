@@ -11,8 +11,8 @@
     <div class="fondFicheDiplome">
         <div class="ficheDiplome">
             <img class="ficheDiplome__img"
-            @if(is_file("liaisons/img/diplomes/".$leDiplome->getId().".jpg"))
-                src="liaisons/img/diplomes/{{$leDiplome->getId()}}.jpg"
+            @if(is_file("liaisons/img/diplomes/".$leDiplome->getId()."_450.jpg"))
+                src="liaisons/img/diplomes/{{$leDiplome->getId()}}_450.jpg"
             @else
                 src="liaisons/img/profile.jpg"
             @endif
@@ -52,7 +52,7 @@
             <h2 class="projetsDiplome__h2 h2">Les projets par {{$leDiplome->getPrenom()}} {{$leDiplome->getNom()}}</h2>
             @foreach($lesProjets as $unProjet)
                 <a href="index.php?controleur=projet&action=fiche&idProjet={{$unProjet->getId()}}" class="projetsDiplome__unProjet">
-                    <img class="projetsDiplome__unProjet__img" src="liaisons/img/projets/{{$leDiplome->getId()}}_{{$unProjet->getId()}}_01.png" alt="Image du projet {{$unProjet->getTitre()}}">
+                    <img class="projetsDiplome__unProjet__img" src="liaisons/img/projets/principales/{{$leDiplome->getId()}}_{{$unProjet->getId()}}_01_300.png" alt="Image du projet {{$unProjet->getTitre()}}">
                     <h3 class="projetsDiplome__unProjet__h3 h3">{{$unProjet->getTitre()}}</h3>
                 </a>
             @endforeach

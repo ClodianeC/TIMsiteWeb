@@ -1,29 +1,83 @@
 /* Index des projets */
 .fondFiltresTri {
-
+  background-color: $orange;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+  margin-bottom: 10rem;
+  padding: 3rem 0;
 }
 .filtresTri {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
 
   &__h2 {
-
+    text-align: left;
   }
   &__section {
+    width: 100%;
 
     &__h3 {
-
+      width: 100%;
+      margin-bottom: 0;
     }
     &__liste {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 0;
+      margin-top: 0;
 
       &__item {
+        list-style: none;
+        margin: 2rem;
 
         &__checkbox {
+          display: none;
 
+          &:hover+label,
+          &:focus+label,
+          &:checked+label{
+            background-color: $rose;
+          }
+          &:checked+label .filtresTri__section__liste__item__label__icone {
+            display: block;
+            width: 18px;
+            height: 20px;
+            background-image: url("../img/sprite.png");
+            background-position: -727px -16px;
+          }
         }
         &__label {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+          width: 20rem;
+          height: 5rem;
+          background-color: $blancCasse;
+          border: $rose solid 0.4rem;
+          border-radius: 5rem;
+          font-family: "Caviar Dreams", sans-serif;
+          font-size: 2.2rem;
+          line-height: 5rem;
+          text-align: center;
 
+          &__icone {
+            display: block;
+            width: 15px;
+            height: 18px;
+          }
         }
       }
     }
+  }
+  &__btnTriEtFiltre {
+    display: block;
+    margin: 5rem auto;
+    text-align: center;
   }
 }
 

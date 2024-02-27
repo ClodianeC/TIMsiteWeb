@@ -17,8 +17,8 @@
                     <a href="index.php?controleur=diplome&action=fiche&idDiplome={{$unDiplome->getId()}}" class="lesDiplomes__unDiplome pair">
                 @endif
                     <img class="lesDiplomes__unDiplome__img"
-                         @if(is_file("liaisons/img/diplomes/".$unDiplome->getId().".jpg"))
-                             src="liaisons/img/diplomes/{{$unDiplome->getId()}}.jpg"
+                         @if(is_file("liaisons/img/diplomes/".$unDiplome->getId()."_300.jpg"))
+                             src="liaisons/img/diplomes/{{$unDiplome->getId()}}_300.jpg"
                          @else
                              src="liaisons/img/profile.jpg"
                          @endif
