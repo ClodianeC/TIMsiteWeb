@@ -9,7 +9,7 @@
     <p class="accroche">Page 1</p>
 
     <div class="fondFiltresTri">
-        <form class="filtresTri">
+        <form class="filtresTri" action="index.php?controleur=projet&action=index&filtres=true" method="POST">
             <h2 class="filtresTri__h2 h2">Filtrer les projets:</h2>
             <div class="filtresTri__section">
                 <h3 class="filtresTri__section__h3 h3">Par année:</h3>
