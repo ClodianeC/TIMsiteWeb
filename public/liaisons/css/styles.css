@@ -1780,6 +1780,20 @@ input.xLarge {
   border: #d0e3cc solid 0.4rem;
 }
 
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 5rem auto;
+  width: 500px;
+  justify-content: space-around;
+}
+.pagination__texte {
+  display: block;
+  width: fit-content;
+  margin: 0;
+}
+
 /* Fiche du projet */
 .fondFicheProjet {
   background-color: #febe98;

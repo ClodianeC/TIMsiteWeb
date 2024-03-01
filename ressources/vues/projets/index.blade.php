@@ -6,7 +6,7 @@
 
 @section('contenu')
     <h1 class="h1">Les projets</h1>
-    <p class="accroche">Page 1</p>
+    <p class="accroche">Page {{$noPage + 1}}</p>
 
     <div class="fondFiltresTri">
         <form class="filtresTri" action="index.php?controleur=projet&action=index&filtres=true" method="POST">
@@ -14,18 +14,24 @@
             <div class="filtresTri__section">
                 <h3 class="filtresTri__section__h3 h3">Par année:</h3>
                 <ul class="filtresTri__section__liste">
-                    <li class="filtresTri__section__liste__item">
-                        <input type="checkbox" value="1" name="annee" id="annee1" class="filtresTri__section__liste__item__checkbox">
-                        <label for="annee1" class="filtresTri__section__liste__item__label"><span>1<sup>ère</sup> année</span><span class="filtresTri__section__liste__item__label__icone"></span></label>
-                    </li>
-                    <li class="filtresTri__section__liste__item">
-                        <input type="checkbox" value="2" name="annee" id="annee2" class="filtresTri__section__liste__item__checkbox">
-                        <label for="annee2" class="filtresTri__section__liste__item__label"><span>2<sup>ème</sup> année</span><span class="filtresTri__section__liste__item__label__icone"></span></label>
-                    </li>
-                    <li class="filtresTri__section__liste__item">
-                        <input type="checkbox" value="3" name="annee" id="annee3" class="filtresTri__section__liste__item__checkbox">
-                        <label for="annee3" class="filtresTri__section__liste__item__label"><span>3<sup>ème</sup> année</span><span class="filtresTri__section__liste__item__label__icone"></span></label>
-                    </li>
+                    @for($i=1; $i<=3; $i++)
+                        <li class="filtresTri__section__liste__item">
+                            <input type="checkbox" value="{{$i}}" name="annee[]" id="annee{{$i}}" class="filtresTri__section__liste__item__checkbox">
+                            <label for="annee{{$i}}" class="filtresTri__section__liste__item__label">
+                                <span>{{$i}}
+                                    <sup>
+                                        @if($i <= 1)
+                                            ère
+                                        @else
+                                            ème
+                                        @endif
+                                    </sup> année
+                                </span>
+                                <span class="filtresTri__section__liste__item__label__icone">
+                                </span>
+                            </label>
+                        </li>
+                    @endfor
                 </ul>
             </div>
             <div class="filtresTri__section">
@@ -33,7 +39,7 @@
                 <ul class="filtresTri__section__liste">
                     @foreach($lesAxes as $unAxe)
                         <li class="filtresTri__section__liste__item">
-                            <input type="checkbox" value="axe{{$unAxe->getId()}}" name="axeFormation" id="axe{{$unAxe->getId()}}" class="filtresTri__section__liste__item__checkbox">
+                            <input type="checkbox" value="axe{{$unAxe->getId()}}" name="axeFormation[]" id="axe{{$unAxe->getId()}}" class="filtresTri__section__liste__item__checkbox">
                             <label for="axe{{$unAxe->getId()}}" class="filtresTri__section__liste__item__label">{{$unAxe->getNom()}}<span class="filtresTri__section__liste__item__label__icone"></span></label>
                         </li>
                     @endforeach
@@ -59,6 +65,50 @@
                 </h2>
             </a>
         @endforeach
+    </div>
+
+    <div class="pagination">
+        <a
+        @if($noPage > 0)
+            class="pagination__lien hyperlien" href="{{$urlPagination}}&page=0"
+        @else
+            class="pagination__lien"
+        @endif
+        >Premier</a>
+
+        |
+
+        <a
+        @if($noPage > 0)
+            class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$noPage - 1}}"
+        @else
+            class="pagination__lien"
+        @endif
+        >Précédent</a>
+
+        |
+
+        <p class="pagination__texte">Page {{$noPage + 1}} de {{$nbPagesTotal + 1}}</p>
+
+        |
+
+        <a
+        @if($noPage < $nbPagesTotal)
+            class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$noPage + 1}}"
+        @else
+               class="pagination__lien"
+        @endif
+        >Suivant</a>
+
+        |
+
+        <a
+        @if($noPage < $nbPagesTotal)
+            class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$nbPagesTotal}}"
+        @else
+            class="pagination__lien"
+        @endif
+        >Dernier</a>
     </div>
 
 @endsection

@@ -20,6 +20,51 @@ class Projet {
 
     }
 
+//    public static function compter():int {
+//        $chaineSQL = 'SELECT COUNT(*) as total FROM projets';
+//        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+//        $requetePreparee->execute();
+//        $resultat = $requetePreparee->fetch();
+//        return $resultat["total"];
+//    }
+    public static function compter(array $filtresAnnee, array $filtresAxe):int {
+        $desAnnees = "";
+        $desAxes = "";
+        // Transformer les tableaux en strings qui contiennent chacuns des filtres suivis d'un virgules
+        foreach ($filtresAnnee as $unFiltre) {
+            if($desAnnees === "") {
+                $desAnnees = $desAnnees . $unFiltre;
+            }
+            else {
+                $desAnnees = $desAnnees . ", " . $unFiltre;
+            }
+        }
+        foreach ($filtresAxe as $unFiltre) {
+            if($desAxes === "") {
+                $desAxes = $desAxes . $unFiltre;
+            }
+            else {
+                $desAxes = $desAxes . ", " . $unFiltre;
+            }
+        }
+
+        // Définir la chaine SQL
+        $chaineSQL = 'SELECT COUNT(*) FROM projets';
+        if(count($filtresAnnee) !== 0 || count($filtresAxe) !== 0) {
+            $chaineSQL = $chaineSQL . " INNER JOIN cours ON projets.cours_id = cours.id";
+            $chaineSQL = $chaineSQL . " INNER JOIN axe_cours ON cours.id = axes_cours.cours_id";
+        }
+        if(count($filtresAnnee) !== 0){
+            $chaineSQL = $chaineSQL . " WHERE cours.annee in(".$desAnnees.")";
+        }
+        if(count($filtresAxe) !== 0){
+            $chaineSQL = $chaineSQL . " WHERE axes_cours.axe_id in(".$desAxes.")";
+        }
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->execute();
+        $resultat = $requetePreparee->fetch();
+        return $resultat["COUNT(*)"];
+    }
     public static function trouverTout():array{
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM projets';
@@ -60,6 +105,55 @@ class Projet {
         $requetePreparee->execute();
         // Récupérer le résultat
         $projets = $requetePreparee->fetchAll();
+        return $projets;
+    }
+    public static function paginer(int $unNoPage, int $unNbParPage, array $filtresAnnee, array $filtresAxe):array {
+        $occurence = $unNoPage * $unNbParPage;
+
+        $desAnnees = "";
+        $desAxes = "";
+        // Transformer les tableaux en strings qui contiennent chacuns des filtres suivis d'un virgules
+        foreach ($filtresAnnee as $unFiltre) {
+            if($desAnnees === "") {
+                $desAnnees = $desAnnees . $unFiltre;
+            }
+            else {
+                $desAnnees = $desAnnees . ", " . $unFiltre;
+            }
+        }
+        foreach ($filtresAxe as $unFiltre) {
+            if($desAxes === "") {
+                $desAxes = $desAxes . $unFiltre;
+            }
+            else {
+                $desAxes = $desAxes . ", " . $unFiltre;
+            }
+        }
+
+        // Définir la chaine SQL
+        $chaineSQL = 'SELECT * FROM projets';
+
+        if(count($filtresAnnee) !== 0 || count($filtresAxe) !== 0) {
+            $chaineSQL = $chaineSQL . " INNER JOIN cours ON projets.cours_id = cours.id";
+            $chaineSQL = $chaineSQL . " INNER JOIN axe_cours ON cours.id = axes_cours.cours_id";
+        }
+        if(count($filtresAnnee) !== 0){
+            $chaineSQL = $chaineSQL . " WHERE cours.annee in(".$desAnnees.")";
+        }
+        if(count($filtresAxe) !== 0){
+            $chaineSQL = $chaineSQL . " WHERE axes_cours.axe_id in(".$desAxes.")";
+        }
+        $chaineSQL = $chaineSQL . " LIMIT " . $occurence . ", " . $unNbParPage;
+        // Préparer la requête (optimisation)
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+
+        // Définir le mode de récupération
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Projet");
+        // Exécuter la requête
+        $requetePreparee->execute();
+        // Récupérer le résultat
+        $projets = $requetePreparee->fetchAll();
+
         return $projets;
     }
 
