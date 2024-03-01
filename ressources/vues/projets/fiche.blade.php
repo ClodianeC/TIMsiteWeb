@@ -9,7 +9,13 @@
     <p class="accroche">Par {{$leDiplome->getPrenom()}} {{$leDiplome->getNom()}}</p>
 
     <div class="fondFicheProjet">
-        <img class="imgPrincipale" src="liaisons/img/projets/principales/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_01_1440.png" alt="Image du projet {{$leProjet->getTitre()}}">
+        <img class="imgPrincipale"
+             @if(is_file("liaisons/img/projets/principales/".$leProjet->getDiplomeId() . "_" . $leProjet->getId(). "_01_1440.png"))
+                 src="liaisons/img/projets/principales/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_01_1440.png"
+             @else
+                 src="liaisons/img/projets/placeholders/projet{{rand(1, 4)}}.svg"
+             @endif
+        alt="Image du projet {{$leProjet->getTitre()}}">
         <div class="ficheProjet">
             @if(substr_count($leProjet->getDescription(), '.') > 1)
                 <div class="ficheProjet__premierePhrase accroche">{!!explode('.', str_replace('"', '',$leProjet->getDescription()))[0]!!}.</div>
@@ -52,9 +58,23 @@
                 <div class="lesEtapes__section">
                     @if($loop->iteration % 2 == 0)
                         <p class="lesEtapes__section__texte">{!! str_replace(array('<p>', '</p>', '"'), '', $uneEtape->getDescription()) !!}</p>
-                        <img class="lesEtapes__section__img" src="liaisons/img/projets/etapes/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}_600.png" alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">
+                        <img class="lesEtapes__section__img"
+                             @if(is_file("liaisons/img/projets/etapes/" . $leDiplome->getId() . "_" . $leProjet->getId() . "_e" . $uneEtape->getId() . "_600.png"))
+                                 src="liaisons/img/projets/etapes/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}_600.png"
+                             @else
+                                 src="liaisons/img/projets/placeholders/projet{{rand(1, 4)}}.svg"
+                             @endif
+                        alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">
+{{--                        <img class="lesEtapes__section__img" src="liaisons/img/projets/etapes/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}_600.png" alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">--}}
                     @else
-                        <img class="lesEtapes__section__img" src="liaisons/img/projets/etapes/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}_600.png" alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">
+                        <img class="lesEtapes__section__img"
+                             @if(is_file("liaisons/img/projets/etapes/" . $leDiplome->getId() . "_" . $leProjet->getId() . "_e" . $uneEtape->getId() . "_600.png"))
+                                 src="liaisons/img/projets/etapes/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}_600.png"
+                             @else
+                                 src="liaisons/img/projets/placeholders/projet{{rand(1, 4)}}.svg"
+                             @endif
+                        alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">
+{{--                        <img class="lesEtapes__section__img" src="liaisons/img/projets/etapes/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}_600.png" alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">--}}
                         <p class="lesEtapes__section__texte">{!! str_replace(array('<p>', '</p>', '"'), '', $uneEtape->getDescription()) !!}</p>
                     @endif
                 </div>
@@ -70,7 +90,7 @@
                      @if(is_file("liaisons/img/diplomes/".$leDiplome->getId()."_300.jpg"))
                          src="liaisons/img/diplomes/{{$leDiplome->getId()}}_300.jpg"
                      @else
-                         src="liaisons/img/profile.jpg"
+                         src="liaisons/img/diplomes/{{$leDiplome->getGenre()}}Profile.svg"
                      @endif
                      alt="Image de {{$leDiplome->getPrenom()}} {{$leDiplome->getNom()}}">
             </a>
@@ -79,7 +99,14 @@
                 @foreach($lesProjets as $unProjet)
                     @if($unProjet->getId() !== $leProjet->getId())
                         <a href="index.php?controleur=projet&action=fiche&idProjet={{$unProjet->getId()}}" class="ficheCreateurProjet__section__unProjet">
-                            <img class="ficheCreateurProjet__section__unProjet__img" src="liaisons/img/projets/principales/{{$unProjet->getDiplomeId()}}_{{$unProjet->getId()}}_01_300.png" alt="Image du projet {{$unProjet->getTitre()}}">
+                            <img class="ficheCreateurProjet__section__unProjet__img"
+                                 @if(is_file("liaisons/img/projets/principales/" . $unProjet->getDiplomeId() . "_" . $unProjet->getId() . "_01_300.png"))
+                                     src="liaisons/img/projets/principales/{{$unProjet->getDiplomeId()}}_{{$unProjet->getId()}}_01_300.png"
+                                 @else
+                                     src="liaisons/img/projets/placeholders/projet{{rand(1, 4)}}.svg"
+                                 @endif
+                            alt="Image du projet {{$unProjet->getTitre()}}">
+{{--                            <img class="ficheCreateurProjet__section__unProjet__img" src="liaisons/img/projets/principales/{{$unProjet->getDiplomeId()}}_{{$unProjet->getId()}}_01_300.png" alt="Image du projet {{$unProjet->getTitre()}}">--}}
                             <h4 class="ficheCreateurProjet__section__unProjet__h4 h4">
                                 {{substr($unProjet->getTitre(), 0, 34)}}
                                 @if(strlen($unProjet->getTitre()) > 34)

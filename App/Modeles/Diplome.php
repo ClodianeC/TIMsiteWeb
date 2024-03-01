@@ -8,6 +8,7 @@ use \PDO;
 // Classe modèle
 class Diplome {
     private int $id = 0;
+    private string $genre = '';
     private string $nom = '';
     private string $prenom = '';
     private string $presentation = '';
@@ -61,6 +62,9 @@ class Diplome {
     }
     public function getNom():string{
         return $this->nom;
+    }
+    public function getGenre():string{
+        return $this->genre;
     }
     public function getPrenom():string{
         return $this->prenom;

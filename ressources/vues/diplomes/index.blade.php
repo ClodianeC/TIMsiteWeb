@@ -20,7 +20,7 @@
                          @if(is_file("liaisons/img/diplomes/".$unDiplome->getId()."_300.jpg"))
                              src="liaisons/img/diplomes/{{$unDiplome->getId()}}_300.jpg"
                          @else
-                             src="liaisons/img/profile.jpg"
+                             src="liaisons/img/diplomes/{{$unDiplome->getGenre()}}Profile.svg"
                          @endif
                          alt="Image de {{$unDiplome->getPrenom()}} {{$unDiplome->getNom()}}">
                     <h2 class="lesDiplomes__unDiplome__nom h2">{{$unDiplome->getPrenom()}} {{$unDiplome->getNom()}}</h2>

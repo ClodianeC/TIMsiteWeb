@@ -56,7 +56,13 @@
             @else
                 <a href="index.php?controleur=projet&action=fiche&idProjet={{$unProjet->getId()}}" class="lesProjets__unProjet pair">
             @endif
-                <img class="lesProjets__unProjet__img" src="liaisons/img/projets/principales/{{$unProjet->getDiplomeId()}}_{{$unProjet->getId()}}_01_300.png" alt="Image du projet {{$unProjet->getTitre()}}">
+                <img class="lesProjets__unProjet__img"
+                @if(is_file("liaisons/img/projets/principales/".$unProjet->getDiplomeId() . "_" . $unProjet->getId(). "_01_300.png"))
+                    src="liaisons/img/projets/principales/{{$unProjet->getDiplomeId()}}_{{$unProjet->getId()}}_01_300.png"
+                @else
+                    src="liaisons/img/projets/placeholders/projet{{rand(1, 4)}}.svg"
+                @endif
+                alt="Image du projet {{$unProjet->getTitre()}}">
                 <h2 class="lesProjets__unProjet__h2 h2">
                     {{substr($unProjet->getTitre(), 0, 34)}}
                     @if(strlen($unProjet->getTitre()) > 34)

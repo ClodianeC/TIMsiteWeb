@@ -13,9 +13,9 @@
             <img class="ficheDiplome__img"
             @if(is_file("liaisons/img/diplomes/".$leDiplome->getId()."_450.jpg"))
                 src="liaisons/img/diplomes/{{$leDiplome->getId()}}_450.jpg"
-            @else
-                src="liaisons/img/profile.jpg"
-            @endif
+                 @else
+                     src="liaisons/img/diplomes/{{$leDiplome->getGenre()}}Profile.svg"
+                 @endif
             alt="Image de {{$leDiplome->getPrenom()}} {{$leDiplome->getNom()}}">
             <div class="ficheDiplome__texte">
                 {!! str_replace('"', '', $leDiplome->getPresentation()) !!}
