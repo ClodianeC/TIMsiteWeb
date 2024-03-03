@@ -49,21 +49,25 @@ class Projet {
         }
 
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT COUNT(*) FROM projets';
+        $chaineSQL = 'SELECT COUNT(DISTINCT projets.id) FROM projets';
         if(count($filtresAnnee) !== 0 || count($filtresAxe) !== 0) {
             $chaineSQL = $chaineSQL . " INNER JOIN cours ON projets.cours_id = cours.id";
-            $chaineSQL = $chaineSQL . " INNER JOIN axe_cours ON cours.id = axes_cours.cours_id";
+            $chaineSQL = $chaineSQL . " INNER JOIN axes_cours ON cours.id = axes_cours.cours_id";
+            $chaineSQL = $chaineSQL . " WHERE";
         }
         if(count($filtresAnnee) !== 0){
-            $chaineSQL = $chaineSQL . " WHERE cours.annee in(".$desAnnees.")";
+            $chaineSQL = $chaineSQL . " cours.annee in(".$desAnnees.")";
+        }
+        if(count($filtresAnnee) !== 0 && count($filtresAxe) !== 0) {
+            $chaineSQL = $chaineSQL . " AND";
         }
         if(count($filtresAxe) !== 0){
-            $chaineSQL = $chaineSQL . " WHERE axes_cours.axe_id in(".$desAxes.")";
+            $chaineSQL = $chaineSQL . " axes_cours.axe_id in(".$desAxes.")";
         }
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->execute();
         $resultat = $requetePreparee->fetch();
-        return $resultat["COUNT(*)"];
+        return $resultat["COUNT(DISTINCT projets.id)"];
     }
     public static function trouverTout():array{
         // Définir la chaine SQL
@@ -131,17 +135,21 @@ class Projet {
         }
 
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT * FROM projets';
+        $chaineSQL = 'SELECT DISTINCT projets.id, projets.titre, projets.technologies, projets.description, projets.url, projets.diplome_id, projets.cours_id FROM projets';
 
         if(count($filtresAnnee) !== 0 || count($filtresAxe) !== 0) {
             $chaineSQL = $chaineSQL . " INNER JOIN cours ON projets.cours_id = cours.id";
-            $chaineSQL = $chaineSQL . " INNER JOIN axe_cours ON cours.id = axes_cours.cours_id";
+            $chaineSQL = $chaineSQL . " INNER JOIN axes_cours ON cours.id = axes_cours.cours_id";
+            $chaineSQL = $chaineSQL . " WHERE";
         }
         if(count($filtresAnnee) !== 0){
-            $chaineSQL = $chaineSQL . " WHERE cours.annee in(".$desAnnees.")";
+            $chaineSQL = $chaineSQL . " cours.annee in(".$desAnnees.")";
+        }
+        if(count($filtresAnnee) !== 0 && count($filtresAxe) !== 0) {
+            $chaineSQL = $chaineSQL . " AND";
         }
         if(count($filtresAxe) !== 0){
-            $chaineSQL = $chaineSQL . " WHERE axes_cours.axe_id in(".$desAxes.")";
+            $chaineSQL = $chaineSQL . " axes_cours.axe_id in(".$desAxes.")";
         }
         $chaineSQL = $chaineSQL . " LIMIT " . $occurence . ", " . $unNbParPage;
         // Préparer la requête (optimisation)

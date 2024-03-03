@@ -32,16 +32,13 @@ class ControleurProjet {
         // Append the requested resource location to the URL
         $urlPagination.= $_SERVER['REQUEST_URI'];
 
+        $urlPagination = explode('?', $urlPagination)[0];
+        $urlPagination = $urlPagination . "?controleur=projet&action=index";
+
         if (isset($_GET['page'])) {
             $page = (int) $_GET['page'];
         } else {
             $page = 0;
-        }
-
-        if (isset($_GET['filtres'])) {
-            $filtre = true;
-        } else {
-            $filtre = false;
         }
 
         if(isset($_POST["annee"])){
@@ -52,6 +49,9 @@ class ControleurProjet {
         }
         elseif(isset($_GET["annee"])) {
             $lesChoixAnnee = $_GET["annee"];
+            foreach ($lesChoixAnnee as $unChoixAnnee) {
+                $urlPagination .= "&annee[]=" . $unChoixAnnee;
+            }
         }
         else {
             $lesChoixAnnee = [];
@@ -65,6 +65,9 @@ class ControleurProjet {
         }
         elseif(isset($_GET["axeFormation"])) {
             $lesChoixAxeFormation = $_GET["axeFormation"];
+            foreach ($lesChoixAxeFormation as $unChoixAxeFormation) {
+                $urlPagination .= "&axeFormation[]=" . $unChoixAxeFormation;
+            }
         }
         else {
             $lesChoixAxeFormation = [];
