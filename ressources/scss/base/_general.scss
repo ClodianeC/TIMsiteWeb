@@ -26,6 +26,7 @@ main {
   height: 9.5rem;
   border-radius: 2rem;
   border: none;
+  text-decoration: none;
 
   &:hover,
   &:active {
@@ -45,6 +46,8 @@ main {
   border: none;
   outline: $rose solid 0.4rem;
   outline-offset: -0.3rem;
+  text-decoration: none;
+  line-height: 9.5rem;
 
   &:hover,
   &:active {

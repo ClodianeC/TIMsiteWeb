@@ -21,6 +21,10 @@
                                         @if(array_search($i, $_POST['annee']) !== false)
                                             checked
                                         @endif
+                                   @elseif(isset($_GET['annee']))
+                                        @if(array_search($i, $_GET['annee']) !== false)
+                                            checked
+                                        @endif
                                    @endif
                                    >
                             <label for="annee{{$i}}" class="filtresTri__section__liste__item__label">
@@ -50,6 +54,10 @@
                                     @if(array_search($unAxe->getId(), $_POST['axeFormation']) !== false)
                                         checked
                                     @endif
+                                @elseif(isset($_GET['axeFormation']))
+                                    @if(array_search($unAxe->getId(), $_GET['axeFormation']) !== false)
+                                        checked
+                                    @endif
                                 @endif
                             >
                             <label for="axe{{$unAxe->getId()}}" class="filtresTri__section__liste__item__label">{{$unAxe->getNom()}}<span class="filtresTri__section__liste__item__label__icone"></span></label>
@@ -58,6 +66,9 @@
                 </ul>
             </div>
             <button class="filtresTri__btnTriEtFiltre btnPrincipal" id="triEtFiltre">Appliquer les filtres</button>
+            @if(isset($_POST['axeFormation']) || isset($_POST['annee']) || isset($_GET['axeFormation']) || isset($_GET['annee']))
+                <a href="index.php?controleur=projet&action=index" class="filtresTri__btnTriEtFiltre btnSecondaire">Réinitialiser les filtres</a>
+            @endif
         </form>
     </div>
 

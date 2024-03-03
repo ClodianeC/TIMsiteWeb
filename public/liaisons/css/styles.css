@@ -574,6 +574,7 @@ main {
   height: 9.5rem;
   border-radius: 2rem;
   border: none;
+  text-decoration: none;
 }
 .btnPrincipal:hover, .btnPrincipal:active {
   background-color: #fffaf1;
@@ -592,6 +593,8 @@ main {
   border: none;
   outline: #e87c84 solid 0.4rem;
   outline-offset: -0.3rem;
+  text-decoration: none;
+  line-height: 9.5rem;
 }
 .btnSecondaire:hover, .btnSecondaire:active {
   background-color: #e87c84;
