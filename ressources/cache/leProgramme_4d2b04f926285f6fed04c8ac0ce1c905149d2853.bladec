@@ -102,7 +102,7 @@
  <div class="infoSuppProgramme">
  <h2 class="infoSuppProgramme__h2 h2">Pour avoir de l'information plus spécifique sur les cours</h2>
  <div class="infoSuppProgramme__boutons">
- <button class="btnPrincipal infoSuppProgramme__boutons__btnSiteCegep">Visite le site web du Cégep de Sainte-Foy</button>
+ <a href="https://www.csfoy.ca/programmes/tous-les-programmes/programmes-techniques/techniques-dintegration-multimedia-web-et-apps/" class="btnPrincipal infoSuppProgramme__boutons__btnSiteCegep">Visite le site web du Cégep de Sainte-Foy</a>
  <div class="infoSuppProgramme__boutons__ou"><span class="infoSuppProgramme__boutons__ou__texte">OU</span></div>
  <button class="btnSecondaire infoSuppProgramme__boutons__btnTelechargerGrille">Télécharge la grille du cours</button>
  </div>

@@ -7,6 +7,7 @@ use App\App;
 use App\Modeles\Axe;
 use App\Modeles\Diplome;
 use App\Modeles\Etape;
+use App\Modeles\MenuLien;
 use App\Modeles\Projet;
 use App\Modeles\Texte;
 
@@ -16,6 +17,7 @@ class ControleurProjet {
 
     public function index(): void {
         $infosFooter = [Texte::trouverParId(9), Texte::trouverParId(1), Texte::trouverParId(2), Texte::trouverParId(5), Texte::trouverParId(3), Texte::trouverParId(4)];
+        $lesLiensMenu = MenuLien::trouverTout();
 
         $nbParPage = 12;
         $lesAxes = Axe::trouverTout();
@@ -76,12 +78,13 @@ class ControleurProjet {
         $lesProjets = Projet::paginer($page, $nbParPage, $lesChoixAnnee, $lesChoixAxeFormation);
         $nbPages = ceil(Projet::compter($lesChoixAnnee, $lesChoixAxeFormation) / $nbParPage -1);
 
-        $tDonnees = array("infosFooter"=>$infosFooter,'lesProjets'=>$lesProjets, 'lesAxes'=>$lesAxes, 'noPage'=>$page, 'nbPagesTotal'=>$nbPages, 'urlPagination'=>$urlPagination);
+        $tDonnees = array("infosFooter"=>$infosFooter, 'lesLiens'=>$lesLiensMenu,'lesProjets'=>$lesProjets, 'lesAxes'=>$lesAxes, 'noPage'=>$page, 'nbPagesTotal'=>$nbPages, 'urlPagination'=>$urlPagination);
         echo App::getBlade()->run('projets.index',$tDonnees);
     }
 
     public function fiche():void {
         $infosFooter = [Texte::trouverParId(9), Texte::trouverParId(1), Texte::trouverParId(2), Texte::trouverParId(5), Texte::trouverParId(3), Texte::trouverParId(4)];
+        $lesLiensMenu = MenuLien::trouverTout();
 
         $id = (int) $_GET['idProjet'];
 
@@ -90,7 +93,7 @@ class ControleurProjet {
         $lesProjetsDuDiplome = Projet::trouverParDiplome($leProjet->getDiplomeId());
         $lesEtapes = Etape::trouverParProjet($leProjet->getId());
 
-        $tDonnees = array("infosFooter"=>$infosFooter, 'leProjet'=>$leProjet, 'leDiplome'=>$leDiplome,"lesProjets"=>$lesProjetsDuDiplome, 'lesEtapes'=>$lesEtapes);
+        $tDonnees = array("infosFooter"=>$infosFooter, 'lesLiens'=>$lesLiensMenu, 'leProjet'=>$leProjet, 'leDiplome'=>$leDiplome,"lesProjets"=>$lesProjetsDuDiplome, 'lesEtapes'=>$lesEtapes);
         echo App::getBlade()->run('projets.fiche',$tDonnees);
     }
 }

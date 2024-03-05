@@ -579,6 +579,8 @@ main {
   border-radius: 2rem;
   border: none;
   text-decoration: none;
+  text-align: center;
+  line-height: 9.5rem;
 }
 .btnPrincipal:hover, .btnPrincipal:active {
   background-color: #fffaf1;
@@ -737,6 +739,17 @@ main {
   position: relative;
   margin: auto 1rem auto auto;
 }
+.menu__liste__item__lien__rond.actif {
+  background-color: #febe98;
+}
+.menu__liste__item__lien__rond.actif__icone,
+.menu__liste__item__lien__rond.actif #diplomes,
+.menu__liste__item__lien__rond.actif #projets,
+.menu__liste__item__lien__rond.actif #programme,
+.menu__liste__item__lien__rond.actif #stages,
+.menu__liste__item__lien__rond.actif #joindre {
+  background-position-y: -20px;
+}
 .menu__liste__item__lien__rond__icone {
   background-image: url("../img/sprite.png");
   display: inline-block;
@@ -751,46 +764,39 @@ main {
   margin: 0;
   display: block;
 }
-.menu__liste__item__lien:active, .menu__liste__item__lien:hover {
-  text-decoration: underline;
-}
 .menu__liste__item__lien:active .menu__liste__item__lien__rond, .menu__liste__item__lien:hover .menu__liste__item__lien__rond {
   background-color: #febe98;
 }
-.menu__liste__item__lien:active #diplomes, .menu__liste__item__lien:hover #diplomes {
-  background-position: -60px 20px;
-}
-.menu__liste__item__lien:active #projets, .menu__liste__item__lien:hover #projets {
-  background-position: -80px 20px;
-}
-.menu__liste__item__lien:active #programme, .menu__liste__item__lien:hover #programme {
-  background-position: -120px 20px;
-}
-.menu__liste__item__lien:active #stages, .menu__liste__item__lien:hover #stages {
-  background-position: -140px 20px;
-}
-.menu__liste__item__lien:active #joindre, .menu__liste__item__lien:hover #joindre {
-  background-position: -160px 20px;
+.menu__liste__item__lien:active #diplomes,
+.menu__liste__item__lien:active #projets,
+.menu__liste__item__lien:active #programme,
+.menu__liste__item__lien:active #stages,
+.menu__liste__item__lien:active #joindre, .menu__liste__item__lien:hover #diplomes,
+.menu__liste__item__lien:hover #projets,
+.menu__liste__item__lien:hover #programme,
+.menu__liste__item__lien:hover #stages,
+.menu__liste__item__lien:hover #joindre {
+  background-position-y: -20px;
 }
 
 #diplomes {
-  background-position: -60px 0;
+  background-position-x: -60px;
 }
 
 #projets {
-  background-position: -80px 0;
+  background-position-x: -80px;
 }
 
 #programme {
-  background-position: -120px 0;
+  background-position-x: -120px;
 }
 
 #stages {
-  background-position: -140px 0;
+  background-position-x: -140px;
 }
 
 #joindre {
-  background-position: -160px 0;
+  background-position-x: -160px;
 }
 
 @media (min-width: 800px) {
@@ -832,41 +838,49 @@ main {
     height: 5rem;
     top: 0;
   }
+  .menu__liste__item__lien__rond.actif {
+    background-color: #febe98;
+  }
+  .menu__liste__item__lien__rond.actif__icone,
+  .menu__liste__item__lien__rond.actif #diplomes,
+  .menu__liste__item__lien__rond.actif #projets,
+  .menu__liste__item__lien__rond.actif #programme,
+  .menu__liste__item__lien__rond.actif #stages,
+  .menu__liste__item__lien__rond.actif #joindre {
+    background-position-y: -52px;
+  }
   .menu__liste__item__lien__rond__icone {
     width: 5rem;
     height: 5rem;
     background-size: 745px;
     position: static;
+    background-position-y: 0;
   }
-  .menu__liste__item__lien:active #diplomes, .menu__liste__item__lien:hover #diplomes {
-    background-position: -156px -52px;
-  }
-  .menu__liste__item__lien:active #projets, .menu__liste__item__lien:hover #projets {
-    background-position: -208px -52px;
-  }
-  .menu__liste__item__lien:active #programme, .menu__liste__item__lien:hover #programme {
-    background-position: -312.5px -52px;
-  }
-  .menu__liste__item__lien:active #stages, .menu__liste__item__lien:hover #stages {
-    background-position: -364px -52px;
-  }
-  .menu__liste__item__lien:active #joindre, .menu__liste__item__lien:hover #joindre {
-    background-position: -416px -52px;
+  .menu__liste__item__lien:active #diplomes,
+  .menu__liste__item__lien:active #projets,
+  .menu__liste__item__lien:active #programme,
+  .menu__liste__item__lien:active #stages,
+  .menu__liste__item__lien:active #joindre, .menu__liste__item__lien:hover #diplomes,
+  .menu__liste__item__lien:hover #projets,
+  .menu__liste__item__lien:hover #programme,
+  .menu__liste__item__lien:hover #stages,
+  .menu__liste__item__lien:hover #joindre {
+    background-position-y: -52px;
   }
   #diplomes {
-    background-position: -156px 0;
+    background-position-x: -156px;
   }
   #projets {
-    background-position: -208px 0;
+    background-position-x: -208px;
   }
   #programme {
-    background-position: -312.5px 0;
+    background-position-x: -312.5px;
   }
   #stages {
-    background-position: -364px 0;
+    background-position-x: -364px;
   }
   #joindre {
-    background-position: -416px 0;
+    background-position-x: -416px;
   }
 }
 /*Pied de page*/
