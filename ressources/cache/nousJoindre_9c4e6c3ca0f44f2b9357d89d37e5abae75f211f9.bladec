@@ -9,41 +9,49 @@
  <div class="selectionMoyen">
  <div class="selectionMoyen__section">
  <h2 class="selectionMoyen__section__h2 h2">Par Courriel</h2>
- <button class="selectionMoyen__section__btn active"><span class="selectionMoyen__section__btn__icone" id="courriel"></span></button>
+ <button class="selectionMoyen__section__btn active" id="btnCourriel"><span class="selectionMoyen__section__btn__icone" id="courriel"></span></button>
  </div>
 <?php /* Switch basée de W3School */ ?>
 <?php /* https://www.w3schools.com/howto/howto_css_switch.asp */ ?>
- <label class="switch">
- <input type="checkbox">
- <span class="slider round"></span>
- </label>
+<?php /*        <label class="switch">*/ ?>
+<?php /*            <input type="checkbox" id="laSwitch" checked>*/ ?>
+<?php /*            <span class="slider round" id="lePtitRond"></span>*/ ?>
+<?php /*        </label>*/ ?>
 
  <div class="selectionMoyen__section">
  <h2 class="selectionMoyen__section__h2 h2">Par Téléphone</h2>
- <button class="selectionMoyen__section__btn inactive"><span class="selectionMoyen__section__btn__icone" id="telephone"></span></button>
+ <button class="selectionMoyen__section__btn inactive" id="btnTelephone"><span class="selectionMoyen__section__btn__icone" id="telephone"></span></button>
  </div>
  </div>
 
+
+ <form class="formulaire courriel" id="sectionCourriel">
  <div class="fondFormulaire">
- <div class="formulaire courriel">
+ <div class="conteneurForm">
  <p class="formulaire__info">*Champs obligatoires</p>
- <div class="conteneurNomPrenom">
+ <div class="conteneurNomPrenom elementCourriel">
  <div>
- <label class="formulaire__label" for="prenom">Prénom*</label>
- <input type="text" id="prenom" name="prenom" class="formulaire__input moyen">
+ <label class="formulaire__label elementCourriel elementCourriel" for="prenom">Prénom*</label>
+ <input type="text" id="prenom" name="prenom" class="formulaire__input moyen elementCourriel">
  </div>
  <div>
- <label class="formulaire__label" for="nom">Nom*</label>
- <input type="text" id="nom" name="nom" class="formulaire__input moyen">
+ <label class="formulaire__label elementCourriel elementCourriel" for="nom">Nom*</label>
+ <input type="text" id="nom" name="nom" class="formulaire__input moyen elementCourriel">
  </div>
  </div>
- <label class="formulaire__label" for="courriel">Courriel*</label>
- <input type="text" id="courriel" name="courriel" class="formulaire__input large">
+ <label class="formulaire__label elementCourriel elementCourriel" for="courriel">Courriel*</label>
+ <input type="text" id="courriel" name="courriel" class="formulaire__input large elementCourriel">
  <ul class="formulaire__destinataires">
  <?php $__currentLoopData = $lesResponsables; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $unResponsable): $loop = $this->incrementLoopIndices();  ?>
  <li class="formulaire__destinataires__item">
- <input type="radio" class="formulaire__destinataires__item__input screen-reader-only" id="selection<?php echo \htmlentities($unResponsable->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?>" name="selectionResponsable">
+ <input type="radio" class="formulaire__destinataires__item__input screen-reader-only" id="selection<?php echo \htmlentities($unResponsable->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?>" name="selectionResponsable"
+ <?php if(isset($_GET['idResponsable'])): ?>
+ <?php if((int) $_GET['idResponsable'] === $unResponsable->getId()): ?>
+ checked
+ <?php endif; ?>
+ <?php endif; ?>
+ >
  <label for="selection<?php echo \htmlentities($unResponsable->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?>" class="formulaire__destinataires__item__label">
  <span class="conteneurFormPhotoTexte">
  <img class="formulaire__destinataires__item__label__img" src="liaisons/img/responsables/<?php echo \htmlentities($unResponsable->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_200.jpg" alt="image de profil de <?php echo \htmlentities($unResponsable->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($unResponsable->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?>">
@@ -57,14 +65,23 @@
  </li>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </ul>
- <label class="formulaire__label" for="sujet">Sujet*</label>
- <input type="text" id="sujet" name="sujet" class="formulaire__input large">
- <label class="formulaire__label" for="message">Message*</label>
- <input type="text" id="message" name="message" class="formulaire__input xLarge">
+ <div class="formulaire__sectionBen  elementCourriel" id="sectionBen">
+ <label class="formulaire__sectionBen__label" for="noTelephone">Numéro de téléphone* <span>ex: (123) 456-7890</span></label>
+ <input type="text" id="noTelephone" name="noTelephone" class="formulaire__sectionBen__input moyen">
+ <input type="checkbox" id="acceptationTelephone" name="acceptationTelephone" class="formulaire__sectionBen__checkbox">
+ <label class="formulaire__sectionBen__labelCheck" for="acceptationTelephone">J'autorise l'utilisation de mon numéro de téléphone avec le responsable «Étudiant d'un jour»*</label>
+ </div>
+ <label class="formulaire__label elementCourriel" for="sujet">Sujet*</label>
+ <input type="text" id="sujet" name="sujet" class="formulaire__input large elementCourriel">
+ <label class="formulaire__label elementCourriel" for="message">Message*</label>
+ <input type="text" id="message" name="message" class="formulaire__input xLarge elementCourriel">
  </div>
  </div>
  <button class="btnPrincipal active" id="envoyerCourriel">Envoyer un courriel</button>
- <button class="btnPrincipal inactive" id="appeler">Appeler</button>
+ <button class="btnPrincipal inactive" id="appeler" aria-hidden="true">Appeler</button>
+ </form>
+ 
+ <script src="liaisons/script/formulaire.js"></script>
 <?php $this->stopSection(); ?>
 
 

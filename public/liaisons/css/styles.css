@@ -343,12 +343,16 @@ template {
 */
 /** Polices de caractères **/
 @font-face {
-  font-family: "LT Binary Neue Round", sans-serif;
-  src: url("../fonts/CaviarDreams.ttf") format("truetype");
+  font-family: "caviar_dreamsregular";
+  src: url("../fonts/caviardreams-webfont.woff2") format("woff2"), url("../fonts/caviardreams-webfont.woff") format("woff");
 }
 @font-face {
-  font-family: "Caviar Dreams", sans-serif;
-  src: url("../fonts/LTBinaryNeueRound-Regular.ttf") format("truetype");
+  font-family: "caviar_dreamsbold";
+  src: url("../fonts/caviardreams_bold-webfont.woff2") format("woff2"), url("../fonts/caviardreams_bold-webfont.woff") format("woff");
+}
+@font-face {
+  font-family: "lt_binary_neue_roundregular";
+  src: url("../fonts/ltbinaryneueround-regular-webfont.woff2") format("woff2"), url("../fonts/ltbinaryneueround-regular-webfont.woff") format("woff");
 }
 /** Palette de couleurs **/
 /* Couleurs de base */
@@ -407,13 +411,13 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   font-size: 18px; /* 18px pour toutes les largeurs d'écran */
   font-size: 1.8rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
 }
 .accroche {
-  font-family: "Caviar Dreams", sans-serif;
+  font-family: "caviar_dreamsregular", sans-serif;
   font-size: 30px;
   font-size: 3rem;
   line-height: 1.375;
@@ -428,7 +432,7 @@ h3,
 .h3,
 h4,
 .h4 {
-  font-family: "Caviar Dreams", sans-serif;
+  font-family: "caviar_dreamsregular";
   font-weight: normal;
 }
 
@@ -492,7 +496,7 @@ h4--desktop,
 }
 
 .texte {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.375;
@@ -568,7 +572,7 @@ main {
 .btnPrincipal {
   background-color: #e87c84;
   color: #000;
-  font-family: "Caviar Dreams", sans-serif;
+  font-family: "caviar_dreamsregular", sans-serif;
   font-size: 2rem;
   width: 42rem;
   height: 9.5rem;
@@ -585,7 +589,7 @@ main {
 .btnSecondaire {
   background-color: #fffaf1;
   color: #000;
-  font-family: "Caviar Dreams", sans-serif;
+  font-family: "caviar_dreamsregular", sans-serif;
   font-size: 2rem;
   width: 42rem;
   height: 9.5rem;
@@ -602,6 +606,7 @@ main {
   outline-offset: -0.3rem;
 }
 
+/*Entête*/
 .enteteFondRectangle {
   background-color: #fffaf1;
   background-image: url("../img/texture/memphis-mini.webp");
@@ -661,7 +666,7 @@ main {
 .titre {
   position: relative;
   z-index: 2;
-  font-family: "LT Binary Neue Round", sans-serif;
+  font-family: "lt_binary_neue_roundregular", sans-serif;
   font-size: 4vw;
   width: 40vw;
   margin-left: 1rem;
@@ -681,7 +686,7 @@ main {
 .sous-titre {
   position: relative;
   z-index: 2;
-  font-family: "Caviar Dreams", sans-serif;
+  font-family: "caviar_dreamsregular", sans-serif;
   font-size: 3vw;
   top: 20vw;
   margin-left: 1rem;
@@ -1050,7 +1055,7 @@ footer {
   display: block;
   text-align: center;
   font-size: 4.5rem;
-  font-family: "Caviar Dreams", sans-serif;
+  font-family: "caviar_dreamsregular", sans-serif;
   font-weight: bold;
   position: relative;
   bottom: -35%;
@@ -1220,7 +1225,7 @@ footer {
   transition: 0.4s;
 }
 
-.slider:before {
+.slider::before {
   position: absolute;
   content: "";
   height: 3.1rem;
@@ -1240,7 +1245,7 @@ input:focus + .slider {
   box-shadow: 0 0 1px #e87c84;
 }
 
-input:checked + .slider:before {
+input:checked + .slider::before {
   -webkit-transform: translateX(5.1rem);
   -ms-transform: translateX(5.1rem);
   transform: translateX(5.1rem);
@@ -1316,12 +1321,13 @@ input:checked + .slider:before {
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-.formulaire {
+.conteneurForm {
   width: 90%;
   max-width: 1000px;
   margin: auto;
   padding: 1.5rem;
 }
+
 .formulaire__info {
   font-weight: bold;
 }
@@ -1333,6 +1339,7 @@ input:checked + .slider:before {
   border: none;
   border-radius: 1.5rem;
   height: 7rem;
+  padding: 0 3rem;
   margin-bottom: 3rem;
 }
 .formulaire__destinataires {
@@ -1346,7 +1353,8 @@ input:checked + .slider:before {
   list-style: none;
   border-radius: 2rem;
   display: block;
-  width: fit-content;
+  width: 40%;
+  min-width: 30rem;
   flex-basis: 45%;
   margin: 2rem 0;
 }
@@ -1406,19 +1414,45 @@ input:checked + .slider:before {
   outline: #d0e3cc solid 0.4rem;
   outline-offset: -0.4rem;
 }
+.formulaire__sectionBen__label {
+  display: block;
+}
+.formulaire__sectionBen__input {
+  background-color: #fffaf1;
+  border: none;
+  border-radius: 1.5rem;
+  height: 7rem;
+  margin-bottom: 3rem;
+  display: block;
+}
+.formulaire__sectionBen__labelCheck {
+  margin-left: 1.5rem;
+}
+.formulaire__sectionBen__checkbox {
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 1rem;
+  accent-color: #d0e3cc;
+}
 
 .conteneurNomPrenom {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .moyen {
-  width: 42rem;
+  width: 38rem;
 }
 
 .large {
-  width: 51rem;
+  width: 48rem;
 }
 
 input.xLarge {
@@ -1445,6 +1479,21 @@ input.xLarge {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.formulaire.cache {
+  display: none;
+  visibility: hidden;
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+}
+
+.troisiemeReliqueDeLaMort {
+  display: none;
+  visibility: hidden;
 }
 
 /* Index de diplômés */
@@ -1725,7 +1774,7 @@ input.xLarge {
   background-color: #fffaf1;
   border: #e87c84 solid 0.4rem;
   border-radius: 5rem;
-  font-family: "Caviar Dreams", sans-serif;
+  font-family: "caviar_dreamsregular", sans-serif;
   font-size: 2.2rem;
   line-height: 5rem;
   text-align: center;

@@ -9,8 +9,10 @@
     <p class="accroche">Page {{$noPage + 1}}</p>
 
     <div class="fondFiltresTri">
-        <form class="filtresTri" action="index.php?controleur=projet&action=index" method="POST">
+        <form class="filtresTri" action="index.php" method="GET">
             <h2 class="filtresTri__h2 h2">Filtrer les projets:</h2>
+            <input type="hidden" name="controleur" value="projet" aria-hidden="true"></input>
+            <input type="hidden" name="action" value="index" aria-hidden="true"></input>
             <div class="filtresTri__section">
                 <h3 class="filtresTri__section__h3 h3">Par année:</h3>
                 <ul class="filtresTri__section__liste">
@@ -140,6 +142,5 @@
         >Dernier</a>
     </div>
 
-    <script src="liaisons/script/filtresProjets.js"></script>
 
 @endsection

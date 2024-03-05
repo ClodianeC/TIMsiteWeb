@@ -24,7 +24,7 @@
   -webkit-transition: .4s;
   transition: .4s;
 }
-.slider:before {
+.slider::before {
   position: absolute;
   content: "";
   height: 3.1rem;
@@ -42,7 +42,7 @@ input:focus + .slider {
   box-shadow: 0 0 1px $rose;
 }
 
-input:checked + .slider:before {
+input:checked + .slider::before {
   -webkit-transform: translateX(5.1rem);
   -ms-transform: translateX(5.1rem);
   transform: translateX(5.1rem);
@@ -119,13 +119,14 @@ input:checked + .slider:before {
   width: 100%;
   margin: 5rem auto;
   box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
-
 }
-.formulaire {
+.conteneurForm {
   width: 90%;
   max-width: 1000px;
   margin: auto;
   padding: 1.5rem;
+}
+.formulaire {
 
   &__info {
     font-weight: bold;
@@ -139,6 +140,7 @@ input:checked + .slider:before {
     border: none;
     border-radius: 1.5rem;
     height: 7rem;
+    padding: 0 3rem;
     margin-bottom: 3rem;
   }
   &__destinataires {
@@ -152,12 +154,13 @@ input:checked + .slider:before {
       list-style: none;
       border-radius: 2rem;
       display: block;
-      width: fit-content;
+      width: 40%;
+      min-width: 30rem;
       flex-basis: 45%;
       margin: 2rem 0;
 
       &__input {
-        color: #e87c84;
+        color: $rose;
 
         &:hover,
         &:focus {
@@ -225,17 +228,46 @@ input:checked + .slider:before {
 
     }
   }
+  &__sectionBen {
+
+    &__label {
+      display: block;
+    }
+    &__input {
+      background-color: $blancCasse;
+      border: none;
+      border-radius: 1.5rem;
+      height: 7rem;
+      margin-bottom: 3rem;
+      display: block;
+    }
+    &__labelCheck {
+      margin-left: 1.5rem;
+    }
+    &__checkbox {
+      margin-bottom: 3rem;
+      margin-left: 1rem;
+      -ms-transform: scale(2); /* IE */
+      -moz-transform: scale(2); /* FF */
+      -webkit-transform: scale(2); /* Safari and Chrome */
+      -o-transform: scale(2); /* Opera */
+      transform: scale(2);
+      padding: 1rem;
+      accent-color: $vert;
+    }
+  }
 }
 .conteneurNomPrenom {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
 }
 .moyen {
-  width: 42rem;
+  width: 38rem;
 }
 .large {
-  width: 51rem;
+  width: 48rem;
 }
 input.xLarge {
   width: 85rem;
@@ -264,4 +296,18 @@ input.xLarge {
 }
 .conteneurFormTexte {
   //flex-basis: 30%;
+}
+
+.formulaire.cache {
+  display: none;
+  visibility: hidden;
+}
+
+.invisible {
+  display: none;
+  visibility: hidden;
+}
+.troisiemeReliqueDeLaMort {
+  display: none;
+  visibility: hidden;
 }

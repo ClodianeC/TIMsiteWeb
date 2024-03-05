@@ -27,7 +27,7 @@ class Diplome {
 
     public static function trouverTout():array{
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT * FROM diplomes';
+        $chaineSQL = 'SELECT * FROM diplomes ORDER BY RAND()';
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération

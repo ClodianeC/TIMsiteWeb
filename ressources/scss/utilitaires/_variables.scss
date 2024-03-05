@@ -8,16 +8,23 @@
 /** Polices de caractères **/
 
 @font-face {
-  font-family: 'LT Binary Neue Round', sans-serif;
-  src: 	url('../fonts/CaviarDreams.ttf') format('truetype');
+  font-family: 'caviar_dreamsregular';
+  src: url('../fonts/caviardreams-webfont.woff2') format('woff2'),
+  url('../fonts/caviardreams-webfont.woff') format('woff');
 }
 @font-face {
-  font-family: 'Caviar Dreams', sans-serif;
-  src: 	url('../fonts/LTBinaryNeueRound-Regular.ttf') format('truetype');
+  font-family: 'caviar_dreamsbold';
+  src: url('../fonts/caviardreams_bold-webfont.woff2') format('woff2'),
+  url('../fonts/caviardreams_bold-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'lt_binary_neue_roundregular';
+  src: url('../fonts/ltbinaryneueround-regular-webfont.woff2') format('woff2'),
+  url('../fonts/ltbinaryneueround-regular-webfont.woff') format('woff');
 }
 
-$fonteTitre : 'LT Binary Neue Round', sans-serif;
-$fonteNiveauDeTitre : 'Caviar Dreams', sans-serif;
+$fonteTitre : 'lt_binary_neue_roundregular';
+$fonteNiveauDeTitre : 'caviar_dreamsregular';
 $fonteTexteCourant : Arial, sans-serif;
 
 /** Palette de couleurs **/

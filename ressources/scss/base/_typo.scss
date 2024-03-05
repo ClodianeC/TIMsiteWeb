@@ -2,6 +2,22 @@
 * @author Clodiane Charette clodianecharette@hotmail.com
 */
 
+//@font-face {
+//  font-family: 'caviar_dreamsregular';
+//  src: url('../fonts/caviardreams-webfont.woff2') format('woff2'),
+//  url('../fonts/caviardreams-webfont.woff') format('woff');
+//}
+//@font-face {
+//  font-family: 'caviar_dreamsbold';
+//  src: url('../fonts/caviardreams_bold-webfont.woff2') format('woff2'),
+//  url('../fonts/caviardreams_bold-webfont.woff') format('woff');
+//}
+//@font-face {
+//  font-family: 'lt_binary_neue_roundregular';
+//  src: url('../fonts/ltbinaryneueround-regular-webfont.woff2') format('woff2'),
+//  url('../fonts/ltbinaryneueround-regular-webfont.woff') format('woff');
+//}
+
 /**** Typographie responsive ****/
 
 html {
@@ -9,7 +25,7 @@ html {
 }
 
 body {
-  font-family: $fonteTexteCourant;
+  font-family: Arial;
   font-size: 18px; /* 18px pour toutes les largeurs d'écran */
   font-size: 1.8rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
@@ -18,7 +34,7 @@ body {
 }
 
 .accroche {
-  font-family: "Caviar Dreams", sans-serif;
+  font-family: "caviar_dreamsregular", sans-serif;
   font-size: 30px;
   font-size: 3rem;
   line-height: 1.375;
@@ -33,7 +49,7 @@ h3,
 .h3,
 h4,
 .h4 {
-  font-family: $fonteNiveauDeTitre;
+  font-family: "caviar_dreamsregular";
   font-weight: normal;
 }
 
@@ -91,7 +107,7 @@ h4,
 }
 
 .texte {
-  font-family: $fonteTexteCourant;
+  font-family: Arial;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.375;

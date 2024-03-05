@@ -112,7 +112,7 @@
             <h2 class="etudiantDunJour__h2 h2">Étudiante et étudiant d'un jour</h2>
             <div class="etudiantDunJour__infos">
                 <p class="etudiantDunJour__infos__texte">Tu veux en apprendre plus sur le programme? Tu veux assister à un ou plusieurs cours? Viens passer une journée avec nous, en Techniques d'intégration multimédia!</p>
-                <p class="etudiantDunJour__infos__contact">Contacter <a class="etudiantDunJour__infos__contact__benoitF hyperlien" href="#">Benoît Frigon</a> pour en savoir plus.</p>
+                <p class="etudiantDunJour__infos__contact">Contacter <a class="etudiantDunJour__infos__contact__benoitF hyperlien" href="index.php?controleur=site&action=nousJoindre&idResponsable=4">Benoît Frigon</a> pour en savoir plus.</p>
             </div>
         </div>
     </div>

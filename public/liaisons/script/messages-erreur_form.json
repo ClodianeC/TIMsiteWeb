@@ -1,0 +1,62 @@
+{
+  "nom": {
+    "label": "Votre prénom et nom",
+    "erreurs": {
+      "vide": "Veuillez entrer votre prénom et nom.",
+      "motif": "Votre prénom ou votre nom comporte des caractères non pris en charge."
+    }
+  },
+  "courriel": {
+    "label": "Votre courriel",
+    "erreurs": {
+      "vide": "Veuillez entrer votre courriel.",
+      "motif": "Veuillez entrer un courriel valide."
+    }
+  },
+  "destinataire": {
+    "label": "Destinataire",
+    "erreurs": {
+      "vide": "Sélectionnez un ou une destinataire."
+    }
+  },
+  "sujet": {
+    "label": "Sujet du message",
+    "erreurs": {
+      "vide": "Veuillez entrer le sujet du message.",
+      "motif": "Le sujet du message comporte des caractères non pris en charge."
+    }
+  },
+  "message": {
+    "label": "Votre message",
+    "erreurs": {
+      "vide": "Veuillez entrer un message.",
+      "motif": "Votre message comporte des caractères non pris en charge."
+    }
+  },
+  "humain": {
+    "erreurs": {
+      "vide": "Veuillez cocher la case.",
+      "motif": "Votre réponse n'est pas adéquate! Veuillez recommencer."
+    }
+  },
+  "consentement": {
+	"label": "J'autorise l'utilisation de mon numéro de téléphone avec le responsable «Étudiant d'un jour». ",
+    "erreurs": {
+      "vide": "Veuillez cocher la case pour consentir au partage de votre numéro de téléphone avec le responsable « Étudiant d'un jour. »"
+    }
+  },
+  "telephone": {
+    "label": "Téléphone",
+    "erreurs": {
+      "vide": "Veuillez entrer votre numéro de téléphone (format:123 456-7890).",
+      "motif": "Veuillez entrer un numéro de téléphone dans un format valide: 123 456-7890."
+    }
+  },
+  "retroactions": {
+    "courriel": {
+      "completer": "Veuillez compléter le formulaire.",
+      "envoyer": "Le courriel a été envoyé. Merci pour votre message!",
+      "avorter": "L'envoi du courriel a échoué."
+    }
+  }
+}
