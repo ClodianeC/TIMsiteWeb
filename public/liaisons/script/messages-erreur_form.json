@@ -1,12 +1,22 @@
 {
-  "nom": {
-    "label": "Votre prénom et nom",
+  "prenom": {
+    "regex":"#^[a-zA-ZÀ-ÿ -]+$#",
+    "label": "Votre prénom",
     "erreurs": {
-      "vide": "Veuillez entrer votre prénom et nom.",
-      "motif": "Votre prénom ou votre nom comporte des caractères non pris en charge."
+      "vide": "Veuillez entrer votre prénom.",
+      "motif": "Votre prénom comporte des caractères non pris en charge."
+    }
+  },
+  "nom": {
+    "regex": "#^[a-zA-ZÀ-ÿ' -]+$#",
+    "label": "Votre nom",
+    "erreurs": {
+      "vide": "Veuillez entrer nom.",
+      "motif": "Votre nom comporte des caractères non pris en charge."
     }
   },
   "courriel": {
+    "regex": "#^[a-zA-Z0-9][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[@][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[.][a-zA-Z]{2,}$#i",
     "label": "Votre courriel",
     "erreurs": {
       "vide": "Veuillez entrer votre courriel.",
@@ -14,12 +24,14 @@
     }
   },
   "destinataire": {
+    "regex": "",
     "label": "Destinataire",
     "erreurs": {
       "vide": "Sélectionnez un ou une destinataire."
     }
   },
   "sujet": {
+    "regex": "#^[\\p{L}\\d\\s.,\\-_()]{1,100}$#",
     "label": "Sujet du message",
     "erreurs": {
       "vide": "Veuillez entrer le sujet du message.",
@@ -27,6 +39,7 @@
     }
   },
   "message": {
+    "regex": "#^[\\p{L}\\d\\s.,\\-_()!?;:'\"/]{1,1000}$#",
     "label": "Votre message",
     "erreurs": {
       "vide": "Veuillez entrer un message.",
@@ -34,18 +47,21 @@
     }
   },
   "humain": {
+    "regex": "",
     "erreurs": {
       "vide": "Veuillez cocher la case.",
       "motif": "Votre réponse n'est pas adéquate! Veuillez recommencer."
     }
   },
   "consentement": {
+    "regex": "",
 	"label": "J'autorise l'utilisation de mon numéro de téléphone avec le responsable «Étudiant d'un jour». ",
     "erreurs": {
       "vide": "Veuillez cocher la case pour consentir au partage de votre numéro de téléphone avec le responsable « Étudiant d'un jour. »"
     }
   },
   "telephone": {
+    "regex": "#^(\\(\\d{3}\\) \\d{3}-\\d{4}|\\d{3}-\\d{3}-\\d{4})|(\\+?33[ -]?(\\d{1,2}[ -]?){4}\\d{2})$#",
     "label": "Téléphone",
     "erreurs": {
       "vide": "Veuillez entrer votre numéro de téléphone (format:123 456-7890).",

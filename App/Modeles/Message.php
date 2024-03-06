@@ -53,6 +53,24 @@ class Message {
 
         return $message;
     }
+    public function inserer():void {
+        $pdo = App::getPDO();
+        // Définir la chaine SQL
+        $chaineSQL = "INSERT INTO messages (prenom_nom, courriel, telephone, consentement, sujet, contenu, dateheure_creation, responsable_id) VALUES (:prenomNom, :courriel, :telephone, :consentement, :sujet, :contenu, :dateHeure, :idResponsable)";
+        // Préparer la requête (optimisation)
+        $requetePreparee = $pdo->prepare($chaineSQL);
+        // BindParam
+        $requetePreparee->bindParam('prenomNom', $this->prenom_nom, PDO::PARAM_STR);
+        $requetePreparee->bindParam('courriel', $this->courriel, PDO::PARAM_STR);
+        $requetePreparee->bindParam('telephone', $this->telephone, PDO::PARAM_STR);
+        $requetePreparee->bindParam('consentement', $this->consentement, PDO::PARAM_STR);
+        $requetePreparee->bindParam('sujet', $this->sujet, PDO::PARAM_STR);
+        $requetePreparee->bindParam('contenu', $this->contenu, PDO::PARAM_STR);
+        $requetePreparee->bindParam('dateHeure', $this->dateheure_creation, PDO::PARAM_STR);
+        $requetePreparee->bindParam('idResponsable', $this->responsable_id, PDO::PARAM_STR);
+        // Exécuter la requête
+        $requetePreparee->execute();
+    }
 
     public function getId():int{
         return $this->id;

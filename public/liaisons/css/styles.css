@@ -1283,46 +1283,33 @@ input:checked + .slider::before {
   max-width: 750px;
   margin: 5rem auto;
 }
-.selectionMoyen__section {
-  text-align: center;
-  flex-basis: 35%;
+.selectionMoyen__input {
+  display: none;
 }
-.selectionMoyen__section__h2 {
-  margin-top: 0;
-}
-.selectionMoyen__section__btn {
-  width: 12rem;
-  aspect-ratio: 1;
-  border-radius: 12rem;
-  border: none;
-  text-align: center;
-  margin: auto;
-}
-.selectionMoyen__section__btn.active {
-  background-color: #d0e3cc;
-}
-.selectionMoyen__section__btn.active #courriel {
-  background-position: -260px -52px;
-}
-.selectionMoyen__section__btn.active #telephone {
-  background-position: -468px -52px;
-}
-.selectionMoyen__section__btn.inactive {
+.selectionMoyen__input:hover + label .selectionMoyen__label__icone, .selectionMoyen__input:focus + label .selectionMoyen__label__icone, .selectionMoyen__input:checked + label .selectionMoyen__label__icone {
   background-color: #7d7d7d;
+  border-radius: 50%;
+  outline: #7d7d7d solid 0.2rem;
+  outline-offset: -0.2rem;
 }
-.selectionMoyen__section__btn.inactive #courriel {
-  background-position: -260px 0;
+.selectionMoyen__input:hover + label .selectionMoyen__label__icone#iconeParCourriel, .selectionMoyen__input:hover + label .selectionMoyen__label__icone#iconeParTel, .selectionMoyen__input:focus + label .selectionMoyen__label__icone#iconeParCourriel, .selectionMoyen__input:focus + label .selectionMoyen__label__icone#iconeParTel, .selectionMoyen__input:checked + label .selectionMoyen__label__icone#iconeParCourriel, .selectionMoyen__input:checked + label .selectionMoyen__label__icone#iconeParTel {
+  background-position-y: -104px;
 }
-.selectionMoyen__section__btn.inactive #telephone {
-  background-position: -468px 0;
-}
-.selectionMoyen__section__btn__icone {
+.selectionMoyen__label__icone {
+  margin: 1rem auto;
   display: block;
-  width: 5rem;
-  height: 5rem;
-  background-image: url("../img/sprite.png");
-  background-repeat: no-repeat;
-  margin: auto;
+  width: 10rem;
+  height: 10rem;
+  background-image: url("../img/sprite.svg");
+  background-size: 1694px;
+}
+.selectionMoyen__label__icone#iconeParCourriel {
+  background-position-y: 0;
+  background-position-x: -522px;
+}
+.selectionMoyen__label__icone#iconeParTel {
+  background-position-y: 0;
+  background-position-x: -1143px;
 }
 
 .fondFormulaire {
@@ -1441,9 +1428,9 @@ input:checked + .slider::before {
 }
 .formulaire__sectionBen__labelCheck {
   margin-left: 1.5rem;
+  margin-bottom: 3rem;
 }
 .formulaire__sectionBen__checkbox {
-  margin-bottom: 3rem;
   margin-left: 1rem;
   -ms-transform: scale(2); /* IE */
   -moz-transform: scale(2); /* FF */
@@ -1508,6 +1495,10 @@ input.xLarge {
 .troisiemeReliqueDeLaMort {
   display: none;
   visibility: hidden;
+}
+
+.erreur {
+  border: #e87c84 solid 0.4rem;
 }
 
 /* Index de diplômés */
@@ -1589,12 +1580,45 @@ input.xLarge {
   border-radius: 20rem;
   border: #fffaf1 solid 0.4rem;
   outline: #d0e3cc solid 0.4rem;
+  margin: auto;
+}
+.ficheDiplome__sectionContact {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.ficheDiplome__sectionContact__h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  flex-basis: 100%;
+}
+.ficheDiplome__sectionContact__lien__icone {
+  display: block;
+  background-image: url("../img/sprite.svg");
+  height: 5rem;
+  width: 5rem;
+}
+.ficheDiplome__sectionContact__lien__icone#contactLinkedin {
+  background-position-x: -104px;
+  background-position-y: 0;
+}
+.ficheDiplome__sectionContact__lien__icone#contactCourriel {
+  background-position-x: -313px;
+  background-position-y: 0;
+}
+.ficheDiplome__sectionContact__lien__icone#contactSiteWeb {
+  background-position-x: -365.25px;
+  background-position-y: 0;
+}
+.ficheDiplome__sectionContact__lien:hover .ficheDiplome__sectionContact__lien__icone#contactLinkedin, .ficheDiplome__sectionContact__lien:hover .ficheDiplome__sectionContact__lien__icone#contactCourriel, .ficheDiplome__sectionContact__lien:hover .ficheDiplome__sectionContact__lien__icone#contactSiteWeb, .ficheDiplome__sectionContact__lien:active .ficheDiplome__sectionContact__lien__icone#contactLinkedin, .ficheDiplome__sectionContact__lien:active .ficheDiplome__sectionContact__lien__icone#contactCourriel, .ficheDiplome__sectionContact__lien:active .ficheDiplome__sectionContact__lien__icone#contactSiteWeb {
+  background-position-y: -52px;
 }
 .ficheDiplome__texte {
   display: block;
-  width: 70%;
   margin-right: 0;
   margin-left: 3rem;
+  width: 70%;
 }
 
 .niveauInteret {

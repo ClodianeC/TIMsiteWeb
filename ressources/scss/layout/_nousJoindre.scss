@@ -66,46 +66,46 @@ input:checked + .slider::before {
   max-width: 750px;
   margin: 5rem auto;
 
-  &__section {
-    text-align: center;
-    flex-basis: 35%;
+  &__input {
+    display: none;
+
+    &:hover+label,
+    &:focus+label,
+    &:checked+label {
+
+      .selectionMoyen__label__icone {
+        background-color: $gris;
+        border-radius: 50%;
+        outline: $gris solid 0.2rem;
+        outline-offset: -0.2rem;
+
+        &#iconeParCourriel,
+        &#iconeParTel {
+          background-position-y: -104px;
+        }
+      }
+    }
+  }
+  &__label {
 
     &__h2 {
-      margin-top: 0;
-    }
-    &__btn {
-      width: 12rem;
-      aspect-ratio: 1;
-      border-radius: 12rem;
-      border: none;
-      text-align: center;
-      margin: auto;
 
-      &.active {
-        background-color: $vert;
-        #courriel {
-          background-position: -260px -52px;
-        }
-        #telephone {
-          background-position: -468px -52px;
-        }
+    }
+    &__icone {
+      margin: 1rem auto;
+      display: block;
+      width: 10rem;
+      height: 10rem;
+      background-image: url("../img/sprite.svg");
+      background-size: 1694px;
+
+      &#iconeParCourriel {
+        background-position-y: 0;
+        background-position-x: -522px;
       }
-      &.inactive {
-        background-color: $gris;
-        #courriel {
-          background-position: -260px 0;
-        }
-        #telephone {
-          background-position: -468px 0;
-        }
-      }
-      &__icone {
-        display: block;
-        width: 5rem;
-        height: 5rem;
-        background-image: url("../img/sprite.png");
-        background-repeat: no-repeat;
-        margin: auto;
+      &#iconeParTel {
+        background-position-y: 0;
+        background-position-x: -1143px;
       }
     }
   }
@@ -243,9 +243,9 @@ input:checked + .slider::before {
     }
     &__labelCheck {
       margin-left: 1.5rem;
+      margin-bottom: 3rem;
     }
     &__checkbox {
-      margin-bottom: 3rem;
       margin-left: 1rem;
       -ms-transform: scale(2); /* IE */
       -moz-transform: scale(2); /* FF */
@@ -310,4 +310,8 @@ input.xLarge {
 .troisiemeReliqueDeLaMort {
   display: none;
   visibility: hidden;
+}
+
+.erreur {
+  border: $rose solid 0.4rem;
 }

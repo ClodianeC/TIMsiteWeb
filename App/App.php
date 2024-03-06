@@ -4,6 +4,7 @@ namespace App;
 
 
 use App\Controleurs\ControleurDiplome;
+use App\Controleurs\ControleurNousJoindre;
 use App\Controleurs\ControleurProjet;
 use App\Controleurs\ControleurSite;
 use \PDO;
@@ -17,7 +18,7 @@ class App
 {
     private static ?PDO $refPdo = null;
     private static ?BladeOne $refBlade = null;
-
+    private static string $idSession = "";
 
     public function __construct()
     {
@@ -25,8 +26,11 @@ class App
         error_reporting(E_ALL | E_STRICT);
         date_default_timezone_set('America/Montreal');
 
+        $this->demarrerSession();
         // Routage de la requête URL
         $this->routerRequete();
+
+
     }
 
     public static function getPDO():PDO
@@ -75,6 +79,16 @@ class App
         return App::$refBlade;
     }
 
+    public static function demarrerSession():void {
+        if(session_id() === "") {
+            session_start();
+        }
+
+        $idSession = session_id(); //utiliser la méthode session_id pour récupérer l’id de l’utilisateur.
+
+//        echo $idSession ; // Affiche l’identifiant de la session courante
+        App::$idSession = $idSession;
+    }
 
     public function routerRequete():void
     {
@@ -105,9 +119,9 @@ class App
                 case 'leProgramme':
                     $objControleur->leProgramme();
                     break;
-                case 'nousJoindre':
-                    $objControleur->nousJoindre();
-                    break;
+//                case 'nousJoindre':
+//                    $objControleur->nousJoindre();
+//                    break;
                 case 'lesStages':
                     $objControleur->lesStages();
                     break;
@@ -137,6 +151,21 @@ class App
                     break;
                 case 'fiche':
                     $objControleur->fiche();
+                    break;
+                default:
+                    echo 'Erreur 404 - Action invalide';
+            }
+        }  else if ($urlControleur === 'joindre') {
+            $objControleur = new ControleurNousJoindre();
+            switch ($urlAction) {
+                case 'creer':
+                    $objControleur->creer();
+                    break;
+                case 'inserer':
+                    $objControleur->inserer();
+                    break;
+                case 'confirmer':
+                    $objControleur->confirmer();
                     break;
                 default:
                     echo 'Erreur 404 - Action invalide';

@@ -10,16 +10,28 @@
 
     <div class="fondFicheDiplome">
         <div class="ficheDiplome">
-            <img class="ficheDiplome__img"
-            @if(is_file("liaisons/img/diplomes/".$leDiplome->getId()."_450.jpg"))
-                src="liaisons/img/diplomes/{{$leDiplome->getId()}}_450.jpg"
-                 @else
-                     src="liaisons/img/diplomes/{{$leDiplome->getGenre()}}Profile.svg"
-                 @endif
-            alt="Image de {{$leDiplome->getPrenom()}} {{$leDiplome->getNom()}}">
-            <div class="ficheDiplome__texte">
-                {!! str_replace('"', '', $leDiplome->getPresentation()) !!}
+            <div class="sectionGauche">
+                <img class="ficheDiplome__img"
+                     @if(is_file("liaisons/img/diplomes/".$leDiplome->getId()."_450.jpg"))
+                         src="liaisons/img/diplomes/{{$leDiplome->getId()}}_450.jpg"
+                     @else
+                         src="liaisons/img/diplomes/{{$leDiplome->getGenre()}}Profile.svg"
+                     @endif
+                     alt="Image de {{$leDiplome->getPrenom()}} {{$leDiplome->getNom()}}">
+                    <div class="ficheDiplome__sectionContact">
+                        <h2 class="ficheDiplome__sectionContact__h2">Contactez-moi</h2>
+                        @if($leDiplome->getLinkedin() !== '')
+                            <a href="{{$leDiplome->getLinkedin()}}" class="ficheDiplome__sectionContact__lien"><span class="ficheDiplome__sectionContact__lien__icone" id="contactLinkedin"></span></a>
+                        @endif
+                        <a href="mailto:{{$leDiplome->getCourriel()}}" class="ficheDiplome__sectionContact__lien"><span class="ficheDiplome__sectionContact__lien__icone" id="contactCourriel"></span></a>
+                        @if($leDiplome->getSiteWeb() !== '')
+                            <a href="{{$leDiplome->getSiteWeb()}}" class="ficheDiplome__sectionContact__lien"><span class="ficheDiplome__sectionContact__lien__icone" id="contactSiteWeb"></span></a>
+                        @endif
+                    </div>
             </div>
+                <div class="ficheDiplome__texte">
+                    {!! str_replace('"', '', $leDiplome->getPresentation()) !!}
+                </div>
         </div>
     </div>
 

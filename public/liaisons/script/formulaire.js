@@ -1,5 +1,5 @@
-btnCourriel = document.getElementById('btnCourriel');
-btnTelephone = document.getElementById('btnTelephone');
+btnCourriel = document.getElementById('contactParCourriel');
+btnTelephone = document.getElementById('contactParTel');
 btnAppeler = document.getElementById('appeler');
 btnEnvoyerCourriel = document.getElementById('envoyerCourriel');
 lesElementsCourriel = document.querySelectorAll('.elementCourriel');
@@ -11,28 +11,35 @@ btnCourriel.addEventListener('click', switcherAppelCourriel);
 btnTelephone.addEventListener('click', switcherAppelCourriel);
 lesCheckboxsDesResponsables.forEach(uneCheckbox => uneCheckbox.addEventListener('click', toggleSectionBen))
 window.addEventListener('load', toggleSectionBen);
+window.addEventListener('load', switcherAppelCourriel);
 
 function switcherAppelCourriel() {
-    btnTelephone.classList.toggle('active');
-    btnTelephone.classList.toggle('inactive');
-    btnCourriel.classList.toggle('inactive');
-    btnCourriel.classList.toggle('active');
-
-    for(cpt=0; cpt<lesElementsCourriel.length; cpt++) {
-        element = lesElementsCourriel[cpt];
-        element.classList.toggle('invisible');
-        if(element.ariaHidden === false) {
-            element.ariaHidden = true;
+    if(btnTelephone.checked === true) {
+        for(cpt=0; cpt<lesElementsCourriel.length; cpt++) {
+            element = lesElementsCourriel[cpt];
+            element.classList.add('invisible');
+            if(element.ariaHidden === false) {
+                element.ariaHidden = true;
+            }
         }
-        else {
-            element.ariaHidden = false;
+        btnAppeler.classList.remove('inactive');
+        if(btnEnvoyerCourriel.classList.contains('inactive')) {
+            btnEnvoyerCourriel.classList.add('inactive');
         }
     }
-
-    btnAppeler.classList.toggle('active');
-    btnAppeler.classList.toggle('inactive');
-    btnEnvoyerCourriel.classList.toggle('active')
-    btnEnvoyerCourriel.classList.toggle('inactive');
+    else {
+        for(cpt=0; cpt<lesElementsCourriel.length; cpt++) {
+            element = lesElementsCourriel[cpt];
+            element.classList.remove('invisible');
+            if(element.ariaHidden === true) {
+                element.ariaHidden = false;
+            }
+        }
+        if(btnAppeler.classList.contains('inactive')) {
+            btnAppeler.classList.add('inactive');
+        }
+        btnEnvoyerCourriel.classList.remove('inactive');
+    }
 }
 
 function toggleSectionBen() {

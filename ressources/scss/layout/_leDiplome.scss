@@ -25,13 +25,63 @@
     border-radius: 20rem;
     border: $blancCasse solid 0.4rem;
     outline: $vert solid 0.4rem;
+    margin: auto;
+  }
+  &__sectionContact {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &__h2 {
+      font-size: 2.8rem;
+      text-align: center;
+      flex-basis: 100%;
+    }
+    &__lien {
+      &__icone {
+        display: block;
+        background-image: url("../img/sprite.svg");
+        height: 5rem;
+        width: 5rem;
+
+        &#contactLinkedin {
+          background-position-x: -104px;
+          background-position-y: 0;
+        }
+        &#contactCourriel {
+          background-position-x: -313px;
+          background-position-y: 0;
+        }
+        &#contactSiteWeb {
+          background-position-x: -365.25px;
+          background-position-y: 0;
+        }
+      }
+
+      &:hover,
+      &:active {
+
+        .ficheDiplome__sectionContact__lien__icone {
+
+          &#contactLinkedin,
+          &#contactCourriel,
+          &#contactSiteWeb {
+            background-position-y: -52px;
+          }
+        }
+      }
+    }
   }
   &__texte {
     display: block;
-    width: 70%;
     margin-right: 0;
     margin-left: 3rem;
+    width: 70%;
   }
+}
+.sectionGauche {
+
 }
 
 .niveauInteret {

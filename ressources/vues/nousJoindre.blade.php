@@ -39,8 +39,8 @@
                         <input type="text" id="nom" name="nom" class="formulaire__input moyen elementCourriel">
                     </div>
                 </div>
-                <label class="formulaire__label elementCourriel elementCourriel" for="courriel">Courriel*</label>
-                <input type="text" id="courriel" name="courriel" class="formulaire__input large elementCourriel">
+                <label class="formulaire__label elementCourriel elementCourriel" for="champsCourriel">Courriel*</label>
+                <input type="text" id="champsCourriel" name="champsCourriel" class="formulaire__input large elementCourriel">
                 <ul class="formulaire__destinataires">
                     @foreach($lesResponsables as $unResponsable)
                         <li class="formulaire__destinataires__item">
