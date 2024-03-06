@@ -82,10 +82,10 @@ class ControleurNousJoindre {
 //            var_dump($tValidation);
 
             // Le champ est il vide
-            if($laValeurActuelle === 'empty' || $laValeurActuelle === '') {
+            if($laValeurActuelle === 'empty' || $laValeurActuelle === '' || !isset($_POST[$unChampAValider])) {
                 $leFormulaireEstValide = false;
-                $tValidation['estValide'] = false;
-                $tValidation['messageErreur'] = $tMessagesJson[$unChampAValider]['erreurs']['vide'];
+                $tValidation[$unChampAValider]['estValide'] = false;
+                $tValidation[$unChampAValider]['messageErreur'] = $tMessagesJson[$unChampAValider]['erreurs']['vide'];
             }
             // Le champ répond-t-il au critères
             elseif($tMessagesJson[$unChampAValider]['regex'] !== '' && !preg_match($tMessagesJson[$unChampAValider]['regex'], $laValeurActuelle)) {

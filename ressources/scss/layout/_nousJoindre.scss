@@ -133,6 +133,7 @@ input:checked + .slider::before {
   }
   &__label {
     display: block;
+    margin-top: 3rem;
 
   }
   &__input {
@@ -141,14 +142,17 @@ input:checked + .slider::before {
     border-radius: 1.5rem;
     height: 7rem;
     padding: 0 3rem;
-    margin-bottom: 3rem;
+  }
+  &__message {
+    color: #4D0000;
   }
   &__destinataires {
-    padding: 0;
+    padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 3rem auto 5rem auto;
+    margin: 3rem auto 0 auto;
+    border-radius: 2rem;
 
     &__item {
       list-style: none;

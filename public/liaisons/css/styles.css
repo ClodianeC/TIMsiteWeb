@@ -1334,6 +1334,7 @@ input:checked + .slider::before {
 }
 .formulaire__label {
   display: block;
+  margin-top: 3rem;
 }
 .formulaire__input {
   background-color: #fffaf1;
@@ -1341,14 +1342,17 @@ input:checked + .slider::before {
   border-radius: 1.5rem;
   height: 7rem;
   padding: 0 3rem;
-  margin-bottom: 3rem;
+}
+.formulaire__message {
+  color: #4D0000;
 }
 .formulaire__destinataires {
-  padding: 0;
+  padding: 1rem 3rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 3rem auto 5rem auto;
+  margin: 3rem auto 0 auto;
+  border-radius: 2rem;
 }
 .formulaire__destinataires__item {
   list-style: none;
