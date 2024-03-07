@@ -77,6 +77,12 @@
  </div>
 
  <div class="lesProjets">
+ <?php if(count($lesProjets) <= 0): ?>
+ <div class="aucunProjet">
+ <p class="aucunProjet__accroche accroche">Désolé!</p>
+ <p class="aucunProjet__texte">Aucun projet ne correspond aux critères de recherche que vous avez sélectionnés. Changez vos critères de recherche ou réinitialisez les filtres pour voir des projets.</p>
+ </div>
+ <?php endif; ?>
  <?php $__currentLoopData = $lesProjets; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $unProjet): $loop = $this->incrementLoopIndices();  ?>
  <?php if($loop->iteration % 2 == 0): ?>
@@ -102,6 +108,7 @@
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </div>
 
+ <?php if(count($lesProjets) >=1): ?>
  <div class="pagination">
  <a
  <?php if($noPage > 0): ?>
@@ -109,9 +116,13 @@
  <?php else: ?>
  class="pagination__lien"
  <?php endif; ?>
- >Premier</a>
+ >
+ Premier
+ </a>
 
- |
+ <div class="pagination__separateur">
+
+ </div>
 
  <a
  <?php if($noPage > 0): ?>
@@ -119,13 +130,19 @@
  <?php else: ?>
  class="pagination__lien"
  <?php endif; ?>
- >Précédent</a>
+ >
+ Précédent
+ </a>
 
- |
+ <div class="pagination__separateur">
+
+ </div>
 
  <p class="pagination__texte">Page <?php echo \htmlentities($noPage + 1??'', ENT_QUOTES, 'UTF-8', false); ?> de <?php echo \htmlentities($nbPagesTotal + 1??'', ENT_QUOTES, 'UTF-8', false); ?></p>
 
- |
+ <div class="pagination__separateur">
+
+ </div>
 
  <a
  <?php if($noPage < $nbPagesTotal): ?>
@@ -133,9 +150,13 @@
  <?php else: ?>
  class="pagination__lien"
  <?php endif; ?>
- >Suivant</a>
+ >
+ Suivant
+ </a>
 
- |
+ <div class="pagination__separateur">
+
+ </div>
 
  <a
  <?php if($noPage < $nbPagesTotal): ?>
@@ -143,9 +164,11 @@
  <?php else: ?>
  class="pagination__lien"
  <?php endif; ?>
- >Dernier</a>
+ >
+ Dernier
+ </a>
  </div>
-
+ <?php endif; ?>
 
 <?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('gabarit'); } ?>

@@ -17,6 +17,7 @@
         </div>
     </div>
     <span class="piedDePage__separateur"></span>
+    <p class="piedDePage__credits"><a href="https://www.freepik.com/free-vector/set-people-avatars-male-female-characters-faces_22535547.htm#fromView=search&page=1&position=48&uuid=e8d2676d-6724-4608-8c5f-c4588cd607ca" class="piedDePage__credits__lien hyperlien">Image de profile anonyme par upklyak</a> sur Freepik</p>
     <p class="piedDePage__credits">Conception et développement web par Clodiane Charette</p>
     <p class="piedDePage__credits">Tous droits réservés © 2024 Techniques d’intégration multimédia - Web et apps, Cégep de Sainte-Foy</p>
 </div>

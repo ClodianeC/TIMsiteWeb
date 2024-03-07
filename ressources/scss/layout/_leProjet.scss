@@ -1,0 +1,303 @@
+/* Fiche du projet */
+.fondFicheProjet {
+  background-color: $orange;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+  margin-bottom: 10rem;
+  padding-bottom: 5rem;
+}
+
+.imgPrincipale {
+  display: block;
+  aspect-ratio: 16/9;
+  width: 98%;
+  max-width: 140rem;
+  margin: auto auto 5rem auto;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.ficheProjet {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+
+  &__premierePhrase {
+    max-width: 60rem;
+    flex-basis: 100%;
+    margin-top: 0;
+  }
+
+  &__img {
+    aspect-ratio: 16/9;
+    width: 100%;
+    max-width: 60rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    object-fit: cover;
+  }
+
+  &__restantPhrases {
+    width: 90%;
+    vertical-align: middle;
+    padding-bottom: 3rem;
+  }
+
+  &__sectionTechnologies {
+
+    &__h2 {
+      margin-top: 0;
+    }
+
+    &__listeTechno {
+
+    }
+  }
+}
+.sectionSwitchOrdre {
+  display: flex;
+  flex-direction: column-reverse;
+}
+@media (min-width: 800px) {
+  .ficheProjet {
+    width: 90%;
+    max-width: 1000px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: normal;
+
+    &__premierePhrase {
+
+    }
+
+    &__img {
+      width: 50%;
+      flex-basis: 50%;
+      height: fit-content;
+    }
+
+    &__restantPhrases {
+      width: 45%;
+      flex-basis: 45%;
+      padding-bottom: 5rem;
+    }
+
+    &__sectionTechnologies {
+      max-width: 50%;
+      margin-right: 1rem;
+
+      &__h2 {
+        margin-top: 0;
+      }
+
+      &__listeTechno {
+
+      }
+    }
+  }
+  .sectionSwitchOrdre {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.fondFicheCreateurProjet {
+  background-color: $blancCasse;
+  border: $vert solid 0.4rem;
+  border-radius: 300rem;
+  padding: 10rem 0;
+  margin: 10rem auto;
+  width: 90%;
+}
+.ficheCreateurProjet {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__h2 {
+    margin: 2rem auto 3rem auto;
+    flex-basis: 100%;
+    text-align: center;
+  }
+  &__lienCreateur {
+    width: fit-content;
+    margin: 2rem auto;
+
+    &__img {
+      display: block;
+      aspect-ratio: 1;
+      width: 70vw;
+      max-width: 30rem;
+      object-fit: cover;
+      border-radius: 30rem;
+      border: $blancCasse solid 0.4rem;
+      outline: $vert solid 0.4rem;
+    }
+    &:hover,
+    &:active {
+      .ficheCreateurProjet__lienCreateur__img {
+        border-color: $vert;
+      }
+    }
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__h3 {
+      display: block;
+      width: fit-content;
+      text-align: center;
+    }
+    &__unProjet {
+      display: block;
+      width: fit-content;
+      margin-bottom: 4rem;
+      color: $noir;
+
+      &__img {
+        width: 70vw;
+        min-width: 23rem;
+        max-width: 30rem;
+        margin: auto;
+        aspect-ratio: 16/9;
+        border-radius: 1rem;
+        display: block;
+        object-fit: cover;
+        border: $blancCasse solid 0.4rem;
+        outline: $vert solid 0.4rem;
+      }
+      &__h4 {
+        width: fit-content;
+        max-width: 30rem;
+        text-align: center;
+        margin: auto;
+      }
+      &:hover,
+      &:active {
+        color: $rose;
+
+        .ficheCreateurProjet__section__unProjet__img {
+          border: $vert solid 0.4rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 800px) {
+  .fondFicheCreateurProjet {
+    padding: 5rem 10rem;
+    width: 75%;
+    max-width: 1300px;
+  }
+  .ficheCreateurProjet {
+    max-width: 1000px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    &__h2 {
+      text-align: center;
+    }
+    &__lienCreateur {
+      display: block;
+      flex-basis: 10%;
+
+      &__img {
+        width: 15vw;
+      }
+    }
+    &__section {
+      flex-basis: 70%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: normal;
+
+      &__h3 {
+        flex-basis: 100%;
+      }
+      &__unProjet {
+
+        &__img {
+          width: 30rem;
+        }
+        &__h4 {
+        }
+      }
+    }
+  }
+}
+
+.lesEtapes {
+
+  &__h2 {
+    text-align: center;
+    width: 100%;
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem auto;
+    width: 90%;
+
+    &__texte {
+      width: 90%;
+      max-width: 60rem;
+      margin: auto;
+    }
+
+    &__img {
+      aspect-ratio: 16/9;
+      width: 100%;
+      max-width: 60rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      object-fit: cover;
+    }
+  }
+}
+@media (min-width: 800px) {
+  .lesEtapes {
+
+    &__h2 {
+
+    }
+
+    &__section {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: normal;
+      max-width: 1000px;
+
+      &.pair {
+        flex-direction: row-reverse;
+      }
+      &.impair {
+        flex-direction: row;
+      }
+      &__texte {
+        width: 40%;
+        max-width: 40%;
+        margin: 0 1rem 0 0;
+      }
+
+      &__img {
+        width: 55%;
+        max-width: 55%;
+        align-self: center;
+      }
+    }
+  }
+}

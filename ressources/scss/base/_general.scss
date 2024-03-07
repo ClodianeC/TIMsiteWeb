@@ -16,19 +16,22 @@ main {
   width: 80%;
   max-width: 800px;
 }
-
+.btnPrincipal,
+.btnSecondaire {
+  font-family: "caviar_dreamsregular", sans-serif;
+  font-size: 1.6rem;
+  width: 100%;
+  max-width: 30rem;
+  height: 6.5rem;
+  border-radius: 1.2rem;
+  text-decoration: none;
+  text-align: center;
+  line-height: 6.5rem;
+}
 .btnPrincipal {
   background-color: $rose;
   color: $noir;
-  font-family: "caviar_dreamsregular", sans-serif;
-  font-size: 2rem;
-  width: 42rem;
-  height: 9.5rem;
-  border-radius: 2rem;
   border: none;
-  text-decoration: none;
-  text-align: center;
-  line-height: 9.5rem;
 
   &:hover,
   &:active {
@@ -40,21 +43,25 @@ main {
 .btnSecondaire {
   background-color: $blancCasse;
   color: $noir;
-  font-family: "caviar_dreamsregular", sans-serif;
-  font-size: 2rem;
-  width: 42rem;
-  height: 9.5rem;
-  border-radius: 2rem;
   border: none;
   outline: $rose solid 0.4rem;
   outline-offset: -0.3rem;
-  text-decoration: none;
-  line-height: 9.5rem;
 
   &:hover,
   &:active {
     background-color: $rose;
     outline: $blancCasse solid 0.4rem;
     outline-offset: -0.3rem;
+  }
+}
+@media (min-width: 800px) {
+  .btnPrincipal,
+  .btnSecondaire {
+    font-size: 2rem;
+    width: 40rem;
+    max-width: 40rem;
+    height: 9.5rem;
+    border-radius: 2rem;
+    line-height: 9.5rem;
   }
 }

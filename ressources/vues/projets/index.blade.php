@@ -75,6 +75,12 @@
     </div>
 
     <div class="lesProjets">
+        @if(count($lesProjets) <= 0)
+            <div class="aucunProjet">
+                <p class="aucunProjet__accroche accroche">Désolé!</p>
+                <p class="aucunProjet__texte">Aucun projet ne correspond aux critères de recherche que vous avez sélectionnés. Changez vos critères de recherche ou réinitialisez les filtres pour voir des projets.</p>
+            </div>
+        @endif
         @foreach($lesProjets as $unProjet)
             @if($loop->iteration % 2 == 0)
                 <a href="index.php?controleur=projet&action=fiche&idProjet={{$unProjet->getId()}}" class="lesProjets__unProjet impair">
@@ -98,49 +104,66 @@
         @endforeach
     </div>
 
-    <div class="pagination">
-        <a
-        @if($noPage > 0)
-            class="pagination__lien hyperlien" href="{{$urlPagination}}&page=0"
-        @else
-            class="pagination__lien"
-        @endif
-        >Premier</a>
+    @if(count($lesProjets) >=1)
+        <div class="pagination">
+            <a
+            @if($noPage > 0)
+                class="pagination__lien hyperlien" href="{{$urlPagination}}&page=0"
+            @else
+                class="pagination__lien"
+            @endif
+            >
+                Premier
+            </a>
 
-        |
+            <div class="pagination__separateur">
 
-        <a
-        @if($noPage > 0)
-            class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$noPage - 1}}"
-        @else
-            class="pagination__lien"
-        @endif
-        >Précédent</a>
+            </div>
 
-        |
+            <a
+            @if($noPage > 0)
+                class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$noPage - 1}}"
+            @else
+                class="pagination__lien"
+            @endif
+            >
+                Précédent
+            </a>
 
-        <p class="pagination__texte">Page {{$noPage + 1}} de {{$nbPagesTotal + 1}}</p>
+            <div class="pagination__separateur">
 
-        |
+            </div>
 
-        <a
-        @if($noPage < $nbPagesTotal)
-            class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$noPage + 1}}"
-        @else
-               class="pagination__lien"
-        @endif
-        >Suivant</a>
+            <p class="pagination__texte">Page {{$noPage + 1}} de {{$nbPagesTotal + 1}}</p>
 
-        |
+            <div class="pagination__separateur">
 
-        <a
-        @if($noPage < $nbPagesTotal)
-            class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$nbPagesTotal}}"
-        @else
-            class="pagination__lien"
-        @endif
-        >Dernier</a>
-    </div>
+            </div>
 
+            <a
+            @if($noPage < $nbPagesTotal)
+                class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$noPage + 1}}"
+            @else
+                class="pagination__lien"
+            @endif
+            >
+                Suivant
+            </a>
+
+            <div class="pagination__separateur">
+
+            </div>
+
+            <a
+            @if($noPage < $nbPagesTotal)
+                class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$nbPagesTotal}}"
+            @else
+                class="pagination__lien"
+            @endif
+            >
+                Dernier
+            </a>
+        </div>
+    @endif
 
 @endsection

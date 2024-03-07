@@ -33,20 +33,23 @@
                     @endif
                 @endforeach
             </p>
-            <div class="ficheProjet__sectionTechnologies">
-                <h2 class="ficheProjet__sectionTechnologies__h2 h2">Technologies utilisées:</h2>
-                <ul class="ficheProjet__sectionTechnologies__listeTechno">
-                    @foreach(explode(', ', $leProjet->getTechnologies()) as $uneTechno)
-                        @php
-                            $uneTechno = str_replace('""', '\'',$uneTechno)
-                        @endphp
-                        <li>{!! str_replace('"', '',$uneTechno) !!}</li>
-                    @endforeach
-                </ul>
+            <div class="sectionSwitchOrdre">
+                <div class="ficheProjet__sectionTechnologies">
+                    <h2 class="ficheProjet__sectionTechnologies__h2 h2">Technologies utilisées:</h2>
+                    <ul class="ficheProjet__sectionTechnologies__listeTechno">
+                        @foreach(explode(', ', $leProjet->getTechnologies()) as $uneTechno)
+                            @php
+                                $uneTechno = str_replace('""', '\'',$uneTechno)
+                            @endphp
+                            <li>{!! str_replace('"', '',$uneTechno) !!}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @if(is_file("liaisons/img/projets/secondaires/".$leProjet->getDiplomeId()."_".$leProjet->getId()."_03_600.png"))
+                    <img class="ficheProjet__img" src="liaisons/img/projets/secondaires/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_03_600.png" alt="Image du projet {{$leProjet->getTitre()}}">
+                @endif
             </div>
-            @if(is_file("liaisons/img/projets/secondaires/".$leProjet->getDiplomeId()."_".$leProjet->getId()."_03_600.png"))
-                <img class="ficheProjet__img" src="liaisons/img/projets/secondaires/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_03_600.png" alt="Image du projet {{$leProjet->getTitre()}}">
-            @endif
+
 {{--            <img class="ficheProjet__img" src="liaisons/img/projets/{{$leProjet->getDiplomeId()}}_{{$leProjet->getId()}}_03.png" alt="Image du projet {{$leProjet->getTitre()}}">--}}
         </div>
     </div>
@@ -55,29 +58,20 @@
         <div class="lesEtapes">
             <h2 class="lesEtapes__h2 h2">Les étapes</h2>
             @foreach($lesEtapes as $uneEtape)
-                <div class="lesEtapes__section">
-                    @if($loop->iteration % 2 == 0)
-                        <p class="lesEtapes__section__texte">{!! str_replace(array('<p>', '</p>', '"'), '', $uneEtape->getDescription()) !!}</p>
+                @if($loop->iteration % 2 == 0)
+                    <div class="lesEtapes__section pair">
+                        @else
+                    <div class="lesEtapes__section impair">
+                @endif
                         <img class="lesEtapes__section__img"
                              @if(is_file("liaisons/img/projets/etapes/" . $leDiplome->getId() . "_" . $leProjet->getId() . "_e" . $uneEtape->getId() . "_600.png"))
                                  src="liaisons/img/projets/etapes/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}_600.png"
                              @else
                                  src="liaisons/img/projets/placeholders/projet{{rand(1, 4)}}.svg"
                              @endif
-                        alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">
-{{--                        <img class="lesEtapes__section__img" src="liaisons/img/projets/etapes/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}_600.png" alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">--}}
-                    @else
-                        <img class="lesEtapes__section__img"
-                             @if(is_file("liaisons/img/projets/etapes/" . $leDiplome->getId() . "_" . $leProjet->getId() . "_e" . $uneEtape->getId() . "_600.png"))
-                                 src="liaisons/img/projets/etapes/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}_600.png"
-                             @else
-                                 src="liaisons/img/projets/placeholders/projet{{rand(1, 4)}}.svg"
-                             @endif
-                        alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">
-{{--                        <img class="lesEtapes__section__img" src="liaisons/img/projets/etapes/{{$leDiplome->getId()}}_{{$leProjet->getId()}}_e{{$uneEtape->getId()}}_600.png" alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">--}}
+                             alt="Image de l'étape {{$uneEtape->getOrdre()}} du projet {{$leProjet->getTitre()}}">
                         <p class="lesEtapes__section__texte">{!! str_replace(array('<p>', '</p>', '"'), '', $uneEtape->getDescription()) !!}</p>
-                    @endif
-                </div>
+                    </div>
             @endforeach
         </div>
     @endif

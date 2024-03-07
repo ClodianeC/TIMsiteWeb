@@ -6,7 +6,13 @@
 
 @section('contenu')
     <h1 class="h1">{{$leDiplome->getPrenom()}} {{$leDiplome->getNom()}}</h1>
-    <p class="accroche">Diplômé(e) 2024</p>
+    <p class="accroche">
+        @if($leDiplome->getGenre() === 'f')
+            Diplômée 2024
+        @else
+            Diplômé 2024
+        @endif
+    </p>
 
     <div class="fondFicheDiplome">
         <div class="ficheDiplome">
