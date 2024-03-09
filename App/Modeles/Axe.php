@@ -9,6 +9,8 @@ use \PDO;
 class Axe {
     private int $id = 0;
     private string $nom = '';
+    private string $description = '';
+    private int $pourcentage = 0;
 
     // Méthodes statiques
     public function __construct() {
@@ -52,5 +54,11 @@ class Axe {
     }
     public function getNom():string{
         return $this->nom;
+    }
+    public function getDescription():string{
+        return $this->description;
+    }
+    public function getPourcentage():int{
+        return $this->pourcentage;
     }
 }

@@ -18,7 +18,7 @@ class ControleurNousJoindre {
     public function creer():void {
         if(isset($_SESSION['tValidation'])) {
             $tValidation = $_SESSION['tValidation'];
-            session_unset();
+            unset($_SESSION['tValidation']);
         }
         else {
             $tValidation = null;
@@ -136,7 +136,6 @@ class ControleurNousJoindre {
     public function confirmer():void {
         if(isset($_SESSION['tValidation'])) {
             $tValidation = $_SESSION['tValidation'];
-            session_unset();
         }
         else {
             $tValidation = null;

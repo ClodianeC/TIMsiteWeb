@@ -5,16 +5,17 @@
 <?php $this->stopSection(); ?>
 
 <?php $this->startSection('contenu'); ?>
- <?php if($tValidation != null && $tValidation != ''): ?>
+ <?php if($_SESSION['tValidation'] != null && $_SESSION['tValidation'] != ''): ?>
  <h1>Bien reçu!</h1>
  <div class="fondConfirmation">
- <p class="accroche">Votre message à <?php echo \htmlentities($lesResponsables[(int) $tValidation['destinataire']['valeur']]->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($lesResponsables[(int) $tValidation['destinataire']['valeur']]->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?> s'est bel et bien envoyé.</p>
- <p><?php echo \htmlentities($lesResponsables[(int) $tValidation['destinataire']['valeur']]->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($lesResponsables[(int) $tValidation['destinataire']['valeur']]->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?> vous répondra sous peu.</p>
+ <p class="accroche">Votre message à <?php echo \htmlentities($lesResponsables[(int) $_SESSION['tValidation']['destinataire']['valeur'] -1]->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($lesResponsables[(int) $_SESSION['tValidation']['destinataire']['valeur'] -1]->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?> s'est bel et bien envoyé.</p>
+ <p><?php echo \htmlentities($lesResponsables[(int) $_SESSION['tValidation']['destinataire']['valeur'] -1]->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($lesResponsables[(int) $_SESSION['tValidation']['destinataire']['valeur'] -1]->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?> vous répondra sous peu.</p>
  <p class="accroche">Merci de votre intérêt et au plaisir de peut-être vous voir en TIM!</p>
  <a class="hyperlien" href="index.php?controleur=site&action=leProgramme">Retourner à l'accueil</a>
  </div>
  <?php else: ?>
  <?php 
+ unset($_SESSION['tValidation']);
  header('Location: index.php?controleur=site&action=leProgramme');
  exit;
  ?>

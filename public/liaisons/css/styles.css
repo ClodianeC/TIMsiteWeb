@@ -1019,6 +1019,45 @@ footer {
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+.fondBoursesPerspective {
+  background-color: #fffaf1;
+  border: #d0e3cc solid 0.4rem;
+  border-radius: 30rem;
+  padding: 5rem 1rem;
+  margin: 10rem auto;
+  width: 90%;
+  max-width: 600px;
+}
+
+.boursesPerspective {
+  width: 80%;
+  max-width: 550px;
+  margin: auto;
+  text-align: center;
+}
+.boursesPerspective__h2 {
+  margin-top: 0;
+}
+.boursesPerspective__texte {
+  padding-bottom: 3rem;
+}
+.boursesPerspective p {
+  margin-bottom: 0;
+}
+
+@media (min-width: 800px) {
+  .fondBoursesPerspective {
+    padding: 5rem 10rem;
+    width: 75%;
+    max-width: 1300px;
+  }
+  .boursesPerspective {
+    width: 90%;
+  }
+  .boursesPerspective__texte {
+    padding-bottom: 3rem;
+  }
+}
 .fondInfoPrgramme {
   background-color: #febe98;
   background-image: url("../img/texture/round.webp");
@@ -1068,6 +1107,7 @@ footer {
 }
 .infoSuppProgramme__boutons__btnSiteCegep {
   position: relative;
+  font-size: 1.4rem;
   z-index: 1;
 }
 .infoSuppProgramme__boutons__ou {
@@ -1097,6 +1137,11 @@ footer {
 }
 
 @media (min-width: 800px) {
+  .infoSuppProgramme__boutons__btnSiteCegep {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 950px) {
   .infoSuppProgramme {
     width: 90%;
     max-width: 1000px;
@@ -1106,6 +1151,7 @@ footer {
   }
   .infoSuppProgramme__boutons__btnSiteCegep {
     position: static;
+    font-size: 1.8rem;
   }
   .infoSuppProgramme__boutons__ou {
     width: 12rem;
@@ -1120,11 +1166,140 @@ footer {
     position: static;
   }
 }
+.fondDemandeAdmission {
+  background-color: #febe98;
+  background-image: url("../img/texture/subtle_zebra_3d.png");
+  background-blend-mode: multiply;
+  width: 95%;
+  max-width: 1440px;
+  margin: auto;
+  padding: 3rem 0;
+  border-radius: 2rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.demandeAdmission {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.demandeAdmission__h2 {
+  text-align: center;
+  margin-top: 0;
+  width: 100%;
+}
+.demandeAdmission__sectionGauche {
+  padding: 1rem 0 3rem 0;
+  width: 80%;
+}
+.demandeAdmission__sectionGauche p:nth-child(2) {
+  font-family: "caviar_dreamsregular", sans-serif;
+  margin: 4rem auto;
+  font-size: 2.5rem;
+}
+.demandeAdmission__sectionDroite__h3 {
+  text-align: center;
+}
+.demandeAdmission__sectionDroite__bulleDates {
+  aspect-ratio: 1;
+  width: 27.5rem;
+  background-color: #fffaf1;
+  border: #d0e3cc solid 0.4rem;
+  border-radius: 50%;
+}
+.demandeAdmission__sectionDroite__bulleDates__h4 {
+  text-align: center;
+  max-width: 60%;
+  margin: 2rem auto;
+}
+.demandeAdmission__sectionDroite__bulleDates__liste {
+  padding: 0;
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+.demandeAdmission__sectionDroite__bulleDates__liste__item {
+  list-style: none;
+  margin-bottom: 0.7rem;
+}
+.demandeAdmission__sectionDroite__bulleDates__liste__item span:first-child {
+  display: inline-block;
+  width: 8rem;
+}
+.demandeAdmission__sectionDroite__bulleDates__liste__item__icone {
+  display: inline-block;
+  width: 1.8rem;
+  height: 1.6rem;
+  background-image: url("../img/sprite.svg");
+  background-position: -830px -43px;
+  margin-right: 1rem;
+}
+
+@media (min-width: 850px) {
+  .demandeAdmission {
+    width: 90%;
+    max-width: 1000px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .demandeAdmission__sectionGauche {
+    padding: 5rem 0;
+    width: 60%;
+  }
+  .demandeAdmission__sectionDroite__h3 {
+    text-align: left;
+  }
+}
+.etudiantInternational {
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem auto;
+}
+.etudiantInternational__h2 {
+  width: 100%;
+  text-align: center;
+}
+.etudiantInternational p:nth-child(2) {
+  width: 100%;
+}
+.etudiantInternational :nth-child(3) {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  .etudiantInternational {
+    width: 90%;
+    max-width: 85rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5rem auto;
+  }
+  .etudiantInternational__h2 {
+    width: 100%;
+    text-align: center;
+  }
+  .etudiantInternational p:nth-child(2) {
+    width: 47%;
+  }
+  .etudiantInternational :nth-child(3) {
+    width: 47%;
+    text-align: right;
+  }
+}
 .fondEtudiantDunJour {
   background-color: #fffaf1;
   border: #d0e3cc solid 0.4rem;
   border-radius: 30rem;
-  margin: 10rem auto;
+  margin: 5rem auto;
   width: 90%;
   max-width: 600px;
 }
@@ -1155,6 +1330,7 @@ footer {
   .fondEtudiantDunJour {
     padding: 5rem 10rem;
     width: 75%;
+    margin: 10rem auto;
     max-width: 1300px;
   }
   .etudiantDunJour {
@@ -1165,6 +1341,102 @@ footer {
   }
   .etudiantDunJour__infos {
     flex-direction: row;
+  }
+}
+.fondApresTim {
+  background-color: #febe98;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 3rem 0;
+  margin: 5rem auto;
+}
+
+.apresTim {
+  width: 80%;
+  margin: auto;
+}
+.apresTim__h2 {
+  text-align: center;
+}
+.apresTim__section {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #fffaf1;
+  border: #d0e3cc solid 0.4rem;
+  border-radius: 2rem;
+  margin-bottom: 3rem;
+}
+.apresTim__section__h3 {
+  width: 85%;
+  margin-top: 1rem;
+}
+.apresTim__section__icone.actif {
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  background-image: url("../img/sprite.svg");
+  background-position: -624px -52px;
+}
+.apresTim__section p:nth-child(3) {
+  margin-top: 3rem;
+  width: 100%;
+  order: 4;
+}
+.apresTim__section__sousSection {
+  margin-top: 3rem;
+  width: 100%;
+  order: 5;
+}
+.apresTim__section__sousSection:nth-child(4) ul {
+  margin-top: 0;
+}
+.apresTim__section__liste {
+  width: fit-content;
+}
+.apresTim__section__liste li {
+  width: fit-content;
+}
+.apresTim__section:active .apresTim__section__icone.actif, .apresTim__section:hover .apresTim__section__icone.actif, .apresTim__section:focus .apresTim__section__icone.actif {
+  background-position: -676px -52px;
+}
+.apresTim__section.ferme p:nth-child(3) {
+  display: none;
+}
+.apresTim__section.ferme .apresTim__section__sousSection {
+  display: none;
+}
+.apresTim__employeurs {
+  width: fit-content;
+  margin: auto;
+}
+.apresTim__employeurs__h3 {
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .apresTim {
+    width: 90%;
+    max-width: 1000px;
+  }
+  .apresTim__section {
+    padding: 3rem;
+  }
+  .apresTim__section__icone.actif {
+    margin-top: 1rem;
+  }
+  .apresTim__section p:nth-child(3) {
+    width: 47%;
+    order: 5;
+  }
+  .apresTim__section__sousSection {
+    width: 47%;
+    order: 4;
   }
 }
 /* Les stages */

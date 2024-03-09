@@ -71,8 +71,17 @@
 
 <?php $this->startSection('contenu'); ?>
  <h1 class="h1">Le programme</h1>
-<?php /*    <p><?php echo \htmlentities($contenu??'', ENT_QUOTES, 'UTF-8', false); ?></p>*/ ?>
- <p class="accroche">Conception, médias, intégration et programmation. Un seul but, former des techniciennes et des techniciens polyvalents, aptes à réaliser des sites et des applications Web de A à Z.</p>
+ <p class="accroche"><?php echo substr($lesTextes[11]->getTexte(), strpos($lesTextes[11]->getTexte(), '>') + 1); ?></p>
+
+ <div class="fondBoursesPerspective">
+ <div class="boursesPerspective">
+ <h2 class="boursesPerspective__h2 h2"><?php echo \htmlentities($lesTextes[9]->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></h2>
+ <?php echo substr($lesTextes[9]->getTexte(), 0, strpos($lesTextes[9]->getTexte(), '<p') + 2); ?> class="boursesPerspective__texte" <?php echo substr($lesTextes[9]->getTexte(), strpos($lesTextes[9]->getTexte(), '<p') + 2, strpos($lesTextes[9]->getTexte(), '<a') + 1); ?> class="boursesPerspective__texte__lien hyperlien" <?php echo substr($lesTextes[9]->getTexte(), strpos($lesTextes[9]->getTexte(), '<a') + 2); ?>
+
+ </div>
+ </div>
+
+ <p class="accroche"><?php echo $lesTextes[10]->getTexte(); ?></p>
 
 <?php /*  PieChart de Google  */ ?>
 <?php /*  https://developers.google.com/chart/interactive/docs/gallery/piechart  */ ?>
@@ -81,20 +90,13 @@
  <div class="fondInfoPrgramme">
  <div class="infoProgramme">
  <div class="infoProgramme__titreExplication">
- <h2 class="infoProgramme__titreExplication__h2">Intégration - 25%</h2>
- <p class="infoProgramme__titreExplication__texte">Transposer les médias et le design en code sémantique et programmer l’interactivité du côté client (front-end). S’assurer de l’accessibilité de l’interface.</p>
+ <h2 class="infoProgramme__titreExplication__h2"><?php echo \htmlentities($lesAxes[4]->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?> - <?php echo \htmlentities($lesAxes[4]->getPourcentage()??'', ENT_QUOTES, 'UTF-8', false); ?>%</h2>
+ <p class="infoProgramme__titreExplication__texte"><?php echo strtok($lesAxes[4]->getDescription() , '<'); ?></p>
  </div>
+
  <ul class="infoProgramme__listeExemples">
- <li class="infoProgramme__listeExemples__item">HTML 5</li>
- <li class="infoProgramme__listeExemples__item">SASS</li>
- <li class="infoProgramme__listeExemples__item">CSS</li>
- <li class="infoProgramme__listeExemples__item">Flex et Grid</li>
- <li class="infoProgramme__listeExemples__item">JSON</li>
- <li class="infoProgramme__listeExemples__item">JavaScript</li>
- <li class="infoProgramme__listeExemples__item">Ajax</li>
- <li class="infoProgramme__listeExemples__item">TypeScript</li>
- <li class="infoProgramme__listeExemples__item">Mobile First</li>
- <li class="infoProgramme__listeExemples__item">Responsive Web</li>
+ <?php echo str_replace('</ul>', '', substr($lesAxes[4]->getDescription(), strpos($lesAxes[4]->getDescription(), '>') + 1)); ?>
+
  </ul>
  </div>
  </div>
@@ -107,15 +109,91 @@
  <button class="btnSecondaire infoSuppProgramme__boutons__btnTelechargerGrille">Télécharge la grille du cours</button>
  </div>
  </div>
+
+ <div class="fondDemandeAdmission">
+ <div class="demandeAdmission">
+ <h2 class="demandeAdmission__h2 h2"><?php echo \htmlentities($lesTextes[5]->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></h2>
+ <div class="demandeAdmission__sectionGauche">
+ <?php echo substr($lesTextes[5]->getTexte(), 0, strpos($lesTextes[5]->getTexte(), '<a') + 2); ?>
+
+ class="hyperlien"
+ <?php echo substr($lesTextes[5]->getTexte(), strpos($lesTextes[5]->getTexte(), '<a') + 2); ?>
+
+ </div>
+ <div class="demandeAdmission__sectionDroite">
+ <h3 class="demandeAdmission__sectionDroite__h3">En bref:</h3>
+ <div class="demandeAdmission__sectionDroite__bulleDates">
+ <h4 class="demandeAdmission__sectionDroite__bulleDates__h4">L'inscription se fait avant le:</h4>
+ <ul class="demandeAdmission__sectionDroite__bulleDates__liste">
+ <li class="demandeAdmission__sectionDroite__bulleDates__liste__item"><span>1<sup>er</sup> mars</span> <span class="demandeAdmission__sectionDroite__bulleDates__liste__item__icone"></span> 1<sup>er</sup> tour</li>
+ <li class="demandeAdmission__sectionDroite__bulleDates__liste__item"><span>1<sup>er</sup> mai</span> <span class="demandeAdmission__sectionDroite__bulleDates__liste__item__icone"></span> 2<sup>ème</sup> tour</li>
+ <li class="demandeAdmission__sectionDroite__bulleDates__liste__item"><span>1<sup>er</sup> juin</span> <span class="demandeAdmission__sectionDroite__bulleDates__liste__item__icone"></span> 3<sup>ème</sup> tour</li>
+ <li class="demandeAdmission__sectionDroite__bulleDates__liste__item"><span>1<sup>er</sup> août</span> <span class="demandeAdmission__sectionDroite__bulleDates__liste__item__icone"></span> 4<sup>ème</sup> tour</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="etudiantInternational">
+ <h2 class="etudiantInternational__h2 h2"><?php echo $lesTextes[6]->getTitre(); ?></h2>
+ <?php echo substr($lesTextes[6]->getTexte(), 0, strpos($lesTextes[6]->getTexte(), '<a') + 2); ?>
+
+ class="hyperlien"
+ <?php echo substr($lesTextes[6]->getTexte(), strpos($lesTextes[6]->getTexte(), '<a') + 2); ?>
+
+ </div>
+
  <div class="fondEtudiantDunJour">
  <div class="etudiantDunJour">
  <h2 class="etudiantDunJour__h2 h2">Étudiante et étudiant d'un jour</h2>
  <div class="etudiantDunJour__infos">
  <p class="etudiantDunJour__infos__texte">Tu veux en apprendre plus sur le programme? Tu veux assister à un ou plusieurs cours? Viens passer une journée avec nous, en Techniques d'intégration multimédia!</p>
- <p class="etudiantDunJour__infos__contact">Contacter <a class="etudiantDunJour__infos__contact__benoitF hyperlien" href="index.php?controleur=site&action=nousJoindre&idResponsable=4">Benoît Frigon</a> pour en savoir plus.</p>
+ <p class="etudiantDunJour__infos__contact">Contacter <a class="etudiantDunJour__infos__contact__benoitF hyperlien" href="index.php?controleur=joindre&action=creer&idResponsable=4">Benoît Frigon</a> pour en savoir plus.</p>
  </div>
  </div>
  </div>
+
+ <div class="fondApresTim">
+ <div class="apresTim">
+ <h2 class="apresTim__h2">Et qu'est-ce qu'il se passe après la TIM?</h2>
+ <?php for($i=18; $i<=21; $i++): ?>
+ <button class="apresTim__section" id="sectionApresTim<?php echo \htmlentities($i??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <h3 class="apresTim__section__h3 h3"><?php echo \htmlentities($lesTextes[$i]->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></h3>
+ <span class="apresTim__section__icone"></span>
+ <?php if($i !== 21): ?>
+ <?php echo substr($lesTextes[$i]->getTexte(), 0, strpos($lesTextes[$i]->getTexte(), 'Postes') -3); ?>
+
+ <div class="apresTim__section__sousSection">
+ <?php echo substr($lesTextes[$i]->getTexte(), strpos($lesTextes[$i]->getTexte(), 'Postes'), strpos($lesTextes[$i]->getTexte(), ':') - strpos($lesTextes[$i]->getTexte(), 'Postes') +1); ?>
+
+ <ul class="apresTim__section__liste">
+ <?php $__currentLoopData = explode(',', substr($lesTextes[$i]->getTexte(), strpos($lesTextes[$i]->getTexte(), ':') +1)); $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $uneLigne): $loop = $this->incrementLoopIndices();  ?>
+ <li><?php echo $uneLigne; ?></li>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </ul>
+ </div>
+
+ <?php else: ?>
+ <?php echo substr($lesTextes[$i]->getTexte(), 0, strpos($lesTextes[$i]->getTexte(), '<u')); ?>
+
+ <div class="apresTim__section__sousSection">
+ <?php echo substr($lesTextes[$i]->getTexte(), strpos($lesTextes[$i]->getTexte(), '<u')); ?>
+
+ </div>
+ <?php endif; ?>
+ </button>
+ <?php endfor; ?>
+ <div class="apresTim__employeurs">
+ <h3 class="apresTim__employeurs__h3 h3"><?php echo \htmlentities($lesTextes[22]->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></h3>
+ <?php echo $lesTextes[22]->getTexte(); ?>
+
+ </div>
+ </div>
+ </div>
+
+ <script src="liaisons/script/apresTim.js"></script>
 <?php $this->stopSection(); ?>
 
 

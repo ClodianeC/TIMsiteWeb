@@ -6,7 +6,7 @@
 
 <?php $this->startSection('contenu'); ?>
  <h1 class="h1">Les stages</h1>
- <p class="accroche">Le programme TIM du Cégep de Sainte-Foy offre des stages en Alternance travail études (ATE) pendant l’été et un stage crédité à la session 6 qui peut être réalisé en France. Contacter <a class="hyperlien" href="index.php?controleur=site&action=nousJoindre&idResponsable=3">Pascal Larose</a> pour en savoir plus.</p>
+ <p class="accroche">Le programme TIM du Cégep de Sainte-Foy offre des stages en Alternance travail études (ATE) pendant l’été et un stage crédité à la session 6 qui peut être réalisé en France. Contacter <a class="hyperlien" href="index.php?controleur=joindre&action=creer&idResponsable=3">Pascal Larose</a> pour en savoir plus.</p>
  <div class="fondInfoStage">
  <div class="infoStage">
  <div class="infoStage__section">
@@ -24,7 +24,7 @@
  </div>
  </div>
  </div>
- <p class="texteStage">Consultez le profil des compétences de nos étudiantes et étudiants. Contactez <a class="infoStage__texte__lien hyperlien" href="index.php?controleur=site&action=nousJoindre&idResponsable=3">Pascal Larose</a> Pour en savoir plus. Téléphone : (418) 659-6600, poste 6663</p>
+ <p class="texteStage">Consultez le profil des compétences de nos étudiantes et étudiants. Contactez <a class="infoStage__texte__lien hyperlien" href="index.php?controleur=joindre&action=creer&idResponsable=3">Pascal Larose</a> Pour en savoir plus. Téléphone : (418) 659-6600, poste 6663</p>
  </div>
  <div class="stageDerniereSession">
  <h2 class="stageDerniereSession__h2 h2">Le stage de dernière session</h2>

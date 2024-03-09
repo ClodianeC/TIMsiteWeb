@@ -12,6 +12,57 @@
   }
 }
 
+.fondBoursesPerspective {
+  background-color: $blancCasse;
+  border: $vert solid 0.4rem;
+  border-radius: 30rem;
+  padding: 5rem 1rem;
+  margin: 10rem auto;
+  width: 90%;
+  max-width: 600px;
+}
+.boursesPerspective {
+  width: 80%;
+  max-width: 550px;
+  margin: auto;
+  text-align: center;
+
+  &__h2 {
+    margin-top: 0;
+  }
+  &__texte {
+    padding-bottom: 3rem;
+
+    &__lien {
+
+    }
+  }
+  & p {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 800px) {
+  .fondBoursesPerspective {
+    padding: 5rem 10rem;
+    width: 75%;
+    max-width: 1300px;
+  }
+  .boursesPerspective {
+    width: 90%;
+
+    &__h2 {
+
+    }
+    &__texte {
+      padding-bottom: 3rem;
+
+      &__lien {
+
+      }
+    }
+  }
+}
+
 .fondInfoPrgramme {
   background-color: $orange;
   background-image: url("../img/texture/round.webp");
@@ -69,6 +120,7 @@
 
     &__btnSiteCegep {
       position: relative;
+      font-size: 1.4rem;
       z-index: 1;
     }
     &__ou {
@@ -101,6 +153,29 @@
 }
 @media (min-width: 800px) {
   .infoSuppProgramme {
+
+    &__h2 {
+
+    }
+    &__boutons {
+
+      &__btnSiteCegep {
+        font-size: 1.6rem;
+      }
+      &__ou {
+
+        &__texte {
+
+        }
+      }
+      &__btnTelechargerGrille {
+
+      }
+    }
+  }
+}
+@media (min-width: 950px) {
+  .infoSuppProgramme {
     width: 90%;
     max-width: 1000px;
 
@@ -112,7 +187,7 @@
 
       &__btnSiteCegep {
         position: static;
-
+        font-size: 1.8rem;
       }
       &__ou {
         width: 12rem;
@@ -131,11 +206,192 @@
   }
 }
 
+.fondDemandeAdmission {
+  background-color: $orange;
+  background-image: url("../img/texture/subtle_zebra_3d.png");
+  background-blend-mode: multiply;
+  width: 95%;
+  max-width: 1440px;
+  margin: auto;
+  padding: 3rem 0;
+  border-radius: 2rem;
+  box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+}
+.demandeAdmission {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__h2 {
+    text-align: center;
+    margin-top: 0;
+    width: 100%;
+  }
+  &__sectionGauche {
+    padding: 1rem 0 3rem 0;
+    width: 80%;
+
+    & p:first-child {
+
+    }
+    & p:nth-child(2) {
+      font-family: "caviar_dreamsregular", sans-serif;
+      margin: 4rem auto;
+      font-size: 2.5rem;
+    }
+    & a {
+
+    }
+  }
+  &__sectionDroite {
+
+
+    &__h3 {
+      text-align: center;
+    }
+    &__bulleDates {
+      aspect-ratio: 1;
+      width: 27.5rem;
+      background-color: $blancCasse;
+      border: $vert solid 0.4rem;
+      border-radius: 50%;
+
+      &__h4 {
+        text-align: center;
+        max-width: 60%;
+        margin: 2rem auto;
+      }
+      &__liste {
+        padding: 0;
+        display: block;
+        width: fit-content;
+        margin: auto;
+
+        &__item {
+          list-style: none;
+          margin-bottom: 0.7rem;
+
+          & span:first-child {
+            display: inline-block;
+            width: 8rem;
+          }
+          &__icone {
+            display: inline-block;
+            width: 1.8rem;
+            height: 1.6rem;
+            background-image: url("../img/sprite.svg");
+            background-position: -830px -43px;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 850px) {
+  .demandeAdmission {
+    width: 90%;
+    max-width: 1000px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__h2 {
+
+    }
+    &__sectionGauche {
+      padding: 5rem 0;
+      width: 60%;
+
+      & p:first-child {
+
+      }
+      & p:nth-child(2) {
+
+      }
+      & a {
+
+      }
+    }
+    &__sectionDroite {
+
+      &__h3 {
+        text-align: left;
+      }
+      &__bulleDates {
+
+        &__h4 {
+
+        }
+        &__liste {
+
+          &__item {
+
+            & span:first-child {
+
+            }
+            &__icone {
+
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+.etudiantInternational {
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem auto;
+
+  &__h2 {
+    width: 100%;
+    text-align: center;
+  }
+  & p:nth-child(2) {
+    width: 100%;
+  }
+  & :nth-child(3) {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (min-width: 800px) {
+  .etudiantInternational {
+    width: 90%;
+    max-width: 85rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5rem auto;
+
+    &__h2 {
+      width: 100%;
+      text-align: center;
+    }
+    & p:nth-child(2) {
+      width: 47%;
+    }
+    & :nth-child(3) {
+      width: 47%;
+      text-align: right;
+    }
+  }
+}
+
 .fondEtudiantDunJour {
   background-color: $blancCasse;
   border: $vert solid 0.4rem;
   border-radius: 30rem;
-  margin: 10rem auto;
+  margin: 5rem auto;
   width: 90%;
   max-width: 600px;
 }
@@ -147,7 +403,6 @@
 
   &__h2 {
     text-align: center;
-
   }
   &__infos {
     display: flex;
@@ -173,6 +428,7 @@
   .fondEtudiantDunJour {
     padding: 5rem 10rem;
     width: 75%;
+    margin: 10rem auto;
     max-width: 1300px;
   }
   .etudiantDunJour {
@@ -193,6 +449,188 @@
       &__contact {
 
         &__benoitF {
+
+        }
+      }
+    }
+  }
+}
+
+.fondApresTim {
+  background-color: $orange;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+  padding: 3rem 0;
+  margin: 5rem auto;
+}
+.apresTim {
+  width: 80%;
+  margin: auto;
+
+  &__h2 {
+    text-align: center;
+  }
+  &__section {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: $blancCasse;
+    border: $vert solid 0.4rem;
+    border-radius: 2rem;
+    margin-bottom: 3rem;
+
+    &__h3 {
+      width: 85%;
+      margin-top: 1rem;
+    }
+    &__icone {
+
+      &.actif {
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+        background-image: url("../img/sprite.svg");
+        background-position: -624px -52px;
+      }
+    }
+    & p:nth-child(3) {
+      margin-top: 3rem;
+      width: 100%;
+      order: 4;
+    }
+    &__sousSection {
+      margin-top: 3rem;
+      width: 100%;
+      order: 5;
+
+      &:nth-child(4) {
+
+        & ul {
+          margin-top: 0;
+        }
+      }
+    }
+    &__liste {
+      width: fit-content;
+
+      & li {
+        width: fit-content;
+      }
+    }
+    &:active,
+    &:hover,
+    &:focus {
+      .apresTim__section__icone {
+
+        &.actif {
+          background-position: -676px -52px;
+        }
+      }
+    }
+    &.ouvert {
+
+    }
+    &.ferme {
+      & p:nth-child(3) {
+        display: none;
+      }
+      .apresTim__section__sousSection {
+        display: none;
+      }
+    }
+  }
+  &__employeurs {
+    width: fit-content;
+    margin: auto;
+
+    &__h3 {
+      text-align: center;
+    }
+    & ul {
+
+      & li {
+
+      }
+    }
+  }
+}
+@media (min-width: 800px) {
+  .apresTim {
+    width: 90%;
+    max-width: 1000px;
+
+    &__h2 {
+
+    }
+    &__section {
+      padding: 3rem;
+
+      &__h3 {
+
+      }
+      &__icone {
+
+        &.actif {
+          margin-top: 1rem;
+        }
+      }
+      & p:nth-child(3) {
+        width: 47%;
+        order: 5;
+      }
+      &__sousSection {
+        width: 47%;
+        order: 4;
+
+        &:nth-child(4) {
+
+          & ul {
+
+          }
+        }
+      }
+      &__liste {
+
+        & li {
+
+        }
+      }
+      &:active,
+      &:hover,
+      &:focus {
+        .apresTim__section__icone {
+
+          &.actif {
+
+          }
+        }
+      }
+      &.ouvert {
+
+      }
+      &.ferme {
+        & p:nth-child(3) {
+
+        }
+        .apresTim__section__sousSection {
+
+        }
+      }
+    }
+    &__employeurs {
+
+      &__h3 {
+
+      }
+      & ul {
+
+        & li {
 
         }
       }
