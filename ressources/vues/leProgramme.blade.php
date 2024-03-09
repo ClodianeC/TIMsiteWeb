@@ -4,71 +4,6 @@
     Le programme
 @endsection
 
-@section('graphique')
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-                ['Aspects du programme', 'Pourcentage'],
-                ["Programmation", 25],
-                ['Intégration', 25],
-                ['Conception', 25],
-                ['Médias', 15],
-                ['Autres', 10]
-            ]);
-
-            var options = {
-                allowHTML: true,
-                title: '',
-                pieStartAngle: 10,
-                slices: {
-                    0: {color: '#95AA91'},
-                    1: {color: '#B5C6B2'},
-                    2: {color: '#6A8065'},
-                    3: {color: '#3D5139',
-                        textStyle: { color: '#FFFAF1'}},
-                    4: {color: '#D0E3CC'}
-                },
-                backgroundColor :  {
-                    stroke: 'transparent',
-                    fill: 'transparent'
-                },
-                pieSliceBorderColor: 'transparent',
-                fontName: "Caviar Dreams",
-                pieSliceText: 'label',
-                pieSliceTextStyle: {
-                    color: 'black'
-                },
-                fontSize: 18,
-                legend: {
-                    // position: 'none',
-                    alignment: 'center',
-                    textStyle: {
-                        fontSize: 16
-                    },
-                },
-                tooltip: {
-                    showColorCode: true,
-                    text: 'percentage'
-                },
-                chartArea: {
-                    width: '100%',
-                    height: '100%'
-                }
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-            chart.draw(data, options);
-        }
-    </script>
-
-@endsection
-
 @section('contenu')
     <h1 class="h1">Le programme</h1>
     <p class="accroche">{!! substr($lesTextes[11]->getTexte(), strpos($lesTextes[11]->getTexte(), '>') + 1) !!}</p>
@@ -82,21 +17,44 @@
 
     <p class="accroche">{!! $lesTextes[10]->getTexte() !!}</p>
 
-{{--  PieChart de Google  --}}
-{{--  https://developers.google.com/chart/interactive/docs/gallery/piechart  --}}
-    <div id="piechart" style="width: 900px; height: 900px;"></div>
+    <div class="lesAxesDuProgramme">
+        <div class="pieChart">
+            @php($start = 0)
+            @php($colors = ['#95AA91', '#B5C6B2', '#6A8065', '#3D5139', '#D0E3CC'])
+            @foreach($lesAxes as $unAxe)
+                <div
+                        class="pieSlice pie{{$unAxe->getId()}}"
+                        id="pie{{$unAxe->getId()}}"
+                        style="background: conic-gradient(transparent 0% {{$start}}deg,
+                                                  {{$colors[$loop->iteration-1]}} {{$start}}deg {{$start + $unAxe->getPourcentage()*360/100 +1}}deg,
+                                                  transparent 25%)">
+                    <span class="pourcentage">{{$unAxe->getPourcentage()}}%</span>
+                    <span class="nom">{{$unAxe->getNom()}}</span>
+                </div>
+                @php($start = $start + $unAxe->getPourcentage()*360/100)
+            @endforeach
+        </div>
+        <div class="lesBtns">
+            @foreach($lesAxes as $unAxe)
+                <button class="btnAxes" id="btnAxe{{$unAxe->getId()}}" style="background-color: {{$colors[$loop->iteration-1]}}">{{$unAxe->getNom()}}</button>
+            @endforeach
+        </div>
+    </div>
+
 
     <div class="fondInfoPrgramme">
-        <div class="infoProgramme">
-            <div class="infoProgramme__titreExplication">
-                <h2 class="infoProgramme__titreExplication__h2">{{$lesAxes[4]->getNom()}} - {{$lesAxes[4]->getPourcentage()}}%</h2>
-                <p class="infoProgramme__titreExplication__texte">{!! strtok($lesAxes[4]->getDescription() , '<') !!}</p>
-            </div>
+        @foreach($lesAxes as $unAxe)
+            <div class="infoProgramme nonSelectionne" id="sectionAxe{{$unAxe->getId()}}">
+                <div class="infoProgramme__titreExplication">
+                    <h2 class="infoProgramme__titreExplication__h2">{{$unAxe->getNom()}} - {{$unAxe->getPourcentage()}}%</h2>
+                    <p class="infoProgramme__titreExplication__texte">{!! strtok($unAxe->getDescription() , '<') !!}</p>
+                </div>
 
-            <ul class="infoProgramme__listeExemples">
-                {!! str_replace('</ul>', '', substr($lesAxes[4]->getDescription(), strpos($lesAxes[4]->getDescription(), '>') + 1)) !!}
-            </ul>
-        </div>
+                <ul class="infoProgramme__listeExemples">
+                    {!! str_replace('</ul>', '', substr($unAxe->getDescription(), strpos($unAxe->getDescription(), '>') + 1)) !!}
+                </ul>
+            </div>
+        @endforeach
     </div>
 
     <div class="infoSuppProgramme">
@@ -182,6 +140,7 @@
     </div>
 
     <script src="liaisons/script/apresTim.js"></script>
+    <script src="liaisons/script/lesAxes.js"></script>
 @endsection
 
 

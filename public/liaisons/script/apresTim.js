@@ -28,7 +28,7 @@ function initialiserSections() {
 }
 function ouvrirFermerSections(sectionClick) {
     if(!sectionClick.classList.contains('ouvert')) {
-        console.log('Je clique sur une case fermée')
+        // console.log('Je clique sur une case fermée')
         for(cptSections = 0; cptSections < lesSections.length; cptSections++) {
             if(lesSections[cptSections].classList.contains('ouvert')) {
                 lesSections[cptSections].classList.remove('ouvert');

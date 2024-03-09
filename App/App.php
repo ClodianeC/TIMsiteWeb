@@ -29,10 +29,7 @@ class App
         $this->demarrerSession();
         // Routage de la requête URL
         $this->routerRequete();
-
-
     }
-
     public static function getPDO():PDO
     {
         // Retourne l'objet de connexion et si nécessaire l'instancie

@@ -4,71 +4,6 @@
  Le programme
 <?php $this->stopSection(); ?>
 
-<?php $this->startSection('graphique'); ?>
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
- <script type="text/javascript">
- google.charts.load('current', {'packages':['corechart']});
- google.charts.setOnLoadCallback(drawChart);
-
- function drawChart() {
-
- var data = google.visualization.arrayToDataTable([
- ['Aspects du programme', 'Pourcentage'],
- ["Programmation", 25],
- ['Intégration', 25],
- ['Conception', 25],
- ['Médias', 15],
- ['Autres', 10]
- ]);
-
- var options = {
- allowHTML: true,
- title: '',
- pieStartAngle: 10,
- slices: {
- 0: {color: '#95AA91'},
- 1: {color: '#B5C6B2'},
- 2: {color: '#6A8065'},
- 3: {color: '#3D5139',
- textStyle: { color: '#FFFAF1'}},
- 4: {color: '#D0E3CC'}
- },
- backgroundColor :  {
- stroke: 'transparent',
- fill: 'transparent'
- },
- pieSliceBorderColor: 'transparent',
- fontName: "Caviar Dreams",
- pieSliceText: 'label',
- pieSliceTextStyle: {
- color: 'black'
- },
- fontSize: 18,
- legend: {
- // position: 'none',
- alignment: 'center',
- textStyle: {
- fontSize: 16
- },
- },
- tooltip: {
- showColorCode: true,
- text: 'percentage'
- },
- chartArea: {
- width: '100%',
- height: '100%'
- }
- };
-
- var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
- chart.draw(data, options);
- }
- </script>
-
-<?php $this->stopSection(); ?>
-
 <?php $this->startSection('contenu'); ?>
  <h1 class="h1">Le programme</h1>
  <p class="accroche"><?php echo substr($lesTextes[11]->getTexte(), strpos($lesTextes[11]->getTexte(), '>') + 1); ?></p>
@@ -83,22 +18,48 @@
 
  <p class="accroche"><?php echo $lesTextes[10]->getTexte(); ?></p>
 
-<?php /*  PieChart de Google  */ ?>
-<?php /*  https://developers.google.com/chart/interactive/docs/gallery/piechart  */ ?>
- <div id="piechart" style="width: 900px; height: 900px;"></div>
+ <div class="lesAxesDuProgramme">
+ <div class="pieChart">
+ <?php ($start = 0); ?>
+ <?php ($colors = ['#95AA91', '#B5C6B2', '#6A8065', '#3D5139', '#D0E3CC']); ?>
+ <?php $__currentLoopData = $lesAxes; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $unAxe): $loop = $this->incrementLoopIndices();  ?>
+ <div
+ class="pieSlice pie<?php echo \htmlentities($unAxe->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ id="pie<?php echo \htmlentities($unAxe->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ style="background: conic-gradient(transparent 0% <?php echo \htmlentities($start??'', ENT_QUOTES, 'UTF-8', false); ?>deg,
+ <?php echo \htmlentities($colors[$loop->iteration-1]??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($start??'', ENT_QUOTES, 'UTF-8', false); ?>deg <?php echo \htmlentities($start + $unAxe->getPourcentage()*360/100 +1??'', ENT_QUOTES, 'UTF-8', false); ?>deg,
+ transparent 25%)">
+ <span class="pourcentage"><?php echo \htmlentities($unAxe->getPourcentage()??'', ENT_QUOTES, 'UTF-8', false); ?>%</span>
+ <span class="nom"><?php echo \htmlentities($unAxe->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ <?php ($start = $start + $unAxe->getPourcentage()*360/100); ?>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <div class="lesBtns">
+ <?php $__currentLoopData = $lesAxes; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $unAxe): $loop = $this->incrementLoopIndices();  ?>
+ <button class="btnAxes" id="btnAxe<?php echo \htmlentities($unAxe->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>" style="background-color: <?php echo \htmlentities($colors[$loop->iteration-1]??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($unAxe->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?></button>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+
 
  <div class="fondInfoPrgramme">
- <div class="infoProgramme">
+ <?php $__currentLoopData = $lesAxes; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $unAxe): $loop = $this->incrementLoopIndices();  ?>
+ <div class="infoProgramme nonSelectionne" id="sectionAxe<?php echo \htmlentities($unAxe->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>">
  <div class="infoProgramme__titreExplication">
- <h2 class="infoProgramme__titreExplication__h2"><?php echo \htmlentities($lesAxes[4]->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?> - <?php echo \htmlentities($lesAxes[4]->getPourcentage()??'', ENT_QUOTES, 'UTF-8', false); ?>%</h2>
- <p class="infoProgramme__titreExplication__texte"><?php echo strtok($lesAxes[4]->getDescription() , '<'); ?></p>
+ <h2 class="infoProgramme__titreExplication__h2"><?php echo \htmlentities($unAxe->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?> - <?php echo \htmlentities($unAxe->getPourcentage()??'', ENT_QUOTES, 'UTF-8', false); ?>%</h2>
+ <p class="infoProgramme__titreExplication__texte"><?php echo strtok($unAxe->getDescription() , '<'); ?></p>
  </div>
 
  <ul class="infoProgramme__listeExemples">
- <?php echo str_replace('</ul>', '', substr($lesAxes[4]->getDescription(), strpos($lesAxes[4]->getDescription(), '>') + 1)); ?>
+ <?php echo str_replace('</ul>', '', substr($unAxe->getDescription(), strpos($unAxe->getDescription(), '>') + 1)); ?>
 
  </ul>
  </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </div>
 
  <div class="infoSuppProgramme">
@@ -194,6 +155,7 @@
  </div>
 
  <script src="liaisons/script/apresTim.js"></script>
+ <script src="liaisons/script/lesAxes.js"></script>
 <?php $this->stopSection(); ?>
 
 
