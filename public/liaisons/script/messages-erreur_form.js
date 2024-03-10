@@ -1,4 +1,4 @@
-{
+const objJSONMessagesErreur = {
   "prenom": {
     "regex":"#^[a-zA-ZÀ-ÿ -]+$#",
     "label": "Votre prénom",
@@ -55,7 +55,7 @@
   },
   "consentement": {
     "regex": "",
-    "label": "J'autorise l'utilisation de mon numéro de téléphone avec le responsable «Étudiant d'un jour». ",
+	"label": "J'autorise l'utilisation de mon numéro de téléphone avec le responsable «Étudiant d'un jour». ",
     "erreurs": {
       "vide": "Veuillez cocher la case pour consentir au partage de votre numéro de téléphone avec le responsable « Étudiant d'un jour. »"
     }

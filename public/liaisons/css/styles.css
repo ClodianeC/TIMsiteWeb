@@ -1903,7 +1903,7 @@ footer {
   height: 5.5rem;
   padding: 0 1.5rem;
 }
-.formulaire__input:hover, .formulaire__input:hover, .formulaire__input:focus {
+.formulaire__input:active, .formulaire__input:focus {
   outline: #d0e3cc solid 0.4rem;
   outline-offset: -0.4rem;
 }
@@ -1914,7 +1914,7 @@ footer {
   width: 80%;
   padding: 1rem 3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   margin: 3rem auto 0 auto;
@@ -1995,6 +1995,11 @@ footer {
   height: 5.5rem;
   margin-bottom: 3rem;
   display: block;
+  padding: 0 1.5rem;
+}
+.formulaire__sectionBen__input:active, .formulaire__sectionBen__input:focus {
+  outline: #d0e3cc solid 0.4rem;
+  outline-offset: -0.4rem;
 }
 .formulaire__sectionBen__labelCheck {
   margin-left: 1.5rem;
@@ -2052,6 +2057,10 @@ footer {
     -webkit-transform: scale(2); /* Safari and Chrome */
     -o-transform: scale(2); /* Opera */
     transform: scale(2);
+  }
+  .formulaire__sectionBen__checkbox#consentement:hover, .formulaire__sectionBen__checkbox#consentement:checked, .formulaire__sectionBen__checkbox#consentement:focus, .formulaire__sectionBen__checkbox#consentement:active {
+    outline: #d0e3cc solid 0.2rem;
+    outline-offset: -0.2rem;
   }
 }
 @media (min-width: 950px) {
@@ -2137,13 +2146,25 @@ input.xLarge {
   outline-offset: -0.4rem;
 }
 
-.spriteRETRO--warning {
+.formulaire__sectionBen__checkbox.erreur {
+  outline: #e87c84 solid 0.2rem;
+  outline-offset: -0.2rem;
+}
+
+.spriteRETRO {
   background-image: url("../img/sprite.svg");
   display: inline-block;
   margin-right: 1rem;
   width: 2rem;
   height: 2rem;
+}
+
+.spriteRETRO--warning {
   background-position: -829px -67.3px;
+}
+
+.spriteRETRO--ok {
+  background-position: -807px -67.3px;
 }
 
 /* Index de diplômés */

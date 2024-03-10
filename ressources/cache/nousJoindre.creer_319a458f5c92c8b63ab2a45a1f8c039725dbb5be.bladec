@@ -29,7 +29,7 @@
  <input type="text"
  id="prenom"
  name="prenom"
- required
+<?php /*                               required*/ ?>
  pattern="[a-zA-ZÀ-ÖØ-öø-ÿ -]+"
  title="Caractères alphabétiques français seulement."
  value="<?php if(isset($tValidation['prenom']['valeur'])): ?><?php echo \htmlentities($tValidation['prenom']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
@@ -46,7 +46,8 @@
  <input type="text"
  id="nom"
  name="nom"
- required
+<?php /*                               required*/ ?>
+ pattern="[a-zA-ZÀ-ÖØ-öø-ÿ -]+"
  title="Caractères alphabétiques français seulement."
  value="<?php if(isset($tValidation['nom']['valeur'])): ?><?php echo \htmlentities($tValidation['nom']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
  class="formulaire__input moyen elementCourriel <?php if(isset($tValidation['nom']['estValide'])): ?> <?php if($tValidation['nom']['estValide'] === false): ?> erreur <?php endif; ?><?php endif; ?>">
@@ -62,7 +63,8 @@
  <input type="text"
  id="courriel"
  name="courriel"
- required
+<?php /*                       required*/ ?>
+ pattern="[a-zA-Z0-9][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[@][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[.][a-zA-Z]{2,}"
  title="Adresse courriel valide."
  value="<?php if(isset($tValidation['courriel']['valeur'])): ?><?php echo \htmlentities($tValidation['courriel']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
  class="formulaire__input large elementCourriel <?php if(isset($tValidation['courriel']['estValide'])): ?> <?php if($tValidation['courriel']['estValide'] === false): ?> erreur <?php endif; ?><?php endif; ?>">
@@ -113,6 +115,7 @@
  <input type="text"
  id="telephone"
  name="telephone"
+ pattern="(\(\d{3}\) \d{3}-\d{4}|\d{3}-\d{3}-\d{4})|(\+?33[ -]?(\d{1,2}[ -]?){4}\d{2})"
  title="Numéro de téléphone au format xxx xxx xxxx ou xx xx xx xx."
  value="<?php if(isset($tValidation['telephone']['valeur'])): ?><?php echo \htmlentities($tValidation['telephone']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
  class="formulaire__sectionBen__input moyen <?php if(isset($tValidation['telephone']['estValide'])): ?> <?php if($tValidation['telephone']['estValide'] === false): ?> erreur <?php endif; ?><?php endif; ?>">
@@ -140,7 +143,8 @@
  <input type="text"
  id="sujet"
  name="sujet"
- required
+<?php /*                       required*/ ?>
+ pattern="[\p{L}\d\s.,\-_()]{1,100}"
  title="Caractères alphabétiques français seulement."
  value="<?php if(isset($tValidation['sujet']['valeur'])): ?><?php echo \htmlentities($tValidation['sujet']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
  class="formulaire__input large elementCourriel <?php if(isset($tValidation['sujet']['estValide'])): ?> <?php if($tValidation['sujet']['estValide'] === false): ?> erreur <?php endif; ?>- <?php endif; ?>">
@@ -154,7 +158,8 @@
  <input type="text"
  id="message"
  name="message"
- required
+<?php /*                       required*/ ?>
+ pattern="[\p{L}\d\s.,\-_()!?;:'&quot;/]{1,1000}"
  title="Caractères alphabétiques français seulement."
  value="<?php if(isset($tValidation['message']['valeur'])): ?><?php echo \htmlentities($tValidation['message']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
  class="formulaire__input xLarge elementCourriel <?php if(isset($tValidation['message']['estValide'])): ?> <?php if($tValidation['message']['estValide'] === false): ?> erreur <?php endif; ?><?php endif; ?>">
@@ -170,7 +175,9 @@
  <button class="btnPrincipal inactive" id="appeler" aria-hidden="true">Appeler</button>
  </form>
 
+ <script src="liaisons/script/messages-erreur_form.js"></script>
  <script src="liaisons/script/formulaire.js"></script>
+ <script src="liaisons/script/validationClient.js"></script>
 <?php $this->stopSection(); ?>
 
 
