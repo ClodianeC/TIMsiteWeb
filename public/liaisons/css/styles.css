@@ -1379,7 +1379,6 @@ footer {
 }
 .infoSuppProgramme__boutons__btnSiteCegep {
   position: relative;
-  font-size: 1.4rem;
   z-index: 1;
 }
 .infoSuppProgramme__boutons__ou {
@@ -1408,11 +1407,6 @@ footer {
   z-index: 1;
 }
 
-@media (min-width: 800px) {
-  .infoSuppProgramme__boutons__btnSiteCegep {
-    font-size: 1.6rem;
-  }
-}
 @media (min-width: 950px) {
   .infoSuppProgramme {
     width: 90%;
@@ -1742,6 +1736,11 @@ footer {
   margin-bottom: 0;
 }
 
+.btnGrille {
+  display: block;
+  margin: auto;
+}
+
 @media (min-width: 800px) {
   .infoStage {
     width: 90%;
@@ -1758,7 +1757,7 @@ footer {
   width: 80%;
   max-width: 500px;
   margin: auto;
-  padding: 5rem 0;
+  padding: 3rem 0;
   text-align: center;
 }
 
@@ -1784,18 +1783,31 @@ footer {
   max-width: 80%;
   margin: 3rem auto;
 }
-.stageATE__texte {
+.stageATE p:nth-child(2) {
   max-width: 80%;
   margin: 2rem auto;
 }
-.stageATE__h3 {
+.stageATE p:nth-child(3) {
   max-width: 85%;
   margin: auto;
+  font-family: "caviar_dreamsregular";
+  font-size: 22px;
+  font-size: 2.2rem;
 }
-.stageATE__liste {
+@media screen {
+  .stageATE p:nth-child(3) {
+    max-width: 85%;
+    margin: auto;
+    font-family: "caviar_dreamsregular";
+    font-size: 25px;
+    font-size: 2.5rem;
+  }
+}
+.stageATE ul {
   max-width: 80%;
   margin: 3rem auto;
 }
+
 @media (min-width: 800px) {
   .fondInfoATE {
     border-radius: 100vh;

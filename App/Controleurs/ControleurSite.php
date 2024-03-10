@@ -34,16 +34,10 @@ class ControleurSite {
     public function lesStages():void {
         $infosFooter = [Texte::trouverParId(9), Texte::trouverParId(1), Texte::trouverParId(2), Texte::trouverParId(5), Texte::trouverParId(3), Texte::trouverParId(4)];
         $lesLiensMenu = MenuLien::trouverTout();
+        $lesTextes = Texte::trouverTout();
 
-        $tDonnees = array("infosFooter"=>$infosFooter, 'lesLiens'=>$lesLiensMenu);
+        $tDonnees = array("infosFooter"=>$infosFooter, 'lesLiens'=>$lesLiensMenu, 'lesTextes'=>$lesTextes);
         echo App::getBlade()->run('lesStages',$tDonnees);
-    }
-    public function bidon():void {
-        $infosFooter = [Texte::trouverParId(9), Texte::trouverParId(1), Texte::trouverParId(2), Texte::trouverParId(5), Texte::trouverParId(3), Texte::trouverParId(4)];
-        $lesLiensMenu = MenuLien::trouverTout();
-
-        $tDonnees = array("infosFooter"=>$infosFooter, 'lesLiens'=>$lesLiensMenu);
-        echo App::getBlade()->run('bidon',$tDonnees);
     }
 }
 

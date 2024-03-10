@@ -5,8 +5,15 @@
 <?php $this->stopSection(); ?>
 
 <?php $this->startSection('contenu'); ?>
- <h1 class="h1">Les stages</h1>
- <p class="accroche">Le programme TIM du Cégep de Sainte-Foy offre des stages en Alternance travail études (ATE) pendant l’été et un stage crédité à la session 6 qui peut être réalisé en France. Contacter <a class="hyperlien" href="index.php?controleur=joindre&action=creer&idResponsable=3">Pascal Larose</a> pour en savoir plus.</p>
+ <h1 class="h1"><?php echo \htmlentities($lesTextes[23]->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></h1>
+ <p class="accroche">
+ <?php echo substr($lesTextes[23]->getTexte(), 0, strpos($lesTextes[23]->getTexte(), '#')); ?>
+
+ index.php?controleur=joindre&action=creer&idResponsable=3"
+ class="hyperlien"
+ <?php echo substr($lesTextes[23]->getTexte(), strpos($lesTextes[23]->getTexte(), '#') +2); ?>
+
+ </p>
  <div class="fondInfoStage">
  <div class="infoStage">
  <div class="infoStage__section">
@@ -24,23 +31,19 @@
  </div>
  </div>
  </div>
- <p class="texteStage">Consultez le profil des compétences de nos étudiantes et étudiants. Contactez <a class="infoStage__texte__lien hyperlien" href="index.php?controleur=joindre&action=creer&idResponsable=3">Pascal Larose</a> Pour en savoir plus. Téléphone : (418) 659-6600, poste 6663</p>
+ <p class="texteStage">Consultez le profil des compétences de nos étudiantes et étudiants.</p>
+ <button class="btnPrincipal btnGrille" id="btnGrilleCompetences">Téléchargez la grille des compétences</button>
+ <p class="texteStage">Contactez <a class="infoStage__texte__lien hyperlien" href="index.php?controleur=joindre&action=creer&idResponsable=3">Pascal Larose</a> Pour en savoir plus. Téléphone : (418) 659-6600, poste 6663</p>
  </div>
  <div class="stageDerniereSession">
- <h2 class="stageDerniereSession__h2 h2">Le stage de dernière session</h2>
- <p class="stageDerniereSession__texte">La dernière session de la formation est divisée en deux parties. La première comporte des cours réalisés en mode intensif d’une durée de sept semaines. La seconde est entièrement consacrée à un stage rémunéré en entreprise. </p>
+ <h2 class="stageDerniereSession__h2 h2"><?php echo \htmlentities($lesTextes[26]->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></h2>
+ <p class="stageDerniereSession__texte"><?php echo $lesTextes[26]->getTexte(); ?></p>
  </div>
  <div class="fondInfoATE">
  <div class="stageATE">
- <h2 class="stageATE__h2 h2">Les stages en Alternance travail-étude (ATE)</h2>
- <p class="stageATE__texte">Les stages ATE sont une formule qui permet aux étudiants et aux étudiantes qui le désirent, dès la fin de la première année, de vivre une expérience de travail enrichissante, tout en étant encadré par une personne enseignante et superviseure dans un milieu de travail authentique. Cette expérience permettra à l’étudiant et à l’étudiante de vivre la réalité du marché du travail et de mettre ses nouveaux acquis à profit.</p>
- <h3 class="stageATE__h3 h3">Pourquoi faire un stage ATE?</h3>
- <ul class="stageATE__liste">
- <li class="stageATE__liste__item">Découvrir la dynamique d’un environnement de travail de professionnel</li>
- <li class="stageATE__liste__item">Faire de nouveaux apprentissages complémentaires au programme</li>
- <li class="stageATE__liste__item">Développer ses compétences professionnelles</li>
- <li class="stageATE__liste__item">Agrandir son réseau de contact dans le domaine</li>
- </ul>
+ <h2 class="stageATE__h2 h2"><?php echo \htmlentities($lesTextes[25]->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></h2>
+ <?php echo $lesTextes[25]->getTexte(); ?>
+
  </div>
  </div>
 <?php $this->stopSection(); ?>
