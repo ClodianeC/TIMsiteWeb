@@ -13,32 +13,48 @@ lesCheckboxsDesResponsables.forEach(uneCheckbox => uneCheckbox.addEventListener(
 window.addEventListener('load', toggleSectionBen);
 window.addEventListener('load', switcherAppelCourriel);
 
+
 function switcherAppelCourriel() {
+
     if(btnTelephone.checked === true) {
+
         for(cpt=0; cpt<lesElementsCourriel.length; cpt++) {
             element = lesElementsCourriel[cpt];
-            element.classList.add('invisible');
+            if(!element.classList.contains('invisible')) {
+                element.classList.add('invisible');
+            }
             if(element.ariaHidden === false) {
                 element.ariaHidden = true;
             }
         }
-        btnAppeler.classList.remove('inactive');
-        if(btnEnvoyerCourriel.classList.contains('inactive')) {
+
+        if(!btnEnvoyerCourriel.classList.contains('inactive')) {
             btnEnvoyerCourriel.classList.add('inactive');
+            btnEnvoyerCourriel.classList.remove('active')
         }
+        btnAppeler.classList.remove('inactive');
+        btnAppeler.classList.add('active');
+        btnAppeler.ariaHidden = false;
     }
     else {
+
         for(cpt=0; cpt<lesElementsCourriel.length; cpt++) {
             element = lesElementsCourriel[cpt];
-            element.classList.remove('invisible');
+            if(element.classList.contains('invisible')) {
+                element.classList.remove('invisible');
+            }
             if(element.ariaHidden === true) {
                 element.ariaHidden = false;
             }
         }
-        if(btnAppeler.classList.contains('inactive')) {
+
+        if(!btnAppeler.classList.contains('inactive')) {
             btnAppeler.classList.add('inactive');
+            btnAppeler.classList.remove('active');
         }
         btnEnvoyerCourriel.classList.remove('inactive');
+        btnEnvoyerCourriel.classList.add('active');
+        btnEnvoyerCourriel.ariaHidden = false;
     }
 }
 

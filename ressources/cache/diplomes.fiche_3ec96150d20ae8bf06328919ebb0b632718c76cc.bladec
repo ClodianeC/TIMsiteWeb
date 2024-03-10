@@ -8,11 +8,7 @@
 <?php $this->startSection('contenu'); ?>
  <h1 class="h1"><?php echo \htmlentities($leDiplome->getPrenom()??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($leDiplome->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?></h1>
  <p class="accroche">
- <?php if($leDiplome->getGenre() === 'f'): ?>
- Diplômée 2024
- <?php else: ?>
- Diplômé 2024
- <?php endif; ?>
+ Diplômé(e) 2024
  </p>
 
  <div class="fondFicheDiplome">
@@ -73,7 +69,14 @@
  <?php $__currentLoopData = $lesProjets; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $unProjet): $loop = $this->incrementLoopIndices();  ?>
  <a href="index.php?controleur=projet&action=fiche&idProjet=<?php echo \htmlentities($unProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>" class="projetsDiplome__unProjet">
- <img class="projetsDiplome__unProjet__img" src="liaisons/img/projets/principales/<?php echo \htmlentities($leDiplome->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($unProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_01_300.png" alt="Image du projet <?php echo \htmlentities($unProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img class="projetsDiplome__unProjet__img"
+ <?php if(is_file("liaisons/img/projets/principales/" . $leDiplome->getId() . "_" . $unProjet->getId() . "_01_300.png")): ?>
+ src="liaisons/img/projets/principales/<?php echo \htmlentities($leDiplome->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($unProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_01_300.png"
+ <?php else: ?>
+ src="liaisons/img/projets/placeholders/projet<?php echo \htmlentities(rand(1, 4)??'', ENT_QUOTES, 'UTF-8', false); ?>.svg"
+ <?php endif; ?>
+ alt="Image du projet <?php echo \htmlentities($unProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+<?php /*                    <img class="projetsDiplome__unProjet__img" src="liaisons/img/projets/principales/<?php echo \htmlentities($leDiplome->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_<?php echo \htmlentities($unProjet->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>_01_300.png" alt="Image du projet <?php echo \htmlentities($unProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?>">*/ ?>
  <h3 class="projetsDiplome__unProjet__h3 h3"><?php echo \htmlentities($unProjet->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></h3>
  </a>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>

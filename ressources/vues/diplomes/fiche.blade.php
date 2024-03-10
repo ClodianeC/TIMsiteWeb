@@ -66,7 +66,14 @@
             <h2 class="projetsDiplome__h2 h2">Les projets par {{$leDiplome->getPrenom()}} {{$leDiplome->getNom()}}</h2>
             @foreach($lesProjets as $unProjet)
                 <a href="index.php?controleur=projet&action=fiche&idProjet={{$unProjet->getId()}}" class="projetsDiplome__unProjet">
-                    <img class="projetsDiplome__unProjet__img" src="liaisons/img/projets/principales/{{$leDiplome->getId()}}_{{$unProjet->getId()}}_01_300.png" alt="Image du projet {{$unProjet->getTitre()}}">
+                    <img class="projetsDiplome__unProjet__img"
+                         @if(is_file("liaisons/img/projets/principales/" . $leDiplome->getId() . "_" . $unProjet->getId() . "_01_300.png"))
+                             src="liaisons/img/projets/principales/{{$leDiplome->getId()}}_{{$unProjet->getId()}}_01_300.png"
+                         @else
+                             src="liaisons/img/projets/placeholders/projet{{rand(1, 4)}}.svg"
+                         @endif
+                         alt="Image du projet {{$unProjet->getTitre()}}">
+{{--                    <img class="projetsDiplome__unProjet__img" src="liaisons/img/projets/principales/{{$leDiplome->getId()}}_{{$unProjet->getId()}}_01_300.png" alt="Image du projet {{$unProjet->getTitre()}}">--}}
                     <h3 class="projetsDiplome__unProjet__h3 h3">{{$unProjet->getTitre()}}</h3>
                 </a>
             @endforeach

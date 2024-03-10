@@ -113,7 +113,7 @@
   }
   // *** Fiches responsables *** //
   &__destinataires {
-    width: 100%;
+    width: 80%;
     padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
@@ -155,7 +155,7 @@
         flex-direction: column;
         justify-content: space-between;
         width: 88%;
-        height: 88%;
+        height: 135%;
         border-radius: 1.5rem;
         padding: 2rem;
         background-color: $blancCasse;

@@ -23,7 +23,6 @@
             <div class="topOfTheWorld" id="topOfTheWorld" aria-hidden="true"></div>
 
             @include('fragments.entete')
-{{--            <a href="index.php?controleur=site&action=bidon">Lien bidon</a>--}}
         </header>
 
         <main>
