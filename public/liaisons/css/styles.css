@@ -2882,5 +2882,22 @@ input.xLarge {
     align-self: center;
   }
 }
+/* Page Confirmation envoie courriel */
+.fondConfirmation {
+  background-color: #febe98;
+  background-image: url("../img/texture/round.webp");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  margin: 3rem auto 8rem auto;
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+}
+.fondConfirmation p, .fondConfirmation a {
+  display: block;
+  margin: 3rem auto auto auto;
+  width: 80%;
+  max-width: 65rem;
+}
 
 /*# sourceMappingURL=styles.css.map */
