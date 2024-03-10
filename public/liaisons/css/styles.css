@@ -533,9 +533,14 @@ body {
 }
 
 main {
-  margin: -12rem auto 0 auto;
+  margin: -6rem auto 0 auto;
 }
 
+@media (min-width: 600px) {
+  main {
+    margin: -12rem auto 0 auto;
+  }
+}
 .accroche {
   margin: 5rem auto;
   width: 80%;
@@ -1057,6 +1062,8 @@ footer {
   align-items: center;
   width: 90%;
   margin: auto;
+  overflow: hidden;
+  padding-top: 1rem;
 }
 
 .pieChart {
@@ -1068,7 +1075,6 @@ footer {
   background-color: rgba(255, 250, 241, 0.4);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
   rotate: 12deg;
-  overflow: hidden;
 }
 
 .pieSlice {
