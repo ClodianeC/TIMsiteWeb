@@ -1,5 +1,15 @@
 /* Nous joindre */
 
+// ** Switch entre formulaire courriel/téléphone
+// ** Le formulaire
+// *** Fiches responsables
+// *** Section Benoit Frigon (téléphone)
+// *** Format des input type text
+// ** Boutons Appeler/Envoie courriel
+// ** Classes cachées
+// ** Styles erreur
+
+// **** Switch entre formulaire courriel/téléphone **** //
 .selectionMoyen {
   display: flex;
   flex-direction: column;
@@ -60,6 +70,7 @@
   }
 }
 
+// **** Le formulaire **** //
 .fondFormulaire {
   background-color: $orange;
   background-image: url("../img/texture/round.webp");
@@ -100,6 +111,7 @@
   &__message {
     color: #4D0000;
   }
+  // *** Fiches responsables *** //
   &__destinataires {
     width: 100%;
     padding: 1rem 3rem;
@@ -184,10 +196,9 @@
           outline-offset: -0.4rem;
         }
       }
-
-
     }
   }
+  // *** Section Benoit Frigon (téléphone) *** //
   &__sectionBen {
 
     &__label {
@@ -216,6 +227,11 @@
       accent-color: $vert;
     }
   }
+}
+.conteneurFormPhotoTexte {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 @media (min-width: 800px) {
   .conteneurForm {
@@ -296,12 +312,12 @@
   }
 }
 
+// *** Format des input type text *** //
 .conteneurNomPrenom {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 .moyen {
   width: 90%;
   max-width: 30rem;
@@ -337,6 +353,7 @@ input.xLarge {
   }
 }
 
+// **** Boutons Appeler/Envoie courriel **** //
 #envoyerCourriel,
 #appeler {
   &.active {
@@ -353,20 +370,11 @@ input.xLarge {
   }
 }
 
-.conteneurFormPhotoTexte {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.conteneurFormTexte {
-  //flex-basis: 30%;
-}
-
+// **** Classes cachées **** //
 .formulaire.cache {
   display: none;
   visibility: hidden;
 }
-
 .invisible {
   display: none;
   visibility: hidden;
@@ -376,6 +384,7 @@ input.xLarge {
   visibility: hidden;
 }
 
+// **** Styles erreur **** //
 .erreur {
   outline: $rose solid 0.4rem;
   outline-offset: -0.4rem;

@@ -1,5 +1,17 @@
 /*Le programme*/
 
+// ** Bourse perspective
+// ** Les axes de cours du programme
+// *** Diagramme des axes
+// *** Les boutons des axes
+// ** Texte infos des axes du programme
+// ** Liens pour info supplémentaire du programme
+// ** Infos demande d'admission
+// ** Section étudiant international
+// ** Section étudiant d'un jour
+// ** Section après la TIM
+
+// **** Bourse perspective **** //
 .fondBoursesPerspective {
   background-color: $blancCasse;
   border: $vert solid 0.4rem;
@@ -51,6 +63,7 @@
   }
 }
 
+// **** Les axes de cours du programme **** //
 .lesAxesDuProgramme {
   display: flex;
   flex-direction: column;
@@ -58,6 +71,7 @@
   width: 90%;
   margin: auto;
 }
+// *** Diagramme des axes *** //
 .pieChart {
   aspect-ratio: 1;
   width: 90%;
@@ -87,7 +101,6 @@
   }
 }
 .pieSlice.pie1 {
-
 
   &.outside {
     top: -12px;
@@ -161,33 +174,6 @@
   & span:nth-child(2) {
     top: 14%;
     right: -22%;
-  }
-}
-.lesBtns {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 2rem 0;
-  width: 80%;
-  max-width: 30rem;
-}
-.btnAxes {
-  width: 100%;
-  font-family: "caviar_dreamsregular", sans-serif;
-  font-size: 2.2rem;
-  border: none;
-  padding: 1rem 3rem;
-  border-radius: 2rem;
-  margin-bottom: 1rem;
-
-  &#btnAxe4 {
-    color: $blancCasse;
-  }
-  &:hover,
-  &:active,
-  &:focus,
-  &.click {
-    box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
   }
 }
 @media (min-width: 600px) {
@@ -349,6 +335,37 @@
       right: -22%;
     }
   }
+}
+
+// *** Les boutons des axes *** //
+.lesBtns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem 0;
+  width: 80%;
+  max-width: 30rem;
+}
+.btnAxes {
+  width: 100%;
+  font-family: "caviar_dreamsregular", sans-serif;
+  font-size: 2.2rem;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+
+  &#btnAxe4 {
+    color: $blancCasse;
+  }
+  &:hover,
+  &:active,
+  &:focus,
+  &.click {
+    box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+  }
+}
+@media (min-width: 800px) {
   .lesBtns {
     display: flex;
     flex-direction: column;
@@ -374,6 +391,7 @@
   }
 }
 
+// **** Texte infos des axes du programme **** //
 .fondInfoPrgramme {
   background-color: $orange;
   background-image: url("../img/texture/round.webp");
@@ -418,6 +436,7 @@
   }
 }
 
+// **** Liens pour info supplémentaire du programme **** //
 .infoSuppProgramme {
   width: 80%;
   max-width: 1000px;
@@ -522,6 +541,7 @@
   }
 }
 
+// **** Infos demande d'admission **** //
 .fondDemandeAdmission {
   background-color: $orange;
   background-image: url("../img/texture/subtle_zebra_3d.png");
@@ -562,7 +582,6 @@
     }
   }
   &__sectionDroite {
-
 
     &__h3 {
       text-align: center;
@@ -659,6 +678,7 @@
   }
 }
 
+// **** Section étudiant international **** //
 .etudiantInternational {
   width: 80%;
   max-width: 500px;
@@ -703,6 +723,7 @@
   }
 }
 
+// **** Section étudiant d'un jour **** //
 .fondEtudiantDunJour {
   background-color: $blancCasse;
   border: $vert solid 0.4rem;
@@ -772,6 +793,7 @@
   }
 }
 
+// **** Section après la TIM **** //
 .fondApresTim {
   background-color: $orange;
   background-image: url("../img/texture/round.webp");

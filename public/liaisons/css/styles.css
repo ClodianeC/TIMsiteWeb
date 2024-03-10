@@ -405,16 +405,15 @@ template {
 /**
 * @author Clodiane Charette clodianecharette@hotmail.com
 */
-/**** Typographie responsive ****/
 html {
   font-size: 62.5%;
 }
 
 body {
   font-family: Arial;
-  font-size: 16px; /* 18px pour toutes les largeurs d'écran */
+  font-size: 16px;
   font-size: 1.6rem;
-  line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
+  line-height: 1.375;
 }
 @media (min-width: 800px) {
   body {
@@ -523,40 +522,7 @@ h4,
   color: #e87c84;
 }
 
-/** Boutons **/
-/**
-* @author Clodiane Charette clodianecharette@hotmail.com
-* @todo Compléter selon l'énoncé de l'exercice
-*/
-.bouton {
-  background-color: #d0e3cc;
-  border-radius: 18px;
-  color: black;
-  padding: 0.5em 1em;
-  text-decoration: none;
-}
-.bouton:after {
-  content: "»";
-  margin-left: 0.4em;
-}
-.bouton--hover {
-  background-color: rgba(208, 227, 204, 0.75);
-}
-.bouton--active {
-  background-color: rgba(208, 227, 204, 0.5);
-}
-.bouton--inverse {
-  background-color: white;
-  border: 2px solid #d0e3cc;
-}
-.bouton--inverse--hover {
-  border-color: rgba(208, 227, 204, 0.75);
-}
-.bouton--inverse--active {
-  border-color: rgba(208, 227, 204, 0.5);
-}
-
-/****** MODULES ******/
+/** Hyperliens **/
 /* Général */
 body {
   background-color: #fffaf1;
@@ -624,6 +590,7 @@ main {
     line-height: 9.5rem;
   }
 }
+/****** MODULES ******/
 /*Entête*/
 .enteteFondRectangle {
   background-color: #fffaf1;
@@ -1153,31 +1120,6 @@ footer {
   right: -22%;
 }
 
-.lesBtns {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 2rem 0;
-  width: 80%;
-  max-width: 30rem;
-}
-
-.btnAxes {
-  width: 100%;
-  font-family: "caviar_dreamsregular", sans-serif;
-  font-size: 2.2rem;
-  border: none;
-  padding: 1rem 3rem;
-  border-radius: 2rem;
-  margin-bottom: 1rem;
-}
-.btnAxes#btnAxe4 {
-  color: #fffaf1;
-}
-.btnAxes:hover, .btnAxes:active, .btnAxes:focus, .btnAxes.click {
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
-}
-
 @media (min-width: 600px) {
   .pieSlice span {
     font-size: 2rem;
@@ -1305,6 +1247,33 @@ footer {
     top: 14%;
     right: -22%;
   }
+}
+.lesBtns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem 0;
+  width: 80%;
+  max-width: 30rem;
+}
+
+.btnAxes {
+  width: 100%;
+  font-family: "caviar_dreamsregular", sans-serif;
+  font-size: 2.2rem;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+.btnAxes#btnAxe4 {
+  color: #fffaf1;
+}
+.btnAxes:hover, .btnAxes:active, .btnAxes:focus, .btnAxes.click {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 800px) {
   .lesBtns {
     display: flex;
     flex-direction: column;
@@ -1999,6 +1968,12 @@ footer {
   accent-color: #d0e3cc;
 }
 
+.conteneurFormPhotoTexte {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 @media (min-width: 800px) {
   .conteneurForm {
     width: 90%;
@@ -2097,12 +2072,6 @@ input.xLarge {
   height: 0;
   visibility: hidden;
   display: none;
-}
-
-.conteneurFormPhotoTexte {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .formulaire.cache {
@@ -2729,6 +2698,55 @@ input.xLarge {
     justify-content: space-around;
   }
 }
+.lesEtapes__h2 {
+  text-align: center;
+  width: 100%;
+}
+.lesEtapes__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem auto;
+  width: 90%;
+}
+.lesEtapes__section__texte {
+  width: 90%;
+  max-width: 60rem;
+  margin: auto;
+}
+.lesEtapes__section__img {
+  aspect-ratio: 16/9;
+  width: 100%;
+  max-width: 60rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  object-fit: cover;
+}
+
+@media (min-width: 800px) {
+  .lesEtapes__section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: normal;
+    max-width: 1000px;
+  }
+  .lesEtapes__section.pair {
+    flex-direction: row-reverse;
+  }
+  .lesEtapes__section.impair {
+    flex-direction: row;
+  }
+  .lesEtapes__section__texte {
+    width: 40%;
+    max-width: 40%;
+    margin: 0 1rem 0 0;
+  }
+  .lesEtapes__section__img {
+    width: 55%;
+    max-width: 55%;
+    align-self: center;
+  }
+}
 .fondFicheCreateurProjet {
   background-color: #fffaf1;
   border: #d0e3cc solid 0.4rem;
@@ -2843,55 +2861,6 @@ input.xLarge {
   }
   .ficheCreateurProjet__section__unProjet__img {
     width: 30rem;
-  }
-}
-.lesEtapes__h2 {
-  text-align: center;
-  width: 100%;
-}
-.lesEtapes__section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 5rem auto;
-  width: 90%;
-}
-.lesEtapes__section__texte {
-  width: 90%;
-  max-width: 60rem;
-  margin: auto;
-}
-.lesEtapes__section__img {
-  aspect-ratio: 16/9;
-  width: 100%;
-  max-width: 60rem;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-  object-fit: cover;
-}
-
-@media (min-width: 800px) {
-  .lesEtapes__section {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: normal;
-    max-width: 1000px;
-  }
-  .lesEtapes__section.pair {
-    flex-direction: row-reverse;
-  }
-  .lesEtapes__section.impair {
-    flex-direction: row;
-  }
-  .lesEtapes__section__texte {
-    width: 40%;
-    max-width: 40%;
-    margin: 0 1rem 0 0;
-  }
-  .lesEtapes__section__img {
-    width: 55%;
-    max-width: 55%;
-    align-self: center;
   }
 }
 /* Page Confirmation envoie courriel */

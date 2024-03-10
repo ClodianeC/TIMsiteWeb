@@ -50,11 +50,10 @@
 /** Hyperliens **/
 @import 'base/hyperlien';
 
-/** Boutons **/
-@import 'base/bouton';
+/** Hyperliens **/
+@import 'base/general';
 
 /****** MODULES ******/
-@import 'base/general';
 @import 'layout/entete';
 @import "layout/piedDePage";
 @import "layout/leProgramme";

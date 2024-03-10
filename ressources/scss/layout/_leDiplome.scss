@@ -1,5 +1,11 @@
 /* Fiche d'un diplômé */
 
+// ** Infos du diplômé
+// ** Les niveaux d'intérêt
+// ** Icônes pour intérêts
+// ** Les projets du diplômé
+
+// **** Infos du diplômé **** //
 .fondFicheDiplome {
   background-color: $orange;
   background-image: url("../img/texture/round.webp");
@@ -110,6 +116,7 @@
   }
 }
 
+// **** Les niveaux d'intérêt **** //
 .niveauInteret {
   width: 80%;
   margin: 10rem auto;
@@ -199,6 +206,7 @@
   }
 }
 
+// **** Icônes pour intérêts **** //
 #iconeConception {
   background-position: -520px 0;
 }
@@ -212,6 +220,7 @@
   background-position: -676px 0;
 }
 
+// **** Couleurs pour intérêts **** //
 .interet1,
 .interet2 {
   background-color: $gris;
@@ -233,6 +242,7 @@
   background-color: $vert;
 }
 
+// **** Les projets du diplômé **** //
 .fondProjetsDiplome {
   background-color: $blancCasse;
   border: $vert solid 0.4rem;

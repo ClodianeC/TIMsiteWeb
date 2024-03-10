@@ -1,4 +1,10 @@
 /* Fiche du projet */
+
+// ** Infos du projet
+// ** Les étapes du projet
+// ** Fiche du créateur du projet
+
+// **** Infos du projet **** //
 .fondFicheProjet {
   background-color: $orange;
   background-image: url("../img/texture/round.webp");
@@ -8,7 +14,6 @@
   margin-bottom: 10rem;
   padding-bottom: 5rem;
 }
-
 .imgPrincipale {
   display: block;
   aspect-ratio: 16/9;
@@ -18,7 +23,6 @@
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
 }
-
 .ficheProjet {
   width: 80%;
   margin: auto;
@@ -47,13 +51,11 @@
     vertical-align: middle;
     padding-bottom: 3rem;
   }
-
   &__sectionTechnologies {
 
     &__h2 {
       margin-top: 0;
     }
-
     &__listeTechno {
 
     }
@@ -107,6 +109,69 @@
   }
 }
 
+// **** Les étapes du projet **** //
+.lesEtapes {
+
+  &__h2 {
+    text-align: center;
+    width: 100%;
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5rem auto;
+    width: 90%;
+
+    &__texte {
+      width: 90%;
+      max-width: 60rem;
+      margin: auto;
+    }
+    &__img {
+      aspect-ratio: 16/9;
+      width: 100%;
+      max-width: 60rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      object-fit: cover;
+    }
+  }
+}
+@media (min-width: 800px) {
+  .lesEtapes {
+
+    &__h2 {
+
+    }
+
+    &__section {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: normal;
+      max-width: 1000px;
+
+      &.pair {
+        flex-direction: row-reverse;
+      }
+      &.impair {
+        flex-direction: row;
+      }
+      &__texte {
+        width: 40%;
+        max-width: 40%;
+        margin: 0 1rem 0 0;
+      }
+      &__img {
+        width: 55%;
+        max-width: 55%;
+        align-self: center;
+      }
+    }
+  }
+}
+
+// **** Fiche du créateur du projet **** //
 .fondFicheCreateurProjet {
   background-color: $blancCasse;
   border: $vert solid 0.4rem;
@@ -234,69 +299,6 @@
         }
         &__h4 {
         }
-      }
-    }
-  }
-}
-
-.lesEtapes {
-
-  &__h2 {
-    text-align: center;
-    width: 100%;
-  }
-  &__section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5rem auto;
-    width: 90%;
-
-    &__texte {
-      width: 90%;
-      max-width: 60rem;
-      margin: auto;
-    }
-
-    &__img {
-      aspect-ratio: 16/9;
-      width: 100%;
-      max-width: 60rem;
-      border-radius: 1rem;
-      margin-bottom: 2rem;
-      object-fit: cover;
-    }
-  }
-}
-@media (min-width: 800px) {
-  .lesEtapes {
-
-    &__h2 {
-
-    }
-
-    &__section {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: normal;
-      max-width: 1000px;
-
-      &.pair {
-        flex-direction: row-reverse;
-      }
-      &.impair {
-        flex-direction: row;
-      }
-      &__texte {
-        width: 40%;
-        max-width: 40%;
-        margin: 0 1rem 0 0;
-      }
-
-      &__img {
-        width: 55%;
-        max-width: 55%;
-        align-self: center;
       }
     }
   }

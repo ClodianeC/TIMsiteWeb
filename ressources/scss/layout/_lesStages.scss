@@ -1,5 +1,10 @@
 /* Les stages */
 
+// ** Le bref des stages
+// ** Stage de dernière session
+// ** Stage en ATE
+
+// **** Le bref des stages **** //
 .fondInfoStage {
   background-color: $orange;
   background-image: url("../img/texture/round.webp");
@@ -40,7 +45,6 @@
   display: block;
   margin: auto;
 }
-
 @media (min-width: 800px) {
   .infoStage {
     width: 90%;
@@ -76,6 +80,7 @@
   text-align: center;
 }
 
+// **** Stage de dernière session **** //
 .stageDerniereSession {
   width: 80%;
   max-width: 800px;
@@ -89,6 +94,7 @@
   }
 }
 
+// **** Stage en ATE **** //
 .fondInfoATE {
   background-color: $blancCasse;
   border: $vert solid 0.4rem;

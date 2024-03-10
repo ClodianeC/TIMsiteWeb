@@ -2,33 +2,15 @@
 * @author Clodiane Charette clodianecharette@hotmail.com
 */
 
-//@font-face {
-//  font-family: 'caviar_dreamsregular';
-//  src: url('../fonts/caviardreams-webfont.woff2') format('woff2'),
-//  url('../fonts/caviardreams-webfont.woff') format('woff');
-//}
-//@font-face {
-//  font-family: 'caviar_dreamsbold';
-//  src: url('../fonts/caviardreams_bold-webfont.woff2') format('woff2'),
-//  url('../fonts/caviardreams_bold-webfont.woff') format('woff');
-//}
-//@font-face {
-//  font-family: 'lt_binary_neue_roundregular';
-//  src: url('../fonts/ltbinaryneueround-regular-webfont.woff2') format('woff2'),
-//  url('../fonts/ltbinaryneueround-regular-webfont.woff') format('woff');
-//}
-
-/**** Typographie responsive ****/
-
 html {
   font-size: 62.5%;
 }
 
 body {
   font-family: Arial;
-  font-size: 16px; /* 18px pour toutes les largeurs d'écran */
+  font-size: 16px;
   font-size: 1.6rem;
-  line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
+  line-height: 1.375;
   @media (min-width: 800px) {
     font-size: 18px;
     font-size: 1.8rem;

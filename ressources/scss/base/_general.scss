@@ -6,21 +6,17 @@ body {
   background-repeat: repeat;
   background-blend-mode: luminosity;
 }
-
-//main {
-//  margin: 80vh auto 0 auto;
-//}
-//@media (min-width: 800px) {
-  main {
-    margin: -12rem auto 0 auto;
-  }
-//}
+main {
+  margin: -12rem auto 0 auto;
+}
 
 .accroche {
   margin: 5rem auto;
   width: 80%;
   max-width: 800px;
 }
+
+// **** Style Boutons **** //
 .btnPrincipal,
 .btnSecondaire {
   font-family: "caviar_dreamsregular", sans-serif;
