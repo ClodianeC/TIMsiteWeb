@@ -688,8 +688,10 @@ main {
 .menu {
   position: relative;
   z-index: 2;
+  width: fit-content;
 }
 .menu__liste {
+  width: fit-content;
   padding: 0;
   position: relative;
   left: 46vw;
@@ -700,6 +702,7 @@ main {
   height: 80vw;
 }
 .menu__liste__item {
+  width: fit-content;
   list-style: none;
   margin-bottom: 3vw;
 }

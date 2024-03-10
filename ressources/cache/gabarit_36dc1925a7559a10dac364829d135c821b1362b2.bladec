@@ -21,7 +21,7 @@
  <body>
  <header >
  <div class="topOfTheWorld" id="topOfTheWorld" aria-hidden="true"></div>
- 
+
  <?php echo $this->runChild('fragments.entete'); ?>
 <?php /*            <a href="index.php?controleur=site&action=bidon">Lien bidon</a>*/ ?>
  </header>
