@@ -1050,16 +1050,16 @@ footer {
 }
 .lesAxesDuProgramme {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
   width: 90%;
-  max-width: 1000px;
   margin: auto;
 }
 
 .pieChart {
-  height: 50rem;
-  width: 50rem;
+  aspect-ratio: 1;
+  width: 90%;
+  max-width: 50rem;
   position: relative;
   border-radius: 50%;
   background-color: rgba(255, 250, 241, 0.4);
@@ -1082,7 +1082,7 @@ footer {
   position: relative;
   text-align: center;
   font-family: "caviar_dreamsregular", sans-serif;
-  font-size: 2.5rem;
+  font-size: 4vw;
 }
 
 .pieSlice.pie1.outside {
@@ -1107,8 +1107,8 @@ footer {
   right: -66%;
 }
 .pieSlice.pie2 span:nth-child(2) {
-  top: 68%;
-  right: -49%;
+  top: 67%;
+  right: -50%;
 }
 
 .pieSlice.pie3.outside {
@@ -1116,11 +1116,11 @@ footer {
   left: -12px;
 }
 .pieSlice.pie3 span:first-child {
-  top: 60%;
+  top: 59%;
   right: -22%;
 }
 .pieSlice.pie3 span:nth-child(2) {
-  top: 66%;
+  top: 64%;
   right: -1%;
 }
 
@@ -1137,12 +1137,12 @@ footer {
 }
 .pieSlice.pie4 span:nth-child(2) {
   top: 35%;
-  right: -1%;
+  right: -2%;
 }
 
 .pieSlice.pie5.outside {
-  top: -24px;
-  left: -7px;
+  top: -21px;
+  left: -6px;
 }
 .pieSlice.pie5 span:first-child {
   top: 8%;
@@ -1158,14 +1158,18 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   padding: 2rem 0;
+  width: 80%;
+  max-width: 30rem;
 }
 
 .btnAxes {
+  width: 100%;
   font-family: "caviar_dreamsregular", sans-serif;
   font-size: 2.2rem;
   border: none;
   padding: 1rem 3rem;
   border-radius: 2rem;
+  margin-bottom: 1rem;
 }
 .btnAxes#btnAxe4 {
   color: #fffaf1;
@@ -1174,6 +1178,153 @@ footer {
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+@media (min-width: 600px) {
+  .pieSlice span {
+    font-size: 2rem;
+  }
+  .pieSlice.pie1 span:first-child {
+    top: 19%;
+    right: -66%;
+  }
+  .pieSlice.pie1 span:nth-child(2) {
+    top: 24%;
+    right: -51%;
+  }
+  .pieSlice.pie2 span:first-child {
+    top: 61%;
+    right: -66%;
+  }
+  .pieSlice.pie2 span:nth-child(2) {
+    top: 67%;
+    right: -51%;
+  }
+  .pieSlice.pie3 span:first-child {
+    top: 59%;
+    right: -22%;
+  }
+  .pieSlice.pie3 span:nth-child(2) {
+    top: 64%;
+    right: -4%;
+  }
+  .pieSlice.pie4 {
+    color: #fffaf1;
+  }
+  .pieSlice.pie4 span:first-child {
+    top: 28%;
+    right: -14%;
+  }
+  .pieSlice.pie4 span:nth-child(2) {
+    top: 34%;
+    right: -4%;
+  }
+  .pieSlice.pie5 span:first-child {
+    top: 8%;
+    right: -33%;
+  }
+  .pieSlice.pie5 span:nth-child(2) {
+    top: 13%;
+    right: -24%;
+  }
+}
+@media (min-width: 800px) {
+  .lesAxesDuProgramme {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: normal;
+    width: 90%;
+    max-width: 1000px;
+  }
+  .pieChart {
+    height: 50rem;
+    width: 50rem;
+    border-radius: 50%;
+  }
+  .pieSlice span {
+    font-size: 2.5rem;
+  }
+  .pieSlice.pie1.outside {
+    top: -12px;
+    left: 12px;
+  }
+  .pieSlice.pie1 span:first-child {
+    top: 19%;
+    right: -66%;
+  }
+  .pieSlice.pie1 span:nth-child(2) {
+    top: 25%;
+    right: -48%;
+  }
+  .pieSlice.pie2.outside {
+    top: 12px;
+    left: 12px;
+  }
+  .pieSlice.pie2 span:first-child {
+    top: 61%;
+    right: -66%;
+  }
+  .pieSlice.pie2 span:nth-child(2) {
+    top: 68%;
+    right: -49%;
+  }
+  .pieSlice.pie3.outside {
+    top: 15px;
+    left: -12px;
+  }
+  .pieSlice.pie3 span:first-child {
+    top: 60%;
+    right: -22%;
+  }
+  .pieSlice.pie3 span:nth-child(2) {
+    top: 66%;
+    right: -1%;
+  }
+  .pieSlice.pie4 {
+    color: #fffaf1;
+  }
+  .pieSlice.pie4.outside {
+    top: -10px;
+    left: -18px;
+  }
+  .pieSlice.pie4 span:first-child {
+    top: 28%;
+    right: -14%;
+  }
+  .pieSlice.pie4 span:nth-child(2) {
+    top: 35%;
+    right: -1%;
+  }
+  .pieSlice.pie5.outside {
+    top: -24px;
+    left: -7px;
+  }
+  .pieSlice.pie5 span:first-child {
+    top: 8%;
+    right: -33%;
+  }
+  .pieSlice.pie5 span:nth-child(2) {
+    top: 14%;
+    right: -22%;
+  }
+  .lesBtns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem 0;
+  }
+  .btnAxes {
+    font-family: "caviar_dreamsregular", sans-serif;
+    font-size: 2.2rem;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+  }
+  .btnAxes#btnAxe4 {
+    color: #fffaf1;
+  }
+  .btnAxes:hover, .btnAxes:active, .btnAxes:focus, .btnAxes.click {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  }
+}
 .fondInfoPrgramme {
   background-color: #febe98;
   background-image: url("../img/texture/round.webp");

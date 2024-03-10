@@ -16,6 +16,7 @@
 
  <link rel="stylesheet" href="liaisons/css/styles.css">
 
+<?php /*        <script defer src="liaisons/script/leProgramme.js"></script>*/ ?>
  </head>
  <body>
  <header >

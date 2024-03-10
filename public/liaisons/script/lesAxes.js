@@ -20,7 +20,7 @@ sectionAxe3 = document.getElementById('sectionAxe3');
 sectionAxe4 = document.getElementById('sectionAxe4');
 sectionAxe5 = document.getElementById('sectionAxe5');
 
-lesSections = [sectionAxe1, sectionAxe2, sectionAxe3, sectionAxe4, sectionAxe5];
+lesSectionsAxe = [sectionAxe1, sectionAxe2, sectionAxe3, sectionAxe4, sectionAxe5];
 
 leCercle = document.querySelector('.pieChart');
 lesCouleurs = ['#95AA91', '#B5C6B2', '#6A8065', '#3D5139', '#D0E3CC'];
@@ -40,14 +40,14 @@ function selectionnerAxe(btnClick) {
             if(lesBtns[cptBtn].classList.contains('click')) {
                 lesBtns[cptBtn].classList.remove('click');
                 laTarte[cptBtn].classList.remove('outside');
-                if(!lesSections[cptBtn].classList.contains('nonSelectionne')) {
-                    lesSections[cptBtn].classList.add('nonSelectionne');
+                if(!lesSectionsAxe[cptBtn].classList.contains('nonSelectionne')) {
+                    lesSectionsAxe[cptBtn].classList.add('nonSelectionne');
                 }
             }
             if(lesBtns[cptBtn] === btnClick) {
                 lesBtns[cptBtn].classList.add('click');
                 laTarte[cptBtn].classList.add('outside');
-                lesSections[cptBtn].classList.remove('nonSelectionne');
+                lesSectionsAxe[cptBtn].classList.remove('nonSelectionne');
                 // leCercle.style.border = lesCouleurs[cptBtn]+" solid 0.4rem";
             }
         }

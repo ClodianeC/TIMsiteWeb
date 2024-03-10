@@ -53,17 +53,16 @@
 
 .lesAxesDuProgramme {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
   width: 90%;
-  max-width: 1000px;
   margin: auto;
 }
 .pieChart {
-  height: 50rem;
-  width: 50rem;
+  aspect-ratio: 1;
+  width: 90%;
+  max-width: 50rem;
   position: relative;
-  //margin: auto;
   border-radius: 50%;
   background-color: rgba(255, 250, 241, 0.4);
   box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
@@ -84,10 +83,11 @@
     position: relative;
     text-align: center;
     font-family: "caviar_dreamsregular", sans-serif;
-    font-size: 2.5rem;
+    font-size: 4vw;
   }
 }
 .pieSlice.pie1 {
+
 
   &.outside {
     top: -12px;
@@ -113,8 +113,8 @@
     right: -66%;
   }
   & span:nth-child(2) {
-    top: 68%;
-    right: -49%;
+    top: 67%;
+    right: -50%;
   }
 }
 .pieSlice.pie3 {
@@ -124,11 +124,11 @@
     left: -12px;
   }
   & span:first-child {
-    top: 60%;
+    top: 59%;
     right: -22%;
   }
   & span:nth-child(2) {
-    top: 66%;
+    top: 64%;
     right: -1%;
   }
 }
@@ -145,14 +145,14 @@
   }
   & span:nth-child(2) {
     top: 35%;
-    right: -1%;
+    right: -2%;
   }
 }
 .pieSlice.pie5 {
 
   &.outside {
-    top: -24px;
-    left: -7px;
+    top: -21px;
+    left: -6px;
   }
   & span:first-child {
     top: 8%;
@@ -168,13 +168,17 @@
   flex-direction: column;
   justify-content: space-around;
   padding: 2rem 0;
+  width: 80%;
+  max-width: 30rem;
 }
 .btnAxes {
+  width: 100%;
   font-family: "caviar_dreamsregular", sans-serif;
   font-size: 2.2rem;
   border: none;
   padding: 1rem 3rem;
   border-radius: 2rem;
+  margin-bottom: 1rem;
 
   &#btnAxe4 {
     color: $blancCasse;
@@ -185,7 +189,189 @@
   &.click {
     box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
   }
+}
+@media (min-width: 600px) {
+  .pieSlice {
 
+    & span {
+      font-size: 2rem;
+    }
+  }
+  .pieSlice.pie1 {
+
+    & span:first-child {
+      top: 19%;
+      right: -66%;
+    }
+    & span:nth-child(2) {
+      top: 24%;
+      right: -51%;
+    }
+  }
+  .pieSlice.pie2 {
+
+    & span:first-child {
+      top: 61%;
+      right: -66%;
+    }
+    & span:nth-child(2) {
+      top: 67%;
+      right: -51%;
+    }
+  }
+  .pieSlice.pie3 {
+
+    & span:first-child {
+      top: 59%;
+      right: -22%;
+    }
+    & span:nth-child(2) {
+      top: 64%;
+      right: -4%;
+    }
+  }
+  .pieSlice.pie4 {
+    color: $blancCasse;
+
+    & span:first-child {
+      top: 28%;
+      right: -14%;
+    }
+    & span:nth-child(2) {
+      top: 34%;
+      right: -4%;
+    }
+  }
+  .pieSlice.pie5 {
+
+    & span:first-child {
+      top: 8%;
+      right: -33%;
+    }
+    & span:nth-child(2) {
+      top: 13%;
+      right: -24%;
+    }
+  }
+}
+@media (min-width: 800px) {
+  .lesAxesDuProgramme {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: normal;
+    width: 90%;
+    max-width: 1000px;
+  }
+  .pieChart {
+    height: 50rem;
+    width: 50rem;
+    border-radius: 50%;
+  }
+  .pieSlice {
+
+    & span {
+      font-size: 2.5rem;
+    }
+  }
+  .pieSlice.pie1 {
+
+    &.outside {
+      top: -12px;
+      left: 12px;
+    }
+    & span:first-child {
+      top: 19%;
+      right: -66%;
+    }
+    & span:nth-child(2) {
+      top: 25%;
+      right: -48%;
+    }
+  }
+  .pieSlice.pie2 {
+
+    &.outside {
+      top: 12px;
+      left: 12px;
+    }
+    & span:first-child {
+      top: 61%;
+      right: -66%;
+    }
+    & span:nth-child(2) {
+      top: 68%;
+      right: -49%;
+    }
+  }
+  .pieSlice.pie3 {
+
+    &.outside {
+      top: 15px;
+      left: -12px;
+    }
+    & span:first-child {
+      top: 60%;
+      right: -22%;
+    }
+    & span:nth-child(2) {
+      top: 66%;
+      right: -1%;
+    }
+  }
+  .pieSlice.pie4 {
+    color: $blancCasse;
+
+    &.outside {
+      top: -10px;
+      left: -18px;
+    }
+    & span:first-child {
+      top: 28%;
+      right: -14%;
+    }
+    & span:nth-child(2) {
+      top: 35%;
+      right: -1%;
+    }
+  }
+  .pieSlice.pie5 {
+
+    &.outside {
+      top: -24px;
+      left: -7px;
+    }
+    & span:first-child {
+      top: 8%;
+      right: -33%;
+    }
+    & span:nth-child(2) {
+      top: 14%;
+      right: -22%;
+    }
+  }
+  .lesBtns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem 0;
+  }
+  .btnAxes {
+    font-family: "caviar_dreamsregular", sans-serif;
+    font-size: 2.2rem;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+
+    &#btnAxe4 {
+      color: $blancCasse;
+    }
+    &:hover,
+    &:active,
+    &:focus,
+    &.click {
+      box-shadow: 4px 4px 8px rgb(0 0 0 / 0.4);
+    }
+  }
 }
 
 .fondInfoPrgramme {
