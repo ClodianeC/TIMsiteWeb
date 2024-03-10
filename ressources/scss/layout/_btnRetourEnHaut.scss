@@ -1,0 +1,25 @@
+/* Bouton pour ramener en haut de la page */
+
+.btnRetourEnHaut {
+  background-color: $blancCasse;
+  border-radius: 50%;
+  border: $vert solid 0.4rem;
+  background-image: url("../img/sprite.svg");
+  background-size: 1698px;
+  background-position: -1656px -78.5px;
+  position: fixed;
+  width: 5rem;
+  height: 5rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  transform: rotate(-90deg);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $vert;
+  }
+}
+.topOfTheWorld {
+  visibility: hidden;
+}

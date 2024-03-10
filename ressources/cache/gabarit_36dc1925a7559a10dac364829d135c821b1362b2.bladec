@@ -16,16 +16,19 @@
 
  <link rel="stylesheet" href="liaisons/css/styles.css">
 
-<?php /*        <script defer src="liaisons/script/leProgramme.js"></script>*/ ?>
+ <script defer src="liaisons/script/retourEnHaut.js"></script>
  </head>
  <body>
  <header >
+ <div class="topOfTheWorld" id="topOfTheWorld" aria-hidden="true"></div>
+ 
  <?php echo $this->runChild('fragments.entete'); ?>
 <?php /*            <a href="index.php?controleur=site&action=bidon">Lien bidon</a>*/ ?>
  </header>
 
  <main>
  <?php echo $this->yieldContent('contenu'); ?>
+ <?php echo $this->runChild('fragments.btnRetourEnHaut'); ?>
  </main>
 
  <footer>

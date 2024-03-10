@@ -16,16 +16,19 @@
 
         <link rel="stylesheet" href="liaisons/css/styles.css">
 
-{{--        <script defer src="liaisons/script/leProgramme.js"></script>--}}
+        <script defer src="liaisons/script/retourEnHaut.js"></script>
     </head>
     <body>
         <header >
+            <div class="topOfTheWorld" id="topOfTheWorld" aria-hidden="true"></div>
+
             @include('fragments.entete')
 {{--            <a href="index.php?controleur=site&action=bidon">Lien bidon</a>--}}
         </header>
 
         <main>
             @yield('contenu')
+            @include('fragments.btnRetourEnHaut')
         </main>
 
         <footer>

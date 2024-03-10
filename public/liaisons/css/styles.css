@@ -2881,4 +2881,27 @@ input.xLarge {
   max-width: 65rem;
 }
 
+/* Bouton pour ramener en haut de la page */
+.btnRetourEnHaut {
+  background-color: #fffaf1;
+  border-radius: 50%;
+  border: #d0e3cc solid 0.4rem;
+  background-image: url("../img/sprite.svg");
+  background-size: 1698px;
+  background-position: -1656px -78.5px;
+  position: fixed;
+  width: 5rem;
+  height: 5rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  transform: rotate(-90deg);
+}
+.btnRetourEnHaut:hover, .btnRetourEnHaut:active, .btnRetourEnHaut:focus {
+  background-color: #d0e3cc;
+}
+
+.topOfTheWorld {
+  visibility: hidden;
+}
+
 /*# sourceMappingURL=styles.css.map */
