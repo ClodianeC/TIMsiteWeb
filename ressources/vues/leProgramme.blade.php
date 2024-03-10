@@ -62,7 +62,7 @@
         <div class="infoSuppProgramme__boutons">
             <a href="https://www.csfoy.ca/programmes/tous-les-programmes/programmes-techniques/techniques-dintegration-multimedia-web-et-apps/" class="btnPrincipal infoSuppProgramme__boutons__btnSiteCegep">Visite la page du programme</a>
             <div class="infoSuppProgramme__boutons__ou"><span class="infoSuppProgramme__boutons__ou__texte">OU</span></div>
-            <button class="btnSecondaire infoSuppProgramme__boutons__btnTelechargerGrille">Télécharge la grille du cours</button>
+            <a class="btnSecondaire infoSuppProgramme__boutons__btnTelechargerGrille" href="liaisons/pdf/grille_cours_TIM.pdf">Télécharge la grille du cours</a>
         </div>
     </div>
 

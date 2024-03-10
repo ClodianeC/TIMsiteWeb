@@ -32,7 +32,7 @@
  </div>
  </div>
  <p class="texteStage">Consultez le profil des compétences de nos étudiantes et étudiants.</p>
- <button class="btnPrincipal btnGrille" id="btnGrilleCompetences">Téléchargez la grille des compétences</button>
+ <a class="btnPrincipal btnGrille" id="btnGrilleCompetences" href="liaisons/pdf/profilCompetences_2024.pdf">Téléchargez le profil des compétences</a>
  <p class="texteStage">Contactez <a class="infoStage__texte__lien hyperlien" href="index.php?controleur=joindre&action=creer&idResponsable=3">Pascal Larose</a> Pour en savoir plus. Téléphone : (418) 659-6600, poste 6663</p>
  </div>
  <div class="stageDerniereSession">
