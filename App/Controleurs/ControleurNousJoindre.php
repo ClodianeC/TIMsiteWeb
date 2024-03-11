@@ -8,6 +8,10 @@ use App\Modeles\MenuLien;
 use App\Modeles\Message;
 use App\Modeles\Responsable;
 use App\Modeles\Texte;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\Transport;
+use Symfony\Component\Mime\Email;
 
 class ControleurNousJoindre {
 
@@ -37,7 +41,7 @@ class ControleurNousJoindre {
 
     }
 
-    public function inserer() :void {
+    public function inserer():void {
         $contenuBruteFichierJson = file_get_contents("liaisons/script/messages-erreur_form.json");
 
         $tMessagesJson = json_decode($contenuBruteFichierJson, true);
@@ -55,8 +59,8 @@ class ControleurNousJoindre {
         // Telephone seulement Responsable à valider aucun envoi au serveur
         if(isset($_POST['selectionContactPar'])) {
             if($_POST['selectionContactPar'] === 'courriel') {
-                if(isset($_POST['selectionResponsable'])) {
-                    if($_POST['selectionResponsable'] === '4') {
+                if(isset($_POST['destinataire'])) {
+                    if($_POST['destinataire'] === '4') {
                         $tChampsAValider = array_merge($tChampsCourriel, $tChampsBen);
                     }
                 }
@@ -65,10 +69,12 @@ class ControleurNousJoindre {
                 }
             }
             else {
+                echo $_POST['telephone'];
                 $tChampsAValider = $tChampsTel;
             }
         }
-
+        echo $_POST['telephone'];
+        echo $_POST['destinataire'];
         foreach ($tChampsAValider as $unChampAValider) {
             if(isset($_POST[$unChampAValider])) {
                 $laValeurActuelle = trim($_POST[$unChampAValider]);
@@ -122,16 +128,18 @@ class ControleurNousJoindre {
                 }
             }
 
-            header('Location: index.php?controleur=joindre&action=confirmer');
-            exit;
+            $resultat = $this->envoyerCourriel();
+            echo $resultat;
+            if($resultat === "OK") {
+                header('Location: index.php?controleur=joindre&action=confirmer');
+                exit;
+            }
+
         }
         else {
             header('Location: index.php?controleur=joindre&action=creer');
             exit;
         }
-//        var_dump($tChampsAValider);
-//        var_dump($tValidation);
-//        var_dump($_SESSION['tValidation']);
     }
     public function confirmer():void {
         if(isset($_SESSION['tValidation'])) {
@@ -149,5 +157,50 @@ class ControleurNousJoindre {
         $tDonnees = ["infosFooter"=>$infosFooter, 'lesLiens'=>$lesLiensMenu, 'lesResponsables'=>$lesResponsables, 'tValidation'=>$tValidation];
 
         echo App::getBlade()->run("nousJoindre.confirmer", $tDonnees);
+    }
+    public function envoyerCourriel() {
+        $leResponsable = Responsable::trouverParId((int) $_POST['destinataire']);
+        $leCourrielResponsable = $leResponsable->getCourriel();
+        if($_POST['destinataire'] === '4') {
+//            $telExpediteur = str_replace(' ', '-', str_replace(array('(', ')'), '', $_POST['telephone']));
+            $telExpediteur = $_POST['telephone'];
+        }
+        else {
+            $telExpediteur = null;
+        }
+        // PRÉPARER LA VUE DU COURRIEL
+        $tDonnees = ["contenuCourriel" => $_POST['message'], 'prenom'=>$_POST['prenom'], 'nom'=>$_POST['nom'], 'leCourrielRespo'=>$leCourrielResponsable, 'courrielExpediteur'=>$_POST['courriel'], 'telExpediteur'=>$telExpediteur];
+        $vueTexte = App::getBlade()->run('courriels.messages.courrielTexte', $tDonnees); // Vue par défaut pour client low tech
+        $vueHtml =  App::getBlade()->run('courriels.messages.courrielHtml' , $tDonnees); // Vue utilisée si supportée par le client
+
+        // PRÉPARER L'OBJET COURRIEL
+        //       Remplacer aaaaaa par: Votre nouvelle adresse courriel Gmail (d'où vient le courriel).
+        //       Remplacer bbbbbb par: Votre nouvelle adresse courriel Gmail (où va le courriel -> pour tester).
+        $courriel = new Email();
+        $courriel->from('pourlewebtest@gmail.com')
+            ->to('pourlewebtest@gmail.com')
+            //->cc('cc@example.com')
+            //->bcc('bcc@example.com')
+            //->replyTo('fabien@example.com')
+            //->priority(Email::PRIORITY_HIGH)
+            ->subject($_POST['sujet'])
+            ->text($vueTexte)
+            ->html($vueHtml);
+
+        // ENVOYER LE COURRIEL PAR LE SERVEUR SMTP DE GOOGLE
+        //       Remplacer 111111 par: Votre nouvelle adresse courriel Gmail.
+        //       Remplacer 222222 par: Le mot de passe applicatif de sécurité généré dans votre nouveau compte Google.
+        //                             Pour tester l'erreur d'envoi: mettre un mot de passe bidon...
+        $transport = Transport::fromDsn('smtp://pourlewebtest@gmail.com:pdfnlcamadqheoim@smtp.gmail.com:587');
+        $mailer = new Mailer($transport);
+        $bilan = 'OK';
+        try {
+            // Essayer d'envoyer...
+            $mailer->send($courriel);
+        } catch (TransportExceptionInterface $e) {
+            // Si ça ne fonctionne pas...
+            $bilan = 'ERREUR';
+        }
+        return $bilan;
     }
 }

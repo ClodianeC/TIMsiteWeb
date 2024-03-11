@@ -94,7 +94,7 @@
                     src="liaisons/img/projets/placeholders/projet{{rand(1, 4)}}.svg"
                 @endif
                 alt="Image du projet {{$unProjet->getTitre()}}">
-                <h2 class="lesProjets__unProjet__h2 h2">
+                <h2 class="lesProjets__unProjet__h2 h2" title="{{$unProjet->getTitre()}}">
                     {{substr($unProjet->getTitre(), 0, 34)}}
                     @if(strlen($unProjet->getTitre()) > 34)
                         ...

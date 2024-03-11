@@ -100,9 +100,10 @@
         <div class="etudiantDunJour">
             <h2 class="etudiantDunJour__h2 h2">{{$lesTextes[7]->getTitre()}}</h2>
             <div class="etudiantDunJour__infos">
-                <p class="etudiantDunJour__infos__texte">{{ substr($lesTextes[7]->getTexte(), 3, strpos($lesTextes[7]->getTexte(), '</p>')) }}</p>
+                <p class="etudiantDunJour__infos__texte">{{ substr($lesTextes[7]->getTexte(), 3, strpos($lesTextes[7]->getTexte(), '</p>') -3) }}</p>
                 <p class="etudiantDunJour__infos__contact">Contacter <a class="etudiantDunJour__infos__contact__benoitF hyperlien" href="index.php?controleur=joindre&action=creer&idResponsable=4">Benoît Frigon</a> pour en savoir plus.</p>
             </div>
+            <a href="https://www.csfoy.ca/etudiante-et-etudiant-dun-jour/etudiante-et-etudiant-dun-jour-formulaire/" class="btnPrincipal etudiantDunJour__btnEdtudiant">S'inscrire à étudiant d'un jour</a>
         </div>
     </div>
 
@@ -132,10 +133,6 @@
                     @endif
                 </button>
             @endfor
-            <div class="apresTim__employeurs">
-                <h3 class="apresTim__employeurs__h3 h3">{{$lesTextes[22]->getTitre()}}</h3>
-                {!! $lesTextes[22]->getTexte() !!}
-            </div>
         </div>
     </div>
 

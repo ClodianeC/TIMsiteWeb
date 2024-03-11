@@ -128,7 +128,7 @@
                            id="consentement"
                            name="consentement"
                            title="Acceptez le partage de votre numéro."
-                           value="@isset($tValidation['consentement']['valeur']){{$tValidation['consentement']['valeur']}}@endisset"
+                           value="checked_value"
                            class="formulaire__sectionBen__checkbox @isset($tValidation['consentement']['estValide']) @if($tValidation['consentement']['estValide'] === false) erreur @endif @endisset">
                     <label class="formulaire__sectionBen__labelCheck" for="consentement">J'autorise l'utilisation de mon numéro de téléphone avec le responsable «Étudiant d'un jour»*</label>
                     <p class="formulaire__message">
@@ -154,19 +154,22 @@
                     @endif
                 </p>
                 <label class="formulaire__label elementCourriel" for="message">Message*</label>
-                <input type="text"
-                       id="message"
-                       name="message"
-{{--                       required--}}
-                       pattern="[\p{L}\d\s.,\-_()!?;:'&quot;/]{1,1000}"
-                       title="Caractères alphabétiques français seulement."
-                       value="@isset($tValidation['message']['valeur']){{$tValidation['message']['valeur']}}@endisset"
-                       class="formulaire__input xLarge elementCourriel @isset($tValidation['message']['estValide']) @if($tValidation['message']['estValide'] === false) erreur @endif @endisset">
+                <textarea
+                    id="message"
+                    name="message"
+{{--                    required--}}
+{{--                    pattern="[\p{L}\d\s.,\-_()!?;:'&quot;/]{1,1000}"--}}
+                    title="Caractères alphabétiques français seulement."
+{{--                    value="@isset($tValidation['message']['valeur']){{$tValidation['message']['valeur']}}@endisset"--}}
+                    class="formulaire__input xLarge elementCourriel @isset($tValidation['message']['estValide']) @if($tValidation['message']['estValide'] === false) erreur @endif @endisset"
+                >
+                    @isset($tValidation['message']['valeur']){{$tValidation['message']['valeur']}}@endisset
+                </textarea>
                 <p class="formulaire__message">
-                    @if(isset($tValidation))
-                        @if($tValidation['message']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['message']['messageErreur']}} @endif
-                        @if($tValidation['message']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
-                    @endif
+                @if(isset($tValidation))
+                    @if($tValidation['message']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['message']['messageErreur']}} @endif
+                    @if($tValidation['message']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
+                @endif
                 </p>
             </div>
         </div>

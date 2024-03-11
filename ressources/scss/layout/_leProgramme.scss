@@ -740,6 +740,10 @@
   margin: auto;
   padding: 10rem 2rem;
 
+  &__btnEdtudiant {
+    display: block;
+    margin: auto;
+  }
   &__h2 {
     text-align: center;
   }
@@ -885,20 +889,6 @@
       }
     }
   }
-  &__employeurs {
-    width: fit-content;
-    margin: auto;
-
-    &__h3 {
-      text-align: center;
-    }
-    & ul {
-
-      & li {
-
-      }
-    }
-  }
 }
 @media (min-width: 800px) {
   .apresTim {
@@ -959,18 +949,6 @@
 
         }
         .apresTim__section__sousSection {
-
-        }
-      }
-    }
-    &__employeurs {
-
-      &__h3 {
-
-      }
-      & ul {
-
-        & li {
 
         }
       }

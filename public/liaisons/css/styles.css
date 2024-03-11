@@ -558,6 +558,7 @@ main {
   text-decoration: none;
   text-align: center;
   line-height: 6.5rem;
+  display: inline-block;
 }
 
 .btnPrincipal {
@@ -1588,6 +1589,10 @@ footer {
   margin: auto;
   padding: 10rem 2rem;
 }
+.etudiantDunJour__btnEdtudiant {
+  display: block;
+  margin: auto;
+}
 .etudiantDunJour__h2 {
   text-align: center;
 }
@@ -1690,13 +1695,7 @@ footer {
 .apresTim__section.ferme .apresTim__section__sousSection {
   display: none;
 }
-.apresTim__employeurs {
-  width: fit-content;
-  margin: auto;
-}
-.apresTim__employeurs__h3 {
-  text-align: center;
-}
+
 @media (min-width: 800px) {
   .apresTim {
     width: 90%;
@@ -2084,10 +2083,12 @@ footer {
   max-width: 40rem;
 }
 
-input.xLarge {
+.xLarge {
+  display: block;
   width: 100%;
   max-width: 100%;
   height: 20rem;
+  padding: 1.5rem;
 }
 
 @media (min-width: 800px) {
@@ -2105,7 +2106,7 @@ input.xLarge {
     width: 48rem;
     max-width: 48rem;
   }
-  input.xLarge {
+  .xLarge {
     width: 90%;
     max-width: 85rem;
     height: 20rem;

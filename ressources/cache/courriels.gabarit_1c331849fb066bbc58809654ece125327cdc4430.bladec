@@ -1,0 +1,25 @@
+<!DOCTTYPE html>
+<?php /*<! Gabarit des courriels ... >*/ ?>
+<html lang="fr">
+ <head>
+ <title><?php echo $this->yieldContent('title'); ?></title>
+ <meta charset="utf-8">
+ </head>
+ <body>
+ <header >
+ <?php echo $this->runChild('courriels.fragments.entete'); ?>
+ </header>
+
+ <main>
+ <?php echo $this->yieldContent('contenu'); ?>
+ </main>
+
+ <footer>
+ <?php echo $this->runChild('courriels.fragments.pieddepage'); ?>
+ </footer>
+ </body>
+</html>
+
+
+
+
