@@ -73,8 +73,6 @@ class ControleurNousJoindre {
                 $tChampsAValider = $tChampsTel;
             }
         }
-        echo $_POST['telephone'];
-        echo $_POST['destinataire'];
         foreach ($tChampsAValider as $unChampAValider) {
             if(isset($_POST[$unChampAValider])) {
                 $laValeurActuelle = trim($_POST[$unChampAValider]);

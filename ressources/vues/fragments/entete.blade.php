@@ -15,8 +15,8 @@
                         @elseif($unLien->getIdentifiant() === 'programme')
                             actif
                         @endif
-                    '>
-                        <span class="menu__liste__item__lien__rond__icone" id="{{$unLien->getIdentifiant()}}"></span>
+                    ' id="{{$unLien->getIdentifiant()}}">
+{{--                        <span class="menu__liste__item__lien__rond__icone" id="{{$unLien->getIdentifiant()}}"></span>--}}
                     </span>
                     <p class="menu__liste__item__lien__texte">{{$unLien->getNom()}}</p>
                 </a>

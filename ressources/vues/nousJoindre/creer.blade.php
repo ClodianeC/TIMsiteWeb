@@ -34,7 +34,7 @@
                                title="Caractères alphabétiques français seulement."
                                value="@isset($tValidation['prenom']['valeur']){{$tValidation['prenom']['valeur']}}@endisset"
                                class="formulaire__input moyen elementCourriel @isset($tValidation['prenom']['estValide']) @if($tValidation['prenom']['estValide'] === false) erreur @endif @endisset">
-                        <p class="formulaire__message">
+                        <p class="formulaire__message elementCourriel">
                         @if(isset($tValidation))
                             @if($tValidation['prenom']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['prenom']['messageErreur']}} @endif
                             @if($tValidation['prenom']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
@@ -51,7 +51,7 @@
                                title="Caractères alphabétiques français seulement."
                                value="@isset($tValidation['nom']['valeur']){{$tValidation['nom']['valeur']}}@endisset"
                                class="formulaire__input moyen elementCourriel @isset($tValidation['nom']['estValide']) @if($tValidation['nom']['estValide'] === false) erreur @endif @endisset">
-                        <p class="formulaire__message">
+                        <p class="formulaire__message elementCourriel">
                             @if(isset($tValidation))
                                 @if($tValidation['nom']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['nom']['messageErreur']}} @endif
                                 @if($tValidation['nom']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
@@ -68,7 +68,7 @@
                        title="Adresse courriel valide."
                        value="@isset($tValidation['courriel']['valeur']){{$tValidation['courriel']['valeur']}}@endisset"
                        class="formulaire__input large elementCourriel @isset($tValidation['courriel']['estValide']) @if($tValidation['courriel']['estValide'] === false) erreur @endif @endisset">
-                <p class="formulaire__message">
+                <p class="formulaire__message elementCourriel">
                     @if(isset($tValidation))
                         @if($tValidation['courriel']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['courriel']['messageErreur']}} @endif
                         @if($tValidation['courriel']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
@@ -118,8 +118,8 @@
                            title="Numéro de téléphone au format xxx xxx xxxx ou xx xx xx xx."
                            value="@isset($tValidation['telephone']['valeur']){{$tValidation['telephone']['valeur']}}@endisset"
                            class="formulaire__sectionBen__input moyen @isset($tValidation['telephone']['estValide']) @if($tValidation['telephone']['estValide'] === false) erreur @endif @endisset">
-                    <p class="formulaire__message">
-                        @if(isset($tValidation))
+                    <p class="formulaire__message elementCourriel">
+                        @if(isset($tValidation['telephone']))
                             @if($tValidation['telephone']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['telephone']['messageErreur']}} @endif
                             @if($tValidation['telephone']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
                         @endif
@@ -131,8 +131,8 @@
                            value="checked_value"
                            class="formulaire__sectionBen__checkbox @isset($tValidation['consentement']['estValide']) @if($tValidation['consentement']['estValide'] === false) erreur @endif @endisset">
                     <label class="formulaire__sectionBen__labelCheck" for="consentement">J'autorise l'utilisation de mon numéro de téléphone avec le responsable «Étudiant d'un jour»*</label>
-                    <p class="formulaire__message">
-                        @if(isset($tValidation))
+                    <p class="formulaire__message elementCourriel">
+                        @if(isset($tValidation['consentement']))
                             @if($tValidation['consentement']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['consentement']['messageErreur']}} @endif
                             @if($tValidation['consentement']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
                         @endif
@@ -147,7 +147,7 @@
                        title="Caractères alphabétiques français seulement."
                        value="@isset($tValidation['sujet']['valeur']){{$tValidation['sujet']['valeur']}}@endisset"
                        class="formulaire__input large elementCourriel @isset($tValidation['sujet']['estValide']) @if($tValidation['sujet']['estValide'] === false) erreur @endif- @endisset">
-                <p class="formulaire__message">
+                <p class="formulaire__message elementCourriel">
                     @if(isset($tValidation))
                         @if($tValidation['sujet']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['sujet']['messageErreur']}} @endif
                         @if($tValidation['sujet']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
@@ -165,7 +165,7 @@
                 >
                     @isset($tValidation['message']['valeur']){{$tValidation['message']['valeur']}}@endisset
                 </textarea>
-                <p class="formulaire__message">
+                <p class="formulaire__message elementCourriel">
                 @if(isset($tValidation))
                     @if($tValidation['message']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['message']['messageErreur']}} @endif
                     @if($tValidation['message']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif

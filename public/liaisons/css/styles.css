@@ -722,43 +722,25 @@ main {
   align-items: center;
 }
 .menu__liste__item__lien__rond {
-  background-color: #7d7d7d;
+  background-color: #fffaf1;
+  background-image: url("../img/sprite.svg");
+  background-repeat: no-repeat;
+  background-size: 661px;
   border-radius: 100%;
   display: inline-block;
   min-width: 4rem;
-  width: 8vw;
+  width: 4rem;
   aspect-ratio: 1;
   text-align: center;
   position: relative;
   margin: auto 1rem auto auto;
 }
 .menu__liste__item__lien__rond.actif {
-  background-color: #febe98;
-}
-.menu__liste__item__lien__rond.actif__icone,
-.menu__liste__item__lien__rond.actif #diplomes,
-.menu__liste__item__lien__rond.actif #projets,
-.menu__liste__item__lien__rond.actif #programme,
-.menu__liste__item__lien__rond.actif #stages,
-.menu__liste__item__lien__rond.actif #joindre {
-  background-position-y: -20px;
-}
-.menu__liste__item__lien__rond__icone {
-  background-image: url("../img/sprite.png");
-  display: inline-block;
-  background-size: 287px;
-  width: 20px;
-  height: 20px;
-  margin: auto;
-  position: relative;
-  top: 2.5vw;
+  background-position-y: -40.3px;
 }
 .menu__liste__item__lien__texte {
   margin: 0;
   display: block;
-}
-.menu__liste__item__lien:active .menu__liste__item__lien__rond, .menu__liste__item__lien:hover .menu__liste__item__lien__rond {
-  background-color: #febe98;
 }
 .menu__liste__item__lien:active #diplomes,
 .menu__liste__item__lien:active #projets,
@@ -769,29 +751,69 @@ main {
 .menu__liste__item__lien:hover #programme,
 .menu__liste__item__lien:hover #stages,
 .menu__liste__item__lien:hover #joindre {
-  background-position-y: -20px;
+  background-position-y: -40.3px;
 }
 
 #diplomes {
-  background-position-x: -60px;
+  background-position-x: -122px;
 }
 
 #projets {
-  background-position-x: -80px;
+  background-position-x: -164px;
 }
 
 #programme {
-  background-position-x: -120px;
+  background-position-x: -324px;
 }
 
 #stages {
-  background-position-x: -140px;
+  background-position-x: -364px;
 }
 
 #joindre {
-  background-position-x: -160px;
+  background-position-x: -405px;
 }
 
+@media (min-width: 500px) {
+  .menu__liste__item__lien__rond {
+    background-size: 135vw;
+    min-width: 4rem;
+    width: 8vw;
+  }
+  .menu__liste__item__lien__rond.actif {
+    background-position-y: -8.5vw;
+  }
+  .menu__liste__item__lien__texte {
+    margin: 0;
+    display: block;
+  }
+  .menu__liste__item__lien:active #diplomes,
+  .menu__liste__item__lien:active #projets,
+  .menu__liste__item__lien:active #programme,
+  .menu__liste__item__lien:active #stages,
+  .menu__liste__item__lien:active #joindre, .menu__liste__item__lien:hover #diplomes,
+  .menu__liste__item__lien:hover #projets,
+  .menu__liste__item__lien:hover #programme,
+  .menu__liste__item__lien:hover #stages,
+  .menu__liste__item__lien:hover #joindre {
+    background-position-y: -8.5vw;
+  }
+  #diplomes {
+    background-position-x: -25vw;
+  }
+  #projets {
+    background-position-x: -33.4vw;
+  }
+  #programme {
+    background-position-x: -66vw;
+  }
+  #stages {
+    background-position-x: -74.5vw;
+  }
+  #joindre {
+    background-position-x: -82.5vw;
+  }
+}
 @media (min-width: 800px) {
   .menu {
     width: 90%;
@@ -834,24 +856,18 @@ main {
     width: 5rem;
     height: 5rem;
     top: 0;
+    background-size: 1700px;
+    background-repeat: no-repeat;
+    background-position-y: 2px;
   }
   .menu__liste__item__lien__rond.actif {
-    background-color: #febe98;
-  }
-  .menu__liste__item__lien__rond.actif__icone,
-  .menu__liste__item__lien__rond.actif #diplomes,
-  .menu__liste__item__lien__rond.actif #projets,
-  .menu__liste__item__lien__rond.actif #programme,
-  .menu__liste__item__lien__rond.actif #stages,
-  .menu__liste__item__lien__rond.actif #joindre {
-    background-position-y: -52px;
+    background-position-y: -102px;
   }
   .menu__liste__item__lien__rond__icone {
     width: 5rem;
     height: 5rem;
     background-size: 745px;
     position: static;
-    background-position-y: 0;
   }
   .menu__liste__item__lien:active #diplomes,
   .menu__liste__item__lien:active #projets,
@@ -862,22 +878,22 @@ main {
   .menu__liste__item__lien:hover #programme,
   .menu__liste__item__lien:hover #stages,
   .menu__liste__item__lien:hover #joindre {
-    background-position-y: -52px;
+    background-position-y: -102px;
   }
   #diplomes {
-    background-position-x: -156px;
+    background-position-x: -311px;
   }
   #projets {
-    background-position-x: -208px;
+    background-position-x: -417px;
   }
   #programme {
-    background-position-x: -312.5px;
+    background-position-x: -831px;
   }
   #stages {
-    background-position-x: -364px;
+    background-position-x: -935px;
   }
   #joindre {
-    background-position-x: -416px;
+    background-position-x: -1039px;
   }
 }
 @media (min-width: 900px) {
@@ -969,9 +985,9 @@ footer {
   margin-bottom: 2rem;
 }
 .piedDePage__rangeeLiens__reseauxSociaux__lien__icone {
-  background-image: url("../img/sprite.png");
-  width: 50px;
-  height: 50px;
+  background-image: url("../img/sprite.svg");
+  width: 5rem;
+  height: 5rem;
   display: inline-block;
 }
 .piedDePage__rangeeLiens__reseauxSociaux__lien:active #instagram, .piedDePage__rangeeLiens__reseauxSociaux__lien:hover #instagram {
@@ -2350,7 +2366,7 @@ footer {
   margin: 0 auto;
 }
 .niveauInteret__section__icone {
-  background-image: url("../img/sprite.png");
+  background-image: url("../img/sprite.svg");
   display: inline-block;
   width: 5rem;
   height: 5rem;
@@ -2380,19 +2396,19 @@ footer {
   }
 }
 #iconeConception {
-  background-position: -520px 0;
+  background-position: -623px 0;
 }
 
 #iconeMedias {
-  background-position: -572px 0;
+  background-position: -675px 0;
 }
 
 #iconeIntegration {
-  background-position: -624px 0;
+  background-position: -727px 0;
 }
 
 #iconeProgrammation {
-  background-position: -676px 0;
+  background-position: -779px 0;
 }
 
 .interet1,
