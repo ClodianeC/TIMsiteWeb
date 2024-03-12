@@ -108,20 +108,6 @@
         <div class="pagination">
             <a
             @if($noPage > 0)
-                class="pagination__lien hyperlien" href="{{$urlPagination}}&page=0"
-            @else
-                class="pagination__lien"
-            @endif
-            >
-                Premier
-            </a>
-
-            <div class="pagination__separateur">
-
-            </div>
-
-            <a
-            @if($noPage > 0)
                 class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$noPage - 1}}"
             @else
                 class="pagination__lien"
@@ -134,7 +120,17 @@
 
             </div>
 
-            <p class="pagination__texte">Page {{$noPage + 1}} de {{$nbPagesTotal + 1}}</p>
+            <div class="pagination__lesPages">
+                @for($i = 1; $i <= $nbPagesTotal +1; $i++)
+                    <a
+                            @if($i === $noPage + 1)
+                                class="pagination__lesPages__lien"
+                            @else
+                                class="pagination__lesPages__lien hyperlien" href="{{$urlPagination}}&page={{$i - 1}}"
+                            @endif
+                    >{{$i}}</a>
+                @endfor
+            </div>
 
             <div class="pagination__separateur">
 
@@ -148,20 +144,6 @@
             @endif
             >
                 Suivant
-            </a>
-
-            <div class="pagination__separateur">
-
-            </div>
-
-            <a
-            @if($noPage < $nbPagesTotal)
-                class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$nbPagesTotal}}"
-            @else
-                class="pagination__lien"
-            @endif
-            >
-                Dernier
             </a>
         </div>
     @endif

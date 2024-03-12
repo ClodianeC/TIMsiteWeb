@@ -204,23 +204,24 @@
 // **** La pagination **** //
 .pagination {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-content: center;
   margin: 5rem auto;
   width: 90%;
-  max-width: 30rem;
+  max-width: 25rem;
   align-items: center;
   justify-content: space-around;
 
   &__lien {
     text-align: center;
-    margin: 1rem auto;
+    margin: 1rem;
   }
   &__separateur {
     display: inline-block;
-    height: 0;
-    width: 2rem;
-    border-top: $noir solid 0.1rem;
+    width: 0;
+    height: 2rem;
+    border-right: $noir solid 0.15rem;
+    margin: 0.4rem;
   }
   &__texte {
     display: block;
@@ -228,24 +229,14 @@
     margin: 1rem auto;
     text-align: center;
   }
-}
-@media (min-width: 800px) {
-  .pagination {
+  &__lesPages {
+    display: flex;
     flex-direction: row;
-    align-items: center;
-    width: 50rem;
-    max-width: 50rem;
 
     &__lien {
-
-    }
-    &__separateur {
-      width: 0;
-      height: 2rem;
-      border-right: $noir solid 0.15rem;
-    }
-    &__texte {
-      margin: 0 1rem;
+      display: inline-block;
+      width: fit-content;
+      margin: auto 0.7rem;
     }
   }
 }

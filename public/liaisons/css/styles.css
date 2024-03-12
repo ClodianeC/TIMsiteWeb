@@ -2652,23 +2652,24 @@ footer {
 }
 .pagination {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-content: center;
   margin: 5rem auto;
   width: 90%;
-  max-width: 30rem;
+  max-width: 25rem;
   align-items: center;
   justify-content: space-around;
 }
 .pagination__lien {
   text-align: center;
-  margin: 1rem auto;
+  margin: 1rem;
 }
 .pagination__separateur {
   display: inline-block;
-  height: 0;
-  width: 2rem;
-  border-top: #000 solid 0.1rem;
+  width: 0;
+  height: 2rem;
+  border-right: #000 solid 0.15rem;
+  margin: 0.4rem;
 }
 .pagination__texte {
   display: block;
@@ -2676,23 +2677,16 @@ footer {
   margin: 1rem auto;
   text-align: center;
 }
-
-@media (min-width: 800px) {
-  .pagination {
-    flex-direction: row;
-    align-items: center;
-    width: 50rem;
-    max-width: 50rem;
-  }
-  .pagination__separateur {
-    width: 0;
-    height: 2rem;
-    border-right: #000 solid 0.15rem;
-  }
-  .pagination__texte {
-    margin: 0 1rem;
-  }
+.pagination__lesPages {
+  display: flex;
+  flex-direction: row;
 }
+.pagination__lesPages__lien {
+  display: inline-block;
+  width: fit-content;
+  margin: auto 0.7rem;
+}
+
 /* Fiche du projet */
 .fondFicheProjet {
   background-color: #febe98;
