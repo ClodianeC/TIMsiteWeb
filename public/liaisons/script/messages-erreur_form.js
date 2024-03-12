@@ -31,7 +31,7 @@ const objJSONMessagesErreur = {
     }
   },
   "sujet": {
-    "regex": "#^[\\p{L}\\d\\s.,\\-_()]{1,100}$#",
+    "regex": "^[a-zA-Z0-9\\sáéíóúÁÉÍÓÚâêîôÂÊÎÔãõÃÕäëïöüÿÄËÏÖÜŸàèìòùÀÈÌÒÙçÇ!$?%(),. /'\"\\-]{0,100}$",
     "label": "Sujet du message",
     "erreurs": {
       "vide": "Veuillez entrer le sujet du message.",
@@ -39,7 +39,7 @@ const objJSONMessagesErreur = {
     }
   },
   "message": {
-    "regex": "#^[\\p{L}\\d\\s.,\\-_()!?;:'\"/]{1,1000}$#",
+    "regex": "^[a-zA-Z0-9sáéíóúÁÉÍÓÚâêîôÂÊÎÔãõÃÕäëïöüÿÄËÏÖÜŸàèìòùÀÈÌÒÙçÇ!$?%(),. /'\"-]{0,1500}$",
     "label": "Votre message",
     "erreurs": {
       "vide": "Veuillez entrer un message.",
@@ -55,17 +55,17 @@ const objJSONMessagesErreur = {
   },
   "consentement": {
     "regex": "",
-	"label": "J'autorise l'utilisation de mon numéro de téléphone avec le responsable «Étudiant d'un jour». ",
+    "label": "J'autorise l'utilisation de mon numéro de téléphone avec le responsable «Étudiant d'un jour». ",
     "erreurs": {
       "vide": "Veuillez cocher la case pour consentir au partage de votre numéro de téléphone avec le responsable « Étudiant d'un jour. »"
     }
   },
   "telephone": {
-    "regex": "#^(\\(\\d{3}\\) \\d{3}-\\d{4}|\\d{3}-\\d{3}-\\d{4})|(\\+?33[ -]?(\\d{1,2}[ -]?){4}\\d{2})$#",
+    "regex": "/^(?:\\+?(?:33|1)\\s?\\((\\d{3})\\)\\s?(\\d{3})-(\\d{4})|\\+?(?:33|1)\\s?(\\d{1}\\s?\\d{2}\\s?\\d{2}\\s?\\d{2}\\s?\\d{2})|\\+?(?:33|1)?\\s?(\\d{3})\\s?(\\d{3})\\s?(\\d{4}))$/",
     "label": "Téléphone",
     "erreurs": {
-      "vide": "Veuillez entrer votre numéro de téléphone (format:123 456-7890).",
-      "motif": "Veuillez entrer un numéro de téléphone dans un format valide: 123 456-7890."
+      "vide": "Veuillez entrer votre numéro de téléphone (format:xxx xxx-xxxx ou format:xx xxx xx xx xx).",
+      "motif": "Veuillez entrer un numéro de téléphone dans un format:xxx xxx-xxxx ou format:xx xxx xx xx xx."
     }
   },
   "retroactions": {

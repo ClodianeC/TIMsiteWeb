@@ -29,8 +29,6 @@
                         <input type="text"
                                id="prenom"
                                name="prenom"
-{{--                               required--}}
-                               pattern="[a-zA-ZÀ-ÖØ-öø-ÿ -]+"
                                title="Caractères alphabétiques français seulement."
                                value="@isset($tValidation['prenom']['valeur']){{$tValidation['prenom']['valeur']}}@endisset"
                                class="formulaire__input moyen elementCourriel @isset($tValidation['prenom']['estValide']) @if($tValidation['prenom']['estValide'] === false) erreur @endif @endisset">
@@ -46,8 +44,6 @@
                         <input type="text"
                                id="nom"
                                name="nom"
-{{--                               required--}}
-                               pattern="[a-zA-ZÀ-ÖØ-öø-ÿ -]+"
                                title="Caractères alphabétiques français seulement."
                                value="@isset($tValidation['nom']['valeur']){{$tValidation['nom']['valeur']}}@endisset"
                                class="formulaire__input moyen elementCourriel @isset($tValidation['nom']['estValide']) @if($tValidation['nom']['estValide'] === false) erreur @endif @endisset">
@@ -63,8 +59,6 @@
                 <input type="text"
                        id="courriel"
                        name="courriel"
-{{--                       required--}}
-                       pattern="[a-zA-Z0-9][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[@][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[.][a-zA-Z]{2,}"
                        title="Adresse courriel valide."
                        value="@isset($tValidation['courriel']['valeur']){{$tValidation['courriel']['valeur']}}@endisset"
                        class="formulaire__input large elementCourriel @isset($tValidation['courriel']['estValide']) @if($tValidation['courriel']['estValide'] === false) erreur @endif @endisset">
@@ -114,7 +108,6 @@
                     <input type="text"
                            id="telephone"
                            name="telephone"
-                           pattern="(\(\d{3}\) \d{3}-\d{4}|\d{3}-\d{3}-\d{4})|(\+?33[ -]?(\d{1,2}[ -]?){4}\d{2})"
                            title="Numéro de téléphone au format xxx xxx xxxx ou xx xx xx xx."
                            value="@isset($tValidation['telephone']['valeur']){{$tValidation['telephone']['valeur']}}@endisset"
                            class="formulaire__sectionBen__input moyen @isset($tValidation['telephone']['estValide']) @if($tValidation['telephone']['estValide'] === false) erreur @endif @endisset">
@@ -143,7 +136,6 @@
                        id="sujet"
                        name="sujet"
 {{--                       required--}}
-                       pattern="[\p{L}\d\s.,\-_()]{1,100}"
                        title="Caractères alphabétiques français seulement."
                        value="@isset($tValidation['sujet']['valeur']){{$tValidation['sujet']['valeur']}}@endisset"
                        class="formulaire__input large elementCourriel @isset($tValidation['sujet']['estValide']) @if($tValidation['sujet']['estValide'] === false) erreur @endif- @endisset">
@@ -157,10 +149,7 @@
                 <textarea
                     id="message"
                     name="message"
-{{--                    required--}}
-{{--                    pattern="[\p{L}\d\s.,\-_()!?;:'&quot;/]{1,1000}"--}}
                     title="Caractères alphabétiques français seulement."
-{{--                    value="@isset($tValidation['message']['valeur']){{$tValidation['message']['valeur']}}@endisset"--}}
                     class="formulaire__input xLarge elementCourriel @isset($tValidation['message']['estValide']) @if($tValidation['message']['estValide'] === false) erreur @endif @endisset"
                 >
                     @isset($tValidation['message']['valeur']){{$tValidation['message']['valeur']}}@endisset

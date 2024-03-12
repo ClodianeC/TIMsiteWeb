@@ -25,13 +25,13 @@ function validerChampsTexte(objEvenement) {
     const strIdCible = objCible.id;
     const refMessageErreur = objCible.nextElementSibling;
 
-    const motif = new RegExp(`^${objCible.pattern}$`);
+    const motif = new RegExp(`${objJSONMessagesErreur[strIdCible].regex}`);
     const blnMotifChaineValide = motif.test(strChaine);
 
     if (strChaine === '') {
         objCible.classList.add('erreur');
         refMessageErreur.innerHTML = `<span class="spriteRETRO spriteRETRO--warning"></span> ${objJSONMessagesErreur[strIdCible].erreurs.vide}`
-    } else if(blnMotifChaineValide === false && objCible.pattern.length > 0) {
+    } else if(blnMotifChaineValide === false && objJSONMessagesErreur[strIdCible].regex.length > 0) {
         objCible.classList.add('erreur');
         refMessageErreur.innerHTML = `<span class="spriteRETRO spriteRETRO--warning"></span> ${objJSONMessagesErreur[strIdCible].erreurs.motif}`;
     } else {
