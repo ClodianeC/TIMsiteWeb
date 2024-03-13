@@ -422,3 +422,15 @@
 .spriteRETRO--ok {
   background-position: -807px -67.3px;
 }
+
+.g-recaptcha {
+  margin: auto;
+  width: fit-content;
+}
+@media (min-width: 800px) {
+  .g-recaptcha {
+    margin: auto;
+    width: 89%;
+    max-width: 1000px;
+  }
+}

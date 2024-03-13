@@ -1,6 +1,6 @@
 const objJSONMessagesErreur = {
   "prenom": {
-    "regex":"#^[a-zA-ZÀ-ÿ -]+$#",
+    "regex":"^[a-zA-ZÀ-ÿ -]+",
     "label": "Votre prénom",
     "erreurs": {
       "vide": "Veuillez entrer votre prénom.",
@@ -8,7 +8,7 @@ const objJSONMessagesErreur = {
     }
   },
   "nom": {
-    "regex": "#^[a-zA-ZÀ-ÿ' -]+$#",
+    "regex": "^[a-zA-ZÀ-ÿ' -]+",
     "label": "Votre nom",
     "erreurs": {
       "vide": "Veuillez entrer votre nom.",
@@ -16,7 +16,7 @@ const objJSONMessagesErreur = {
     }
   },
   "courriel": {
-    "regex": "#^[a-zA-Z0-9][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[@][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[.][a-zA-Z]{2,}$#i",
+    "regex": "^[a-zA-Z0-9][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[@][a-zA-Z0-9_-]+([.][a-zA-Z0-9_-]+)*[.][a-zA-Z]{2,}$",
     "label": "Votre courriel",
     "erreurs": {
       "vide": "Veuillez entrer votre courriel.",

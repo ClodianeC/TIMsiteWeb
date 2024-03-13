@@ -22,11 +22,12 @@ class ControleurNousJoindre {
     public function creer():void {
         if(isset($_SESSION['tValidation'])) {
             $tValidation = $_SESSION['tValidation'];
-            unset($_SESSION['tValidation']);
+//            unset($_SESSION['tValidation']);
         }
         else {
             $tValidation = null;
         }
+//        var_dump($_SESSION['tValidation']);
 
         $infosFooter = [Texte::trouverParId(9), Texte::trouverParId(1), Texte::trouverParId(2), Texte::trouverParId(5), Texte::trouverParId(3), Texte::trouverParId(4)];
         $lesLiensMenu = MenuLien::trouverTout();
@@ -58,21 +59,28 @@ class ControleurNousJoindre {
         // Courriel avec Ben, deux champs de plus que Courriel avec autre responsable
         // Telephone seulement Responsable à valider aucun envoi au serveur
         if(isset($_POST['selectionContactPar'])) {
+            echo 'IsSelected';
             if($_POST['selectionContactPar'] === 'courriel') {
+                echo 'C\'est un courriel';
                 if(isset($_POST['destinataire'])) {
-                    if($_POST['destinataire'] === '4') {
+                    if($_POST['destinataire'] == '4') {
+                        echo 'Ben';
                         $tChampsAValider = array_merge($tChampsCourriel, $tChampsBen);
                     }
+                    else {
+                        echo 'Courriel';
+                        $tChampsAValider = $tChampsCourriel;
+                    }
                 }
-                else {
-                    $tChampsAValider = $tChampsCourriel;
-                }
+
             }
             else {
+                echo 'Tel';
                 echo $_POST['telephone'];
                 $tChampsAValider = $tChampsTel;
             }
         }
+        var_dump($tChampsAValider);
         foreach ($tChampsAValider as $unChampAValider) {
             if(isset($_POST[$unChampAValider])) {
                 $laValeurActuelle = trim($_POST[$unChampAValider]);
@@ -82,8 +90,6 @@ class ControleurNousJoindre {
             }
 
             $tValidation[$unChampAValider] = ['estValide'=>false, 'valeur'=>$laValeurActuelle, 'messageErreur'=>''];
-
-//            var_dump($tValidation);
 
             // Le champ est il vide
             if($laValeurActuelle === 'empty' || $laValeurActuelle === '' || !isset($_POST[$unChampAValider])) {
@@ -104,9 +110,22 @@ class ControleurNousJoindre {
         }
 
         $_SESSION['tValidation'] = $tValidation;
-        session_write_close();
+
+        $recaptcha_response = $_POST['g-recaptcha-response'];
+        $secret_key = '6Lfl5JcpAAAAALGpjnfayEhxbP4fe8zA2z1o0Y0F';
+
+        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret_key}&response={$recaptcha_response}");
+        $response_keys = json_decode($response, true);
+
+        if ($response_keys["success"]) {
+            echo "reCAPTCHA verification successful!";
+        } else {
+            echo "reCAPTCHA verification failed!";
+            $leFormulaireEstValide = false;
+        }
 
         if($leFormulaireEstValide) {
+            var_dump($_SESSION);
             $unMessage = new Message();
             $unMessage->setPrenomNom($tValidation['prenom']['valeur'] . ' ' . $tValidation['nom']['valeur']);
             $unMessage->setCourriel($tValidation['courriel']['valeur']);

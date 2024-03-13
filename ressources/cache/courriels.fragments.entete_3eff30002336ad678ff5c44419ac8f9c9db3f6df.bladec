@@ -1,5 +1,4 @@
 <h3>Nouveau courriel de <?php echo \htmlentities($prenom??'', ENT_QUOTES, 'UTF-8', false); ?> <?php echo \htmlentities($nom??'', ENT_QUOTES, 'UTF-8', false); ?></h3>
-<?php /*<p>Courriel de l'expéditeur du message: <?php echo \htmlentities($courrielExpediteur??'', ENT_QUOTES, 'UTF-8', false); ?></p>*/ ?>
 <h4>Venant du site web de la TIM</h4>
 
 

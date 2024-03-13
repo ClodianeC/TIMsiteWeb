@@ -33,7 +33,7 @@
  value="<?php if(isset($tValidation['prenom']['valeur'])): ?><?php echo \htmlentities($tValidation['prenom']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
  class="formulaire__input moyen elementCourriel <?php if(isset($tValidation['prenom']['estValide'])): ?> <?php if($tValidation['prenom']['estValide'] === false): ?> erreur <?php endif; ?><?php endif; ?>">
  <p class="formulaire__message elementCourriel">
- <?php if(isset($tValidation)): ?>
+ <?php if(isset($tValidation['prenom'])): ?>
  <?php if($tValidation['prenom']['messageErreur'] !== ""): ?> <span class="spriteRETRO spriteRETRO--warning"></span><?php echo \htmlentities($tValidation['prenom']['messageErreur']??'', ENT_QUOTES, 'UTF-8', false); ?> <?php endif; ?>
  <?php if($tValidation['prenom']['messageErreur'] === ""): ?> <span class="spriteRETRO spriteRETRO--ok"></span> <?php endif; ?>
  <?php endif; ?>
@@ -48,7 +48,7 @@
  value="<?php if(isset($tValidation['nom']['valeur'])): ?><?php echo \htmlentities($tValidation['nom']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
  class="formulaire__input moyen elementCourriel <?php if(isset($tValidation['nom']['estValide'])): ?> <?php if($tValidation['nom']['estValide'] === false): ?> erreur <?php endif; ?><?php endif; ?>">
  <p class="formulaire__message elementCourriel">
- <?php if(isset($tValidation)): ?>
+ <?php if(isset($tValidation['nom'])): ?>
  <?php if($tValidation['nom']['messageErreur'] !== ""): ?> <span class="spriteRETRO spriteRETRO--warning"></span><?php echo \htmlentities($tValidation['nom']['messageErreur']??'', ENT_QUOTES, 'UTF-8', false); ?> <?php endif; ?>
  <?php if($tValidation['nom']['messageErreur'] === ""): ?> <span class="spriteRETRO spriteRETRO--ok"></span> <?php endif; ?>
  <?php endif; ?>
@@ -63,7 +63,7 @@
  value="<?php if(isset($tValidation['courriel']['valeur'])): ?><?php echo \htmlentities($tValidation['courriel']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
  class="formulaire__input large elementCourriel <?php if(isset($tValidation['courriel']['estValide'])): ?> <?php if($tValidation['courriel']['estValide'] === false): ?> erreur <?php endif; ?><?php endif; ?>">
  <p class="formulaire__message elementCourriel">
- <?php if(isset($tValidation)): ?>
+ <?php if(isset($tValidation['courriel'])): ?>
  <?php if($tValidation['courriel']['messageErreur'] !== ""): ?> <span class="spriteRETRO spriteRETRO--warning"></span><?php echo \htmlentities($tValidation['courriel']['messageErreur']??'', ENT_QUOTES, 'UTF-8', false); ?> <?php endif; ?>
  <?php if($tValidation['courriel']['messageErreur'] === ""): ?> <span class="spriteRETRO spriteRETRO--ok"></span> <?php endif; ?>
  <?php endif; ?>
@@ -99,7 +99,7 @@
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </ul>
  <p class="formulaire__message">
- <?php if(isset($tValidation)): ?>
+ <?php if(isset($tValidation['destinataire'])): ?>
  <?php if($tValidation['destinataire']['messageErreur'] !== ""): ?> <span class="spriteRETRO spriteRETRO--warning"></span><?php echo \htmlentities($tValidation['destinataire']['messageErreur']??'', ENT_QUOTES, 'UTF-8', false); ?> <?php endif; ?>
  <?php if($tValidation['destinataire']['messageErreur'] === ""): ?> <span class="spriteRETRO spriteRETRO--ok"></span> <?php endif; ?>
  <?php endif; ?>
@@ -141,7 +141,7 @@
  value="<?php if(isset($tValidation['sujet']['valeur'])): ?><?php echo \htmlentities($tValidation['sujet']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>"
  class="formulaire__input large elementCourriel <?php if(isset($tValidation['sujet']['estValide'])): ?> <?php if($tValidation['sujet']['estValide'] === false): ?> erreur <?php endif; ?>- <?php endif; ?>">
  <p class="formulaire__message elementCourriel">
- <?php if(isset($tValidation)): ?>
+ <?php if(isset($tValidation['sujet'])): ?>
  <?php if($tValidation['sujet']['messageErreur'] !== ""): ?> <span class="spriteRETRO spriteRETRO--warning"></span><?php echo \htmlentities($tValidation['sujet']['messageErreur']??'', ENT_QUOTES, 'UTF-8', false); ?> <?php endif; ?>
  <?php if($tValidation['sujet']['messageErreur'] === ""): ?> <span class="spriteRETRO spriteRETRO--ok"></span> <?php endif; ?>
  <?php endif; ?>
@@ -156,13 +156,14 @@
  <?php if(isset($tValidation['message']['valeur'])): ?><?php echo \htmlentities($tValidation['message']['valeur']??'', ENT_QUOTES, 'UTF-8', false); ?><?php endif; ?>
  </textarea>
  <p class="formulaire__message elementCourriel">
- <?php if(isset($tValidation)): ?>
+ <?php if(isset($tValidation['message'])): ?>
  <?php if($tValidation['message']['messageErreur'] !== ""): ?> <span class="spriteRETRO spriteRETRO--warning"></span><?php echo \htmlentities($tValidation['message']['messageErreur']??'', ENT_QUOTES, 'UTF-8', false); ?> <?php endif; ?>
  <?php if($tValidation['message']['messageErreur'] === ""): ?> <span class="spriteRETRO spriteRETRO--ok"></span> <?php endif; ?>
  <?php endif; ?>
  </p>
  </div>
  </div>
+ <div class="g-recaptcha" data-sitekey="6Lfl5JcpAAAAABr11pv4rSVMlK-5PEbd8ze_z18Y"></div>
  <button class="btnPrincipal active" id="envoyerCourriel">Envoyer un courriel</button>
  <a class="btnPrincipal inactive" id="appeler" href="tel:">Appeler</a>
  </form>
@@ -171,6 +172,7 @@
  <script src="liaisons/script/formulaire.js"></script>
  <script src="liaisons/script/validationClient.js"></script>
  <script src="liaisons/script/appel.js"></script>
+ <script src="https://www.google.com/recaptcha/api.js" async></script>
 <?php $this->stopSection(); ?>
 
 

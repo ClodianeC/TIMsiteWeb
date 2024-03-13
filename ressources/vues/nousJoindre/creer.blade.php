@@ -33,7 +33,7 @@
                                value="@isset($tValidation['prenom']['valeur']){{$tValidation['prenom']['valeur']}}@endisset"
                                class="formulaire__input moyen elementCourriel @isset($tValidation['prenom']['estValide']) @if($tValidation['prenom']['estValide'] === false) erreur @endif @endisset">
                         <p class="formulaire__message elementCourriel">
-                        @if(isset($tValidation))
+                        @if(isset($tValidation['prenom']))
                             @if($tValidation['prenom']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['prenom']['messageErreur']}} @endif
                             @if($tValidation['prenom']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
                         @endif
@@ -48,7 +48,7 @@
                                value="@isset($tValidation['nom']['valeur']){{$tValidation['nom']['valeur']}}@endisset"
                                class="formulaire__input moyen elementCourriel @isset($tValidation['nom']['estValide']) @if($tValidation['nom']['estValide'] === false) erreur @endif @endisset">
                         <p class="formulaire__message elementCourriel">
-                            @if(isset($tValidation))
+                            @if(isset($tValidation['nom']))
                                 @if($tValidation['nom']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['nom']['messageErreur']}} @endif
                                 @if($tValidation['nom']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
                             @endif
@@ -63,7 +63,7 @@
                        value="@isset($tValidation['courriel']['valeur']){{$tValidation['courriel']['valeur']}}@endisset"
                        class="formulaire__input large elementCourriel @isset($tValidation['courriel']['estValide']) @if($tValidation['courriel']['estValide'] === false) erreur @endif @endisset">
                 <p class="formulaire__message elementCourriel">
-                    @if(isset($tValidation))
+                    @if(isset($tValidation['courriel']))
                         @if($tValidation['courriel']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['courriel']['messageErreur']}} @endif
                         @if($tValidation['courriel']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
                     @endif
@@ -98,7 +98,7 @@
                     @endforeach
                 </ul>
                 <p class="formulaire__message">
-                    @if(isset($tValidation))
+                    @if(isset($tValidation['destinataire']))
                         @if($tValidation['destinataire']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['destinataire']['messageErreur']}} @endif
                         @if($tValidation['destinataire']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
                     @endif
@@ -140,7 +140,7 @@
                        value="@isset($tValidation['sujet']['valeur']){{$tValidation['sujet']['valeur']}}@endisset"
                        class="formulaire__input large elementCourriel @isset($tValidation['sujet']['estValide']) @if($tValidation['sujet']['estValide'] === false) erreur @endif- @endisset">
                 <p class="formulaire__message elementCourriel">
-                    @if(isset($tValidation))
+                    @if(isset($tValidation['sujet']))
                         @if($tValidation['sujet']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['sujet']['messageErreur']}} @endif
                         @if($tValidation['sujet']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
                     @endif
@@ -155,13 +155,14 @@
                     @isset($tValidation['message']['valeur']){{$tValidation['message']['valeur']}}@endisset
                 </textarea>
                 <p class="formulaire__message elementCourriel">
-                @if(isset($tValidation))
+                @if(isset($tValidation['message']))
                     @if($tValidation['message']['messageErreur'] !== "") <span class="spriteRETRO spriteRETRO--warning"></span>{{$tValidation['message']['messageErreur']}} @endif
                     @if($tValidation['message']['messageErreur'] === "") <span class="spriteRETRO spriteRETRO--ok"></span> @endif
                 @endif
                 </p>
             </div>
         </div>
+        <div class="g-recaptcha" data-sitekey="6Lfl5JcpAAAAABr11pv4rSVMlK-5PEbd8ze_z18Y"></div>
         <button class="btnPrincipal active" id="envoyerCourriel">Envoyer un courriel</button>
         <a class="btnPrincipal inactive" id="appeler" href="tel:">Appeler</a>
     </form>
@@ -170,5 +171,6 @@
     <script src="liaisons/script/formulaire.js"></script>
     <script src="liaisons/script/validationClient.js"></script>
     <script src="liaisons/script/appel.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async></script>
 @endsection
 
