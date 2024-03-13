@@ -92,6 +92,7 @@
   top: 0;
   left: 0;
   border: none;
+  transition: all 200ms ease-in-out;
 
   & span {
     display: inline-block;
@@ -878,14 +879,31 @@
       }
     }
     &.ouvert {
-
+      & p:nth-child(3) {
+        //display: none;
+        max-height: 1000px;
+        overflow: hidden;
+        transition: max-height 400ms ease-in-out;
+      }
+      .apresTim__section__sousSection {
+        //display: none;
+        max-height: 1000px;
+        overflow: hidden;
+        transition: max-height 400ms ease-in-out;
+      }
     }
     &.ferme {
       & p:nth-child(3) {
-        display: none;
+        //display: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 400ms ease-in-out;
       }
       .apresTim__section__sousSection {
-        display: none;
+        //display: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 400ms ease-in-out;
       }
     }
   }

@@ -1102,6 +1102,7 @@ footer {
   top: 0;
   left: 0;
   border: none;
+  transition: all 200ms ease-in-out;
 }
 .pieSlice span {
   display: inline-block;
@@ -1705,11 +1706,25 @@ footer {
 .apresTim__section:active .apresTim__section__icone.actif, .apresTim__section:hover .apresTim__section__icone.actif, .apresTim__section:focus .apresTim__section__icone.actif {
   background-position: -676px -52px;
 }
+.apresTim__section.ouvert p:nth-child(3) {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 400ms ease-in-out;
+}
+.apresTim__section.ouvert .apresTim__section__sousSection {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 400ms ease-in-out;
+}
 .apresTim__section.ferme p:nth-child(3) {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms ease-in-out;
 }
 .apresTim__section.ferme .apresTim__section__sousSection {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms ease-in-out;
 }
 
 @media (min-width: 800px) {

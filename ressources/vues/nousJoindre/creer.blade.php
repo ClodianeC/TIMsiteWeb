@@ -162,7 +162,7 @@
                 </p>
             </div>
         </div>
-        <div class="g-recaptcha" data-sitekey="6Lfl5JcpAAAAABr11pv4rSVMlK-5PEbd8ze_z18Y"></div>
+        <div class="g-recaptcha elementCourriel" data-sitekey="6Lfl5JcpAAAAABr11pv4rSVMlK-5PEbd8ze_z18Y"></div>
         <button class="btnPrincipal active" id="envoyerCourriel">Envoyer un courriel</button>
         <a class="btnPrincipal inactive" id="appeler" href="tel:">Appeler</a>
     </form>
