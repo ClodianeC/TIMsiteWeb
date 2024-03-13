@@ -163,11 +163,12 @@
             </div>
         </div>
         <button class="btnPrincipal active" id="envoyerCourriel">Envoyer un courriel</button>
-        <button class="btnPrincipal inactive" id="appeler" aria-hidden="true">Appeler</button>
+        <a class="btnPrincipal inactive" id="appeler" href="tel:">Appeler</a>
     </form>
 
     <script src="liaisons/script/messages-erreur_form.js"></script>
     <script src="liaisons/script/formulaire.js"></script>
     <script src="liaisons/script/validationClient.js"></script>
+    <script src="liaisons/script/appel.js"></script>
 @endsection
 
