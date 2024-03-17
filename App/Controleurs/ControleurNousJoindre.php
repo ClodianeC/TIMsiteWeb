@@ -195,7 +195,7 @@ class ControleurNousJoindre {
         //       Remplacer bbbbbb par: Votre nouvelle adresse courriel Gmail (où va le courriel -> pour tester).
         $courriel = new Email();
         $courriel->from('pourlewebtest@gmail.com')
-            ->to('pourlewebtest@gmail.com')
+            ->to($leCourrielResponsable)
             //->cc('cc@example.com')
             //->bcc('bcc@example.com')
             //->replyTo('fabien@example.com')

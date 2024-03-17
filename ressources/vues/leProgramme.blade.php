@@ -18,7 +18,7 @@
     <p class="accroche">{!! $lesTextes[10]->getTexte() !!}</p>
 
     <div class="lesAxesDuProgramme">
-        <div class="pieChart">
+        <div class="pieChart" aria-label="Diagramme circulaire démontrant le pourcentage chaques axes occupent dans le programme de la TIM">
             @php($start = 0)
             @php($colors = ['#95AA91', '#B5C6B2', '#6A8065', '#3D5139', '#D0E3CC'])
             @foreach($lesAxes as $unAxe)
@@ -27,7 +27,8 @@
                         id="pie{{$unAxe->getId()}}"
                         style="background: conic-gradient(transparent 0% {{$start}}deg,
                                                   {{$colors[$loop->iteration-1]}} {{$start}}deg {{$start + $unAxe->getPourcentage()*360/100 +1}}deg,
-                                                  transparent 25%)">
+                                                  transparent 25%)"
+                        aria-label="{{$unAxe->getNom()}} occupent {{$unAxe->getPourcentage()}} pourcent du programme">
                     <span class="pourcentage">{{$unAxe->getPourcentage()}}%</span>
                     <span class="nom">{{$unAxe->getNom()}}</span>
                 </div>
@@ -36,7 +37,7 @@
         </div>
         <div class="lesBtns">
             @foreach($lesAxes as $unAxe)
-                <button class="btnAxes" id="btnAxe{{$unAxe->getId()}}" style="background-color: {{$colors[$loop->iteration-1]}}">{{$unAxe->getNom()}}</button>
+                <button class="btnAxes" id="btnAxe{{$unAxe->getId()}}" style="background-color: {{$colors[$loop->iteration-1]}}" aria-label="Bouton pour ouvrir la section de {{$unAxe->getNom()}} ci-dessous">{{$unAxe->getNom()}}</button>
             @endforeach
         </div>
     </div>
@@ -113,7 +114,7 @@
             @for($i=18; $i<=21; $i++)
                 <button class="apresTim__section" id="sectionApresTim{{$i}}">
                     <h3 class="apresTim__section__h3 h3">{{$lesTextes[$i]->getTitre()}}</h3>
-                    <span class="apresTim__section__icone"></span>
+                    <span class="apresTim__section__icone" aria-label="Ouvrir la section {{$lesTextes[$i]->getTitre()}}"></span>
                     @if($i !== 21)
                         {!! substr($lesTextes[$i]->getTexte(), 0, strpos($lesTextes[$i]->getTexte(), 'Postes') -3) !!}
                     <div class="apresTim__section__sousSection">

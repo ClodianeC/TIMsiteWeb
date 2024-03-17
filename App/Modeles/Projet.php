@@ -186,4 +186,8 @@ class Projet {
     public function getCoursId():int{
         return $this->cours_id;
     }
+
+    public function getDiplomeAssocie():Diplome{
+        return Diplome::trouverParId($this->diplome_id);
+    }
 }

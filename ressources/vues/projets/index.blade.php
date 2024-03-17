@@ -11,24 +11,13 @@
     <div class="fondFiltresTri">
         <form class="filtresTri" action="index.php" method="GET">
             <h2 class="filtresTri__h2 h2">Filtrer les projets:</h2>
-            <input type="hidden" name="controleur" value="projet" ></input>
-            <input type="hidden" name="action" value="index" ></input>
+            <input type="hidden" name="controleur" value="projet" >
+            <input type="hidden" name="action" value="index" >
             <div class="filtresTri__section">
                 <h3 class="filtresTri__section__h3 h3">Par année:</h3>
                 <ul class="filtresTri__section__liste">
                     @for($i=1; $i<=3; $i++)
                         <li class="filtresTri__section__liste__item">
-                            <input type="checkbox" value="{{$i}}" name="annee[]" id="annee{{$i}}" class="filtresTri__section__liste__item__checkbox"
-                                   @if(isset($_POST['annee']))
-                                        @if(array_search($i, $_POST['annee']) !== false)
-                                            checked
-                                        @endif
-                                   @elseif(isset($_GET['annee']))
-                                        @if(array_search($i, $_GET['annee']) !== false)
-                                            checked
-                                        @endif
-                                   @endif
-                                   >
                             <label for="annee{{$i}}" class="filtresTri__section__liste__item__label">
                                 <span>{{$i}}
                                     <sup>
@@ -42,6 +31,18 @@
                                 <span class="filtresTri__section__liste__item__label__icone">
                                 </span>
                             </label>
+                            <input type="checkbox" value="{{$i}}" name="annee[]" id="annee{{$i}}" class="filtresTri__section__liste__item__checkbox"
+                                   aria-label="Filtre les résultats pour montrer les projets faits dans l'année {{$i}}"
+                                   @if(isset($_POST['annee']))
+                                        @if(array_search($i, $_POST['annee']) !== false)
+                                            checked
+                                        @endif
+                                   @elseif(isset($_GET['annee']))
+                                        @if(array_search($i, $_GET['annee']) !== false)
+                                            checked
+                                        @endif
+                                   @endif
+                            >
                         </li>
                     @endfor
                 </ul>
@@ -51,7 +52,9 @@
                 <ul class="filtresTri__section__liste">
                     @foreach($lesAxes as $unAxe)
                         <li class="filtresTri__section__liste__item">
+                            <label for="axe{{$unAxe->getId()}}" class="filtresTri__section__liste__item__label">{{$unAxe->getNom()}}<span class="filtresTri__section__liste__item__label__icone"></span></label>
                             <input type="checkbox" value="{{$unAxe->getId()}}" name="axeFormation[]" id="axe{{$unAxe->getId()}}" class="filtresTri__section__liste__item__checkbox"
+                                aria-label="Filtre les résultats pour montrer les projets qui ont un lien avec l'axe {{$unAxe->getNom()}}"
                                 @if(isset($_POST['axeFormation']))
                                     @if(array_search($unAxe->getId(), $_POST['axeFormation']) !== false)
                                         checked
@@ -62,7 +65,6 @@
                                     @endif
                                 @endif
                             >
-                            <label for="axe{{$unAxe->getId()}}" class="filtresTri__section__liste__item__label">{{$unAxe->getNom()}}<span class="filtresTri__section__liste__item__label__icone"></span></label>
                         </li>
                     @endforeach
                 </ul>
@@ -83,9 +85,9 @@
         @endif
         @foreach($lesProjets as $unProjet)
             @if($loop->iteration % 2 == 0)
-                <a href="index.php?controleur=projet&action=fiche&idProjet={{$unProjet->getId()}}" class="lesProjets__unProjet impair">
+                <a href="index.php?controleur=projet&action=fiche&idProjet={{$unProjet->getId()}}" class="lesProjets__unProjet impair" aria-label="Lien pour aller à la fiche du projet {{$unProjet->getTitre()}} par {{$unProjet->getDiplomeAssocie()->getPrenom()}} {{$unProjet->getDiplomeAssocie()->getNom()}}">
             @else
-                <a href="index.php?controleur=projet&action=fiche&idProjet={{$unProjet->getId()}}" class="lesProjets__unProjet pair">
+                <a href="index.php?controleur=projet&action=fiche&idProjet={{$unProjet->getId()}}" class="lesProjets__unProjet pair" aria-label="Lien pour aller à la fiche du projet {{$unProjet->getTitre()}} par {{$unProjet->getDiplomeAssocie()->getPrenom()}} {{$unProjet->getDiplomeAssocie()->getNom()}}">
             @endif
                 <img class="lesProjets__unProjet__img"
                 @if(is_file("liaisons/img/projets/principales/".$unProjet->getDiplomeId() . "_" . $unProjet->getId(). "_01_300.png"))
@@ -109,8 +111,10 @@
             <a
             @if($noPage > 0)
                 class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$noPage - 1}}"
+                aria-label="Aller à la page précédente"
             @else
                 class="pagination__lien"
+                aria-label="Vous êtes à la première page"
             @endif
             >
                 Précédent
@@ -123,11 +127,13 @@
             <div class="pagination__lesPages">
                 @for($i = 1; $i <= $nbPagesTotal +1; $i++)
                     <a
-                            @if($i === $noPage + 1)
-                                class="pagination__lesPages__lien"
-                            @else
-                                class="pagination__lesPages__lien hyperlien" href="{{$urlPagination}}&page={{$i - 1}}"
-                            @endif
+                        @if($i === $noPage + 1)
+                            class="pagination__lesPages__lien"
+                            aria-label="Vous êtes à la page {{$i}}"
+                        @else
+                            class="pagination__lesPages__lien hyperlien" href="{{$urlPagination}}&page={{$i - 1}}"
+                            aria-label="Lien pour accéder à la page {{$i}} des projets"
+                        @endif
                     >{{$i}}</a>
                 @endfor
             </div>
@@ -139,8 +145,10 @@
             <a
             @if($noPage < $nbPagesTotal)
                 class="pagination__lien hyperlien" href="{{$urlPagination}}&page={{$noPage + 1}}"
+                aria-label="Aller à la page suivante"
             @else
                 class="pagination__lien"
+                aria-label="Vous êtes à la dernière page"
             @endif
             >
                 Suivant

@@ -11,9 +11,9 @@
     <div class="piedDePage__rangeeLiens">
         <a class="piedDePage__rangeeLiens__lien hyperlien" id="lienProgramme" href="https://www.csfoy.ca/programmes/tous-les-programmes/programmes-techniques/techniques-dintegration-multimedia-web-et-apps/">{{$infosFooter[2]->getTitre()}}</a>
         <div class="piedDePage__rangeeLiens__reseauxSociaux">
-            <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="https://www.instagram.com/cegepsaintefoy/"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="instagram"></span></a>
-            <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="https://www.facebook.com/timcsf"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="facebook"></span></a>
-            <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="https://www.linkedin.com/groups/2211970"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="linkedin"></span></a>
+            <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="https://www.instagram.com/cegepsaintefoy/" aria-label="Lien vers le compte Instagram du cégep de Sainte-Foy"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="instagram"></span></a>
+            <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="https://www.facebook.com/timcsf" aria-label="Lien vers le compte Facebook du programme de la TIM du cégep de Sainte-Foy"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="facebook"></span></a>
+            <a class="piedDePage__rangeeLiens__reseauxSociaux__lien" href="https://www.linkedin.com/groups/2211970" aria-label="Lien vers le compte Linkedin du programme de la TIM du cégep de Sainte-Foy"><span class="piedDePage__rangeeLiens__reseauxSociaux__lien__icone" id="linkedin"></span></a>
         </div>
     </div>
     <span class="piedDePage__separateur"></span>
