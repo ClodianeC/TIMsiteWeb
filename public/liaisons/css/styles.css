@@ -1889,11 +1889,11 @@ footer {
 }
 .selectionMoyen__label__icone#iconeParCourriel {
   background-position-y: 0;
-  background-position-x: -522px;
+  background-position-x: -519px;
 }
 .selectionMoyen__label__icone#iconeParTel {
   background-position-y: 0;
-  background-position-x: -1141px;
+  background-position-x: -1137px;
 }
 
 @media (min-width: 450px) {

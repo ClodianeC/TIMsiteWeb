@@ -79,7 +79,7 @@
  <?php endif; ?>
  <?php else: ?>
  <?php if(isset($tValidation['destinataire']['valeur'])): ?>
- <?php if($tValidation['destinataire']['valeur'] === $unResponsable->getId()): ?>
+ <?php if($tValidation['destinataire']['valeur'] == $unResponsable->getId()): ?>
  checked
  <?php endif; ?>
  <?php endif; ?>

@@ -72,13 +72,13 @@
                     @foreach($lesResponsables as $unResponsable)
                         <li class="formulaire__destinataires__item">
                             <input type="radio" class="formulaire__destinataires__item__input screen-reader-only" id="selection{{$unResponsable->getNom()}}" value="{{$unResponsable->getId()}}" name="destinataire"
-                                @if(isset($_GET['idResponsable']))
+                                   @if(isset($_GET['idResponsable']))
                                     @if((int) $_GET['idResponsable'] === $unResponsable->getId())
                                         checked
                                     @endif
                                 @else
                                     @isset($tValidation['destinataire']['valeur'])
-                                        @if($tValidation['destinataire']['valeur'] === $unResponsable->getId())
+                                        @if($tValidation['destinataire']['valeur'] == $unResponsable->getId())
                                             checked
                                         @endif
                                     @endisset
