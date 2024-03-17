@@ -17,9 +17,51 @@
 .filtresTri {
   width: 80%;
   margin: auto;
+  overflow: hidden;
+  transition: max-height 400ms ease-in-out;
 
+  &.ferme {
+    max-height: 0;
+  }
+  &.ouvert {
+    max-height: 1000px;
+  }
+  &__sectionTitreBtn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+  }
   &__h2 {
     text-align: left;
+    display: inline-block;
+  }
+  &__icone {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    background-color: transparent;
+    border: none;
+    background-image: url("../img/sprite.svg");
+
+    &.ferme {
+      background-position: -624px -52px;
+    }
+    &:hover.ferme,
+    &:focus.ferme {
+      background-position: -676px -52px;
+    }
+    &.ouvert {
+      background-position: -727px -52px;
+    }
+    &:hover.ouvert,
+    &:focus.ouvert {
+      background-position: -779px -52px;
+    }
   }
   &__section {
     width: 100%;

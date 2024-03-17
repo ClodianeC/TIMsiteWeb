@@ -755,33 +755,33 @@ main {
 }
 
 #diplomes {
-  background-position-x: -122px;
+  background-position-x: -121px;
 }
 
 #projets {
-  background-position-x: -164px;
+  background-position-x: -162px;
 }
 
 #programme {
-  background-position-x: -324px;
+  background-position-x: -322px;
 }
 
 #stages {
-  background-position-x: -364px;
+  background-position-x: -362px;
 }
 
 #joindre {
-  background-position-x: -405px;
+  background-position-x: -403px;
 }
 
 @media (min-width: 500px) {
   .menu__liste__item__lien__rond {
-    background-size: 135vw;
+    background-size: 134vw;
     min-width: 4rem;
     width: 8vw;
   }
   .menu__liste__item__lien__rond.actif {
-    background-position-y: -8.5vw;
+    background-position-y: -8.2vw;
   }
   .menu__liste__item__lien__texte {
     margin: 0;
@@ -796,22 +796,22 @@ main {
   .menu__liste__item__lien:hover #programme,
   .menu__liste__item__lien:hover #stages,
   .menu__liste__item__lien:hover #joindre {
-    background-position-y: -8.5vw;
+    background-position-y: -8.2vw;
   }
   #diplomes {
-    background-position-x: -25vw;
+    background-position-x: -24.5vw;
   }
   #projets {
-    background-position-x: -33.4vw;
+    background-position-x: -32.8vw;
   }
   #programme {
-    background-position-x: -66vw;
+    background-position-x: -65.4vw;
   }
   #stages {
-    background-position-x: -74.5vw;
+    background-position-x: -73.5vw;
   }
   #joindre {
-    background-position-x: -82.5vw;
+    background-position-x: -81.7vw;
   }
 }
 @media (min-width: 800px) {
@@ -856,7 +856,7 @@ main {
     width: 5rem;
     height: 5rem;
     top: 0;
-    background-size: 1700px;
+    background-size: 1706px;
     background-repeat: no-repeat;
     background-position-y: 2px;
   }
@@ -2192,11 +2192,11 @@ footer {
 }
 
 .spriteRETRO--warning {
-  background-position: -829px -67.3px;
+  background-position: -831px -59.8px;
 }
 
 .spriteRETRO--ok {
-  background-position: -807px -67.3px;
+  background-position: -831px -79.8px;
 }
 
 .g-recaptcha {
@@ -2544,9 +2544,48 @@ footer {
 .filtresTri {
   width: 80%;
   margin: auto;
+  overflow: hidden;
+  transition: max-height 400ms ease-in-out;
+}
+.filtresTri.ferme {
+  max-height: 0;
+}
+.filtresTri.ouvert {
+  max-height: 1000px;
+}
+.filtresTri__sectionTitreBtn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
 }
 .filtresTri__h2 {
   text-align: left;
+  display: inline-block;
+}
+.filtresTri__icone {
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  background-color: transparent;
+  border: none;
+  background-image: url("../img/sprite.svg");
+}
+.filtresTri__icone.ferme {
+  background-position: -624px -52px;
+}
+.filtresTri__icone:hover.ferme, .filtresTri__icone:focus.ferme {
+  background-position: -676px -52px;
+}
+.filtresTri__icone.ouvert {
+  background-position: -727px -52px;
+}
+.filtresTri__icone:hover.ouvert, .filtresTri__icone:focus.ouvert {
+  background-position: -779px -52px;
 }
 .filtresTri__section {
   width: 100%;
@@ -2990,8 +3029,8 @@ footer {
   border-radius: 50%;
   border: #d0e3cc solid 0.4rem;
   background-image: url("../img/sprite.svg");
-  background-size: 1698px;
-  background-position: -1656px -78.5px;
+  background-size: 1703px;
+  background-position: -1656px -74px;
   position: fixed;
   width: 5rem;
   height: 5rem;

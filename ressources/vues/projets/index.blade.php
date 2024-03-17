@@ -9,8 +9,11 @@
     <p class="accroche">Page {{$noPage + 1}}</p>
 
     <div class="fondFiltresTri">
-        <form class="filtresTri" action="index.php" method="GET">
+        <div class="filtresTri__sectionTitreBtn">
             <h2 class="filtresTri__h2 h2">Filtrer les projets:</h2>
+            <button type="button" id="ouvrirFermerTriFiltres" class="filtresTri__icone ferme"></button>
+        </div>
+        <form class="filtresTri ferme" action="index.php" method="GET">
             <input type="hidden" name="controleur" value="projet" >
             <input type="hidden" name="action" value="index" >
             <div class="filtresTri__section">
@@ -18,6 +21,18 @@
                 <ul class="filtresTri__section__liste">
                     @for($i=1; $i<=3; $i++)
                         <li class="filtresTri__section__liste__item">
+                            <input type="checkbox" value="{{$i}}" name="annee[]" id="annee{{$i}}" class="filtresTri__section__liste__item__checkbox"
+                                   aria-label="Filtre les résultats pour montrer les projets faits dans l'année {{$i}}"
+                                   @if(isset($_POST['annee']))
+                                       @if(array_search($i, $_POST['annee']) !== false)
+                                           checked
+                                   @endif
+                                   @elseif(isset($_GET['annee']))
+                                       @if(array_search($i, $_GET['annee']) !== false)
+                                           checked
+                                    @endif
+                                    @endif
+                            >
                             <label for="annee{{$i}}" class="filtresTri__section__liste__item__label">
                                 <span>{{$i}}
                                     <sup>
@@ -31,18 +46,7 @@
                                 <span class="filtresTri__section__liste__item__label__icone">
                                 </span>
                             </label>
-                            <input type="checkbox" value="{{$i}}" name="annee[]" id="annee{{$i}}" class="filtresTri__section__liste__item__checkbox"
-                                   aria-label="Filtre les résultats pour montrer les projets faits dans l'année {{$i}}"
-                                   @if(isset($_POST['annee']))
-                                        @if(array_search($i, $_POST['annee']) !== false)
-                                            checked
-                                        @endif
-                                   @elseif(isset($_GET['annee']))
-                                        @if(array_search($i, $_GET['annee']) !== false)
-                                            checked
-                                        @endif
-                                   @endif
-                            >
+
                         </li>
                     @endfor
                 </ul>
@@ -52,7 +56,6 @@
                 <ul class="filtresTri__section__liste">
                     @foreach($lesAxes as $unAxe)
                         <li class="filtresTri__section__liste__item">
-                            <label for="axe{{$unAxe->getId()}}" class="filtresTri__section__liste__item__label">{{$unAxe->getNom()}}<span class="filtresTri__section__liste__item__label__icone"></span></label>
                             <input type="checkbox" value="{{$unAxe->getId()}}" name="axeFormation[]" id="axe{{$unAxe->getId()}}" class="filtresTri__section__liste__item__checkbox"
                                 aria-label="Filtre les résultats pour montrer les projets qui ont un lien avec l'axe {{$unAxe->getNom()}}"
                                 @if(isset($_POST['axeFormation']))
@@ -65,6 +68,7 @@
                                     @endif
                                 @endif
                             >
+                            <label for="axe{{$unAxe->getId()}}" class="filtresTri__section__liste__item__label">{{$unAxe->getNom()}}<span class="filtresTri__section__liste__item__label__icone"></span></label>
                         </li>
                     @endforeach
                 </ul>
@@ -156,4 +160,5 @@
         </div>
     @endif
 
+    <script src="liaisons/script/triFiltreOuvrirFermer.js"></script>
 @endsection

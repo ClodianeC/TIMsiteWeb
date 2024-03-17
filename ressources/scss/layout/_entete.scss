@@ -157,19 +157,19 @@
   }
 }
 #diplomes {
-  background-position-x: -122px;
+  background-position-x: -121px;
 }
 #projets {
-  background-position-x: -164px;
+  background-position-x: -162px;
 }
 #programme {
-  background-position-x: -324px;
+  background-position-x: -322px;
 }
 #stages {
-  background-position-x: -364px;
+  background-position-x: -362px;
 }
 #joindre {
-  background-position-x: -405px;
+  background-position-x: -403px;
 }
 @media (min-width: 500px) {
   .menu {
@@ -181,12 +181,12 @@
         &__lien {
 
           &__rond {
-            background-size: 135vw;
+            background-size: 134vw;
             min-width: 4rem;
             width: 8vw;
 
             &.actif {
-              background-position-y: -8.5vw;
+              background-position-y: -8.2vw;
             }
           }
           &__texte {
@@ -202,7 +202,7 @@
             #programme,
             #stages,
             #joindre {
-              background-position-y: -8.5vw;
+              background-position-y: -8.2vw;
             }
           }
         }
@@ -210,19 +210,19 @@
     }
   }
   #diplomes {
-    background-position-x: -25vw;
+    background-position-x: -24.5vw;
   }
   #projets {
-    background-position-x: -33.4vw;
+    background-position-x: -32.8vw;
   }
   #programme {
-    background-position-x: -66vw;
+    background-position-x: -65.4vw;
   }
   #stages {
-    background-position-x: -74.5vw;
+    background-position-x: -73.5vw;
   }
   #joindre {
-    background-position-x: -82.5vw;
+    background-position-x: -81.7vw;
   }
 }
 @media (min-width: 800px) {
@@ -268,7 +268,7 @@
             width: 5rem;
             height: 5rem;
             top: 0;
-            background-size: 1700px;
+            background-size: 1706px;
             background-repeat: no-repeat;
             background-position-y: 2px;
 
